@@ -10,9 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_145649) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_161509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connections", force: :cascade do |t|
+    t.string "connection_type"
+    t.boolean "pending"
+    t.boolean "accepted"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "investors", force: :cascade do |t|
+    t.boolean "private"
+    t.string "funding_type"
+    t.string "investor_type"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_investors_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "meeting_time"
+    t.integer "duration"
+    t.boolean "meeting_accepted"
+    t.boolean "meeting_pending"
+    t.bigint "connection_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["connection_id"], name: "index_meetings_on_connection_id"
+  end
+
+  create_table "startups", force: :cascade do |t|
+    t.string "funding"
+    t.integer "team"
+    t.date "funding_round_end_date"
+    t.float "funding_amount"
+    t.string "industry"
+    t.integer "headcount"
+    t.integer "turnover"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_startups_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +66,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_145649) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "company_name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "user_type"
+    t.string "address"
+    t.string "city"
+    t.string "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "investors", "users"
+  add_foreign_key "meetings", "connections"
+  add_foreign_key "startups", "users"
 end
