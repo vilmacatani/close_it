@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_161240) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_161509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +31,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_161240) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_investors_on_user_id"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.datetime "meeting_time"
+    t.integer "duration"
+    t.boolean "meeting_accepted"
+    t.boolean "meeting_pending"
+    t.bigint "connection_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["connection_id"], name: "index_meetings_on_connection_id"
   end
 
   create_table "startups", force: :cascade do |t|
@@ -67,5 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_161240) do
   end
 
   add_foreign_key "investors", "users"
+  add_foreign_key "meetings", "connections"
   add_foreign_key "startups", "users"
 end
