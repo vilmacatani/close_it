@@ -10,9 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_160628) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_161240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "connections", force: :cascade do |t|
+    t.string "connection_type"
+    t.boolean "pending"
+    t.boolean "accepted"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "investors", force: :cascade do |t|
+    t.boolean "private"
+    t.string "funding_type"
+    t.string "investor_type"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_investors_on_user_id"
+  end
 
   create_table "startups", force: :cascade do |t|
     t.string "funding"
@@ -47,5 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_160628) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "investors", "users"
   add_foreign_key "startups", "users"
 end
