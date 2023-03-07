@@ -3,6 +3,7 @@
   <head>
     <title>CloseIt</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://unpkg.com/feather-icons"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +11,15 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body>
+  <div class= "all-container">
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
     <%= yield %>
+    <%= render "shared/footer" %>
+  </div>
+  <script>
+    feather.replace()
+  </script>
   </body>
 </html>
