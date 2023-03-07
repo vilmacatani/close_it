@@ -1,6 +1,10 @@
+.container-fluid{
+  border-bottom: 1px solid white;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #17185E;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +12,11 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 13em;
+  padding: 1em;
+}
+
+.nav-item i{
+  color: white;
+  font-size: 2em;
 }

@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+.all-container{
+  margin: 2em 7em 2em
+}
+body {
+  background-color: #17185E ;
+  color: white;
+}
+
+.home-container p {
+  font-family: $bigtitle-font;
+  font-size: larger;
+}
+
+.home-description {
+  width: 40%;
+  text-align: justify;
+  margin-top: 2em;
+}
+
+.home-signup {
+  width: 23em;
+  height: 16em;
+  position: absolute;
+  right: 22em;
+}
+
+.home-signup ul {
+list-style: none;
+font-size: 3em;
+}
+
+.home-signup li {
+  border-bottom: 1px dotted white;
+  text-align: justify;
+}
