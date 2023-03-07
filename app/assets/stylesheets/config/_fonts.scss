@@ -5,13 +5,13 @@
   font-family: 'Grotesk';
   src: url('HKGrotesk-Bold.otf');
 }
+@font-face {
+  font-family: 'Grotesk medium';
+  src: url('NeueHaasGrotDisp-65Medium.otf');
+}
 
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Montserrat", sans-serif;
+$body-font: "Montserrat", sans-serif;
+$headers-font: "Grotesk medium";
 $bigtitle-font: "Grotesk";
-
-
-
-
