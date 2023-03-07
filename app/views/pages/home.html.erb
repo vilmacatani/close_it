@@ -1,15 +1,17 @@
-
-
 <div class= "home-container">
-  <div class="home-description">
-    <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
-    high-potential startups and offering entrepreneursa platform to showcase their business.</p>
-  </div>
-  <div class="home-signup">
-    <ul>
+  <% if user_signed_in? %>
+
+  <% else %>
+    <div class="home-description">
+      <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
+      high-potential startups and offering entrepreneursa platform to showcase their business.</p>
+    </div>
+    <div class="home-signup">
+      <ul>
       <li>JOIN AS</li>
-      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> STARTUP</li>
-      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> INVESTOR</li>
-    </ul>
-  </div>x
+      <li><i class="fa-sharp fa-solid fa-arrow-right"></i>  STARTUP</li>
+      <li><i class="fa-sharp fa-solid fa-arrow-right"></i>  INVESTOR</li>
+      </ul>
+    </div>
+  <% end %>
 </div>
