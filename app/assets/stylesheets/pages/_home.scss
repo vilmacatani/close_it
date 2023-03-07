@@ -17,3 +17,20 @@ body {
   text-align: justify;
   margin-top: 2em;
 }
+
+.home-signup {
+  width: 23em;
+  height: 16em;
+  position: absolute;
+  right: 22em;
+}
+
+.home-signup ul {
+list-style: none;
+font-size: 3em;
+}
+
+.home-signup li {
+  border-bottom: 1px dotted white;
+  text-align: justify;
+}
