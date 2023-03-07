@@ -6,7 +6,7 @@ require 'faker'
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+funding = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
 5.times do
   user = User.create!(
     address: Faker::Address.full_address,
@@ -21,11 +21,12 @@ require 'faker'
   Investor.create!(
     user_id: user.id,
     private: true,
-
+    funding_type: funding.sample,
+    investor_type: Faker::Company.buzzword
   )
 end
 
-funding = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
+
 5.times do
   user = User.create!(
     address: Faker::Address.full_address,
@@ -48,4 +49,5 @@ funding = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
     turnover: Faker::Number.between(from: 1, to: 200)
   )
 end
-  
+
+
