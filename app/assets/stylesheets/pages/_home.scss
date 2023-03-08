@@ -2,9 +2,29 @@
 .all-container{
   margin: 2em 7em 2em
 }
-body {
-  background-color: #17185E ;
+.blue-back {
+  background-color: #17185E !important ;
   color: white;
+}
+
+.full-screen {
+  min-height: 100vh;
+}
+
+.grey-back {
+  background-color: #eaeaea ;
+  color: white;
+  p {
+    color: $white;
+  }
+  .container-fluid{
+    border-bottom: 1px solid $white;
+  }
+  .footer {
+    border-top: 1px solid $white;
+    color: white;
+  }
+
 }
 
 .home-container p {
@@ -36,4 +56,9 @@ letter-spacing: 2px;
 .home-signup li {
   border-bottom: 1px dotted white;
   text-align: justify;
+}
+
+.home-signup a {
+  color:white;
+  text-decoration: none;
 }

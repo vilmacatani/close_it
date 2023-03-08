@@ -6,4 +6,8 @@ export default class extends Controller {
   connect() {
     console.log("Connected")
   }
+
+  update() {
+    console.log()
+  }
 }
