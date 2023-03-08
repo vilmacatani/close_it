@@ -1,5 +1,6 @@
 class StartupsController < ApplicationController
-
+  def show
+  end
   # before_action :set_user, only: %i[new create]
   # def new
   #   @user = User.find(params[:user_id])

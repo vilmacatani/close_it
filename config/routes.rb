@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
-
+  resources :startups, only: :show
   #resources :users do
     #resources :starts_up, only: [:new]
 
