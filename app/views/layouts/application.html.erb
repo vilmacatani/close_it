@@ -12,9 +12,8 @@
   </head>
 
   <body>
-  <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
-  <%# add startup path show and OTHERS!!! %>
-  <div class="grey-back <%= 'blue-back' if blue_pages %> full-screen">
+  <% grey_pages = current_page?(controller: 'registrations', action: 'new') || current_page?(controller: 'investors', action: 'new') || current_page?(controller: 'startups', action: 'new') || current_page?(controller: 'investors', action: 'index') || current_page?(controller: 'startups', action: 'index') || current_page?(controller: 'startups', action: 'show') %>
+  <div class="<%= grey_pages ? 'grey-back' : 'blue-back'%> full-screen">
     <div class= "all-container">
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
@@ -26,5 +25,4 @@
     feather.replace()
   </script>
   </body>
-
 </html>
