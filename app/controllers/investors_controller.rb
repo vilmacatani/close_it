@@ -2,12 +2,15 @@ class InvestorsController < ApplicationController
   def new
   end
 
-  def update
+  def create
   end
 
-  def index
-  end
+  # def update
+  # end
 
-  def show
-  end
+  # def index
+  # end
+
+  # def show
+  # end
 end
