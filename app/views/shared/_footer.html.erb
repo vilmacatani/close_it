@@ -1,5 +1,5 @@
-<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
-<div class="footer grey-back <%= 'blue-back' if blue_pages %>">
+<% grey_pages = current_page?(controller: 'registrations', action: 'new') || current_page?(controller: 'investors', action: 'new') || current_page?(controller: 'startups', action: 'new') || current_page?(controller: 'investors', action: 'index') || current_page?(controller: 'startups', action: 'index') || current_page?(controller: 'startups', action: 'show') %>
+<div class="footer <%= grey_pages ? 'grey-back' : 'blue-back'%>">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
