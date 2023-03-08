@@ -14,10 +14,10 @@
     <div class="home-description">
       <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
     </div>
-    <div class="home-signup">
+    <div class="home-signup-page">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
         <%= f.error_notification %>
-
+        <p class="investor-title">INVESTOR</p>
         <div class="form-inputs">
           <%= f.input :email,
                       required: true,
@@ -33,11 +33,9 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: "signup-button" %>
         </div>
       <% end %>
-
-      <%= render "devise/shared/links" %>
 
     </div>
   <% end %>

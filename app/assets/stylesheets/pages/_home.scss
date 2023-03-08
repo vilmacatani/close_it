@@ -3,7 +3,7 @@
   margin: 2em 7em 2em
 }
 .blue-back {
-  background-color: #17185E ;
+  background-color: #17185E !important ;
   color: white;
 }
 
@@ -15,13 +15,13 @@
   background-color: #eaeaea ;
   color: white;
   p {
-    color: $blue;
+    color: $white;
   }
   .container-fluid{
-    border-bottom: 1px solid $blue;
+    border-bottom: 1px solid $white;
   }
   .footer {
-    border-top: 1px solid $blue;
+    border-top: 1px solid $white;
     color: white;
   }
 
