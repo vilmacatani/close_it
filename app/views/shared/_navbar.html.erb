@@ -1,4 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% grey_pages = current_page?(controller: 'registrations', action: 'new') || current_page?(controller: 'investors', action: 'new') || current_page?(controller: 'startups', action: 'new') || current_page?(controller: 'investors', action: 'index') || current_page?(controller: 'startups', action: 'index') || current_page?(controller: 'startups', action: 'show') %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= grey_pages ? 'grey-back' : 'blue-back'%>">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "CLOSE-IT WHITE.svg" %>
