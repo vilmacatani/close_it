@@ -3,12 +3,8 @@
     <% if current_user.user_type == "investor" %>
     <div data-controller="filter-list">
       <%= render 'search/startup_search' %>
-
-      <% @startups.each do |startup| %>
-        <p><%= startup.user.company_name %></p>
-      <% end %>
+      <%= render "startups/list", startups: @startups %>
     </div>
-
 
     <% else %>
 

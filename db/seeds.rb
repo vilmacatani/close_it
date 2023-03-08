@@ -11,14 +11,13 @@ Investor.destroy_all
 User.destroy_all
 
 User.create!(email: "vilmacatani@gmail.com", password: "111111", user_type: 'investor')
-User.create!(email: "martacatani@gmail.com", password: "111111", user_type: 'startup')
+# User.create!(email: "martacatani@gmail.com", password: "111111", user_type: 'startup')
 
 FUNDING = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
-user_type = ["investor", "startup"]
 investor_type = ["Angel", "Venture Capital", "Private Equity Fund", "Bank"]
 i = 1
 
-7.times do
+2.times do
   user = User.create!(
     address: Faker::Address.full_address,
     email: "vilmacatani#{i}@gmail.com",
@@ -28,7 +27,7 @@ i = 1
     company_name: Faker::Company.name,
     city: Faker::Address.city_suffix,
     country: Faker::Address.country,
-    user_type: user_type.sample
+    user_type: "investor"
   )
 
   Investor.create!(
@@ -41,7 +40,7 @@ i = 1
 end
 j = 1
 
-7.times do
+5.times do
   user = User.create!(
     address: Faker::Address.full_address,
     email: "martasolenne#{j}@gmail.com",
@@ -51,7 +50,7 @@ j = 1
     company_name: Faker::Company.name,
     city: Faker::Address.city_suffix,
     country: Faker::Address.country,
-    user_type: user_type.sample
+    user_type: "startup"
   )
 
   Startup.create!(
