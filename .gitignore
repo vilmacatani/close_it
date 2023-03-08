@@ -39,3 +39,7 @@
 # Ignore Mac and Linux file system files
 *.swp
 .DS_Store
+
+
+# my notes
+notes.txt
