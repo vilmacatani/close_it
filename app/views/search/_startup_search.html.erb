@@ -1,11 +1,11 @@
 <div class="startup-search-container">
-  <div class="startup-filter-form" data-controller="filter-list">
-    <%= form_with url: root_path, method: :get, html: {class: "mb-4"} do |f| %>
-      <%= f.label :industry, "choose industry" %>
-      <%= f.collection_select :industry, Startup.select(:industry).distinct.reorder('industry ASC'), :industry, :industry%>
-      <%= f.collection_select :country, User.select(:country).distinct.reorder('country ASC'), :country, :country%>
-      <%= f.collection_select :funding, Startup.select(:funding).distinct.reorder('funding ASC'), :funding, :funding%>
-      <%= f.submit "Search" %>
+  <div class="startup-filter-form" >
+    <%= form_with url: root_path, method: :get, html: {class: "mb-4"},
+    data: {filter_list_target: "form", action: "submit->filter-list#update"} do |f| %>
+      <%= f.collection_select :industry, Startup.select(:industry).distinct.reorder('industry ASC'), :industry, :industry, {:prompt => 'Select Industry'}%>
+      <%= f.collection_select :country, User.select(:country).distinct.reorder('country ASC'), :country, :country, {:prompt => 'Select Country'} %>
+      <%= f.collection_select :funding, Startup.select(:funding).distinct.reorder('funding ASC'), :funding, :funding, {:prompt => 'Select Funding'}%>
+      <%= f.submit "Search", name: nil %>
     <% end %>
   </div>
 
