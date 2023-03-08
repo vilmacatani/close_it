@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # get 'investors/update'
   # get 'investors/index', to: "investors#index"
   # get 'investors/show'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   # get 'index', to: "pages#index"
 
