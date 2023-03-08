@@ -2,9 +2,29 @@
 .all-container{
   margin: 2em 7em 2em
 }
-body {
+.blue-back {
   background-color: #17185E ;
   color: white;
+}
+
+.full-screen {
+  min-height: 100vh;
+}
+
+.grey-back {
+  background-color: #eaeaea ;
+  color: white;
+  p {
+    color: $blue;
+  }
+  .container-fluid{
+    border-bottom: 1px solid $blue;
+  }
+  .footer {
+    border-top: 1px solid $blue;
+    color: white;
+  }
+
 }
 
 .home-container p {
