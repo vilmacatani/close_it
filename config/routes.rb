@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # get 'index', to: "pages#index"
 
+  get 'uikit', to: "pages#uikit", as: :uikit
+
+
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
 

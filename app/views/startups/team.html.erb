@@ -1,0 +1,26 @@
+
+<div class="home-description">
+        <div class="row">
+          <% @teamembers.each do |teamember| %>
+            <div class="col-md-3">
+              <img class="" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
+              <%= link_to teamember_path(teamember.id) do %>
+                <div class="card-infos">
+                  <div class="member-descr">
+                    <h2><%= offering.title %></h2>
+                    <% description_array = offering.description.split('.')
+                    %>
+                    <p class= "description"><%= description_array[0] %></p>
+                    <p class="price"><%= offering.price_per_night %> €</p>
+                  </div>
+                  <div class="card-rating">
+                    <i class="fa-solid far"></i> <%= offering.average_rating %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>

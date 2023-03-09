@@ -12,4 +12,7 @@ class PagesController < ApplicationController
   #     @listings = Startup.all
   #   end
   # end
+
+  def uikit
+  end
 end
