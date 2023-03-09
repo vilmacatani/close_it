@@ -14,14 +14,6 @@ class InvestorsController < ApplicationController
     end
   end
 
-  # def update
-  # end
-
-  # def index
-  # end
-
-  # def show
-  # end
   private
 
   def investor_params
