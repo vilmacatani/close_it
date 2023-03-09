@@ -56,7 +56,9 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Next" %>
+          <%= f.button :button, "Next", class: "signup-button" do %>
+            <i class="fa-solid fa-arrow-right"></i>
+          <% end %>
         </div>
       <% end %>
     </div>

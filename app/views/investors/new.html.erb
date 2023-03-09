@@ -6,12 +6,13 @@
     <div class="joining-as-text">
       <p id="joining-text">JOINING AS</p>
     </div>
-    <div class="investor_form">
+    <div class="investor-signup-page">
       <%= simple_form_for [current_user, @investor] do |f| %>
+        <p class="investor-title">INVESTOR</p>
         <%= f.input :funding_type %>
         <%= f.input :investor_type %>
         <%= f.input :private, disabled: false %>
-        <%= f.submit %>
+        <%= f.submit class: "create-button" %>
       <% end %>
     </div>
     </div>
