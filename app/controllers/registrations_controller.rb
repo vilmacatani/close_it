@@ -2,6 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
+    current_user.update(user_type: "investor")
     edit_user_registration_path #Or :prefix_to_your_route
   end
 
