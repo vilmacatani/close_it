@@ -5,8 +5,7 @@ export default class extends Controller {
   static targets = ["list", "form", "funding", "industry", "country"]
 
   connect() {
-    // console.log("Connected")
-    // console.log(this.formTarget)
+    console.log("Connected new")
   }
 
   filter(e) {
@@ -31,13 +30,25 @@ export default class extends Controller {
           'funding' : this.fundingTarget.value
       }
     }
-    console.log(typeof this.countryTarget.value)
     const fullUrl = encodeQuery(data)
     fetch(fullUrl, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
       // console.log(data)
       this.listTarget.outerHTML = data
+    })
+
+  }
+
+  search(e) {
+    const query = e.currentTarget.value;
+    console.log(query)
+    // console.log(`${this.formTarget.action}?search=${query}`)
+    fetch(`${this.formTarget.action}?query=${query}`, {headers: {"Accept": "text/plain"}})
+    .then(response => response.text())
+    .then((data) => {
+      this.listTarget.outerHTML = data
+      console.log(data)
     })
 
   }
