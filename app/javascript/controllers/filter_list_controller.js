@@ -5,13 +5,12 @@ export default class extends Controller {
   static targets = ["list", "form", "funding", "industry", "country"]
 
   connect() {
-    console.log("Connected")
-    console.log(this.formTarget)
+    // console.log("Connected")
+    // console.log(this.formTarget)
   }
 
   filter(e) {
-    // e.preventDefault()
-
+    e.preventDefault()
     function encodeQuery(data) {
       let query = data.url + '?'
       for (let d in data.params)
@@ -32,14 +31,17 @@ export default class extends Controller {
           'funding' : this.fundingTarget.value
       }
     }
-
+    console.log(typeof this.countryTarget.value)
     const fullUrl = encodeQuery(data)
     fetch(fullUrl, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
+      // console.log(data)
       this.listTarget.outerHTML = data
     })
+
   }
+
 
 
 }
