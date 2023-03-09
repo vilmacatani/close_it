@@ -10,12 +10,15 @@ Rails.application.routes.draw do
   # get 'investors/update'
   # get 'investors/index', to: "investors#index"
   # get 'investors/show'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   # get 'index', to: "pages#index"
+  resources :users do
+    resources :investors, only: %i[new create]
+  end
 
-  get 'investors/new', to: "investors#new"
-  post 'investors', to: "investors#create"
+  # get '/investors/new', to: "investors#new"
+  # post 'investors', to: "investors#create"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
