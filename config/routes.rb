@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   resources :users do
     resources :investors, only: %i[new create show]
   end
+
   get 'startups/:id/team', to: "startups#team", as: :startup_team
   resources :startups
+
   # get '/investors/new', to: "investors#new"
   # post 'investors', to: "investors#create"
 
