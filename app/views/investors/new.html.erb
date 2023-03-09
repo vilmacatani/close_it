@@ -7,8 +7,7 @@
       <p id="joining-text">JOINING AS</p>
     </div>
     <div class="investor_form">
-      <%= simple_form_for [@user, @investor] do |f| %>
-        <%= f.input :first_name %>
+      <%= simple_form_for [current_user, @investor] do |f| %>
         <%= f.input :funding_type %>
         <%= f.input :investor_type %>
         <%= f.input :private, disabled: false %>
