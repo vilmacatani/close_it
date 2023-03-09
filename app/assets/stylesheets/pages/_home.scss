@@ -62,3 +62,12 @@ letter-spacing: 2px;
   color:white;
   text-decoration: none;
 }
+
+.startup-search-container {
+  display: flex;
+  justify-content: space-between;
+}
+.list-startups{
+  display: flex;
+  justify-content: flex-end;
+}

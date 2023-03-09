@@ -2,10 +2,11 @@
 
   <% if user_signed_in? %>
     <% if current_user.user_type == "investor" %>
-      <div data-controller="filter-list">
+      
+      <div class="search-list-startup" data-controller="filter-list">
         <%= render 'search/startup_search' %>
-        <%= render "startups/list", startups: @startups %>
       </div>
+      <%= render "startups/list", startups: @startups %>
 
     <% else %>
 

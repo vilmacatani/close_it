@@ -1,5 +1,7 @@
-<div data-filter-list-target="list">
-      <% startups.each do |startup| %>
-        <p><%= startup.user.user_type.capitalize %> | <%= startup.user.company_name %> | <%=startup.industry%> | <%=startup.funding %> | <%= startup.user.country %></p>
-      <% end %>
+<div class="list-startups">
+  <div data-filter-list-target="list">
+    <% startups.each do |startup| %>
+      <p><%= startup.user.user_type.capitalize %> | <%= startup.user.company_name %> | <%=startup.industry%> | <%=startup.funding %> | <%= startup.user.country %></p>
+    <% end %>
   </div>
+</div>
