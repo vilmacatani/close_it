@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :connections_as_receiver, class_name: "Connection", foreign_key: :receiver_id
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def self.get_distinct(user, column)
+    User.where(user_type: user).select(column.to_sym).distinct.reorder("#{column} ASC")
+  end
 end
