@@ -6,6 +6,7 @@ class InvestorsController < ApplicationController
   def create
     @investor = Investor.new(investor_params)
     @investor.user = current_user
+    
     if @investor.save
       redirect_to root_path
     else
