@@ -57,7 +57,44 @@ right: 22em;
   text-decoration: none;
 }
 
+.investor-signup-page {
+  background-color: $blue;
+  width: 31em;
+  height: 30em;
+  position: absolute;
+  right: 16em;
+  top: 15em;
+}
+
+
+.investor-signup-page ul {
+background-color: $blue;
+width: 27em;
+height: 25em;
+position: absolute;
+right: 22em;
+}
+
+
+.investor-signup-page li {
+  border-bottom: 1px dotted white;
+  text-align: justify;
+}
+
+.investor-signup-page a {
+  color:white;
+  text-decoration: none;
+}
+
 #new_user {
+  padding: 2em;
+}
+
+#new_investor{
+  padding: 2em;
+}
+
+#edit_user{
   padding: 2em;
 }
 
@@ -72,6 +109,54 @@ p.investor-title {
 }
 
 .form-inputs {
-  max-height: 24em;
+  max-height: 21em;
   overflow-y: scroll;
+}
+
+p#joining-text  {
+  color: white !important;
+  position: absolute;
+  left: 13em;
+  font-size: 3em;
+}
+
+input.create-button{
+  color: #17185E;
+  border: none;
+  position: absolute;
+  left: 20em;
+  bottom: 5em;
+  font-family: $headers-font;
+  padding: 6px;
+  background-color: white;
+}
+
+i.fa-solid.fa-arrow-right {
+  background-color: white;
+  color: #17185E;
+  font-size: 2em;
+  position: absolute;
+  padding: 7px;
+  bottom: -0.5em;
+  left: 12em;
+}
+
+select#investor_investor_type{
+  width: 100%;
+  height: 3em;
+  font-family: $headers-font;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  color:$blue;
+  text-align: center;
+}
+
+select#investor_funding_type{
+  width: 100%;
+  height: 3em;
+  font-family: $headers-font;
+  color:$blue;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
 }

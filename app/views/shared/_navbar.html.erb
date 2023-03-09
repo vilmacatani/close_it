@@ -1,4 +1,4 @@
-<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
+<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) || current_page?(startup_path) || current_page?(startup_team_path) || current_page?(user_investor_path)%>
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon grey-back <%= 'blue-back' if blue_pages %>">
   <div class="container-fluid">
     <%= link_to "#", class: "navbar-brand" do %>
@@ -14,7 +14,11 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <%= image_tag "LOGO-graywhite.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if blue_pages %>
+              <%= image_tag "LOGO-graywhite.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag "logo-blue-white.svg", class: "avatar-grey-page dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My Profile", "#", class: "dropdown-item" %>
               <%= link_to "Dashboard", "#", class: "dropdown-item" %>
@@ -26,7 +30,7 @@
             <%= link_to new_user_session_path, class: "nav-link"  do %>
               <i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i>
             <% end %>
-            
+
           </li>
         <% end %>
       </ul>
