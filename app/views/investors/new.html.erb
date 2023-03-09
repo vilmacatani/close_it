@@ -1,2 +1,20 @@
-<h1>Investors#new</h1>
-<p>Find me in app/views/investors/new.html.erb</p>
+<div class= "home-container">
+  <div class="home-description">
+    <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
+  </div>
+  <div class="signup-container">
+    <div class="joining-as-text">
+      <p id="joining-text">JOINING AS</p>
+    </div>
+    <div class="investor_form">
+      <%= simple_form_for [@user, @investor] do |f| %>
+        <%= f.input :first_name %>
+        <%= f.input :funding_type %>
+        <%= f.input :investor_type %>
+        <%= f.input :private, disabled: false %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>
