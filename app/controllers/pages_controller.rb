@@ -30,8 +30,10 @@ class PagesController < ApplicationController
   # end
 
   def uikit
-  private
+  end
 
+  private
+  
   def filter_params
     params.permit(:industry, :funding).delete_if { |_key, value| value.blank? }
   end

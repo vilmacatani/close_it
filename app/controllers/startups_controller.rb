@@ -10,4 +10,9 @@ class StartupsController < ApplicationController
 
   def create
   end
+
+  def team
+    @startup = Startup.find(params[:id])
+    @teammembers = @startup.members
+  end
 end

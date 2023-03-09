@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   get 'uikit', to: "pages#uikit", as: :uikit
 
-
+  get 'startups/:id/team', to: "startups#team", as: :startup_team
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
 

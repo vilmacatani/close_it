@@ -1,26 +1,25 @@
+<%# <%= @teammembers.first.first_name %>
+ <div class="team-container">
+    <div class= "description-team-members">
+      <div class= "card-member-descripion" >
+        <h1>VILMA CATANI</h1>
+        <p> Vilma is a sexy gurl from Finland <br> very smart too!! <br>Lorem ipsum dolor sit amet, consectetur adipiscin
+        elit, sed do eiusmod tempor incididunt ut laborelaboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <h2>ROLE</h2>
+        <p>CEO of sexyness</p>
+        <h2>EDUCATION</h2>
+        <ul>
+          <li>2015-2020 sexyschool</li>
+          <li>2015-2020 sexyschool</li>
+          <li>2015-2020 sexyschool</li>
+          <li>2015-2020 sexyschool</li>
+        </ul>
+      </div>
 
-<div class="home-description">
-        <div class="row">
-          <% @teamembers.each do |teamember| %>
-            <div class="col-md-3">
-              <img class="" src="https://source.unsplash.com/random/?home&<%= rand(1...100) %>">
-              <%= link_to teamember_path(teamember.id) do %>
-                <div class="card-infos">
-                  <div class="member-descr">
-                    <h2><%= offering.title %></h2>
-                    <% description_array = offering.description.split('.')
-                    %>
-                    <p class= "description"><%= description_array[0] %></p>
-                    <p class="price"><%= offering.price_per_night %> €</p>
-                  </div>
-                  <div class="card-rating">
-                    <i class="fa-solid far"></i> <%= offering.average_rating %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
-        </div>
+      <div class= "list-member">
+
+      </div>
     </div>
+
   </div>
-</div>
