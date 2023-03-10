@@ -1,15 +1,19 @@
+<p id="introduction-search">Narrow your search using the filters:</p>
 <div class="startup-search-container">
   <div class="startup-filter-form" >
     <%= form_with url: root_path, method: :get, html: {class: "mb-4"},
-    data: { filter_list_target: "form", action: "submit->filter-list#filter"} do |f| %>
+      data: { filter_list_target: "form", action: "submit->filter-list#filter"} do |f| %>
       <%= f.collection_select :industry, Startup.get_distinct("industry"), :industry, :industry, {:prompt => 'Select Industry'}, data: {filter_list_target: "industry"}%>
       <%= f.collection_select :country, User.get_distinct("startup" ,"country"), :country, :country, {:prompt => 'Select Country'}, data: {filter_list_target: "country"} %>
       <%= f.collection_select :funding, Startup.get_distinct("funding"), :funding, :funding, {:prompt => 'Select Funding'}, data: {filter_list_target: "funding"}%>
-      <%= f.submit "Search", name: nil %>
+      <%= f.button :submit, id:"submit-button-search-filter" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
     <% end %>
   </div>
 
-  <div class="startup-search-bar" >
+  <form class="startup-search-bar" >
     <input class= "search-bar-home" type="text" data-action="input->filter-list#search" />
-  </div>
+    <button id="button-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
 </div>
