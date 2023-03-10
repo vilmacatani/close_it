@@ -9,11 +9,18 @@
         <figure class="gallery__item gallery__item--1">
           <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 1">
 
-              <div class="card-short-descr">
-                <h2><%= startup.user.company_name %></h2>
-                <h3 class= "startup-industry"><%=startup.industry%></h3>
-                <p class= "startup-class"><%=startup.class %></p>
-              </div>
+             <div class="card-short-descr">
+
+                <div class="title-boxed">
+                  <h2><%= startup.user.company_name %></h2>
+                  <h3 class= "startup-industry"><%=startup.industry%></h3>
+                </div>
+            </div>
+
+                <div class="class-boxed">
+                  <p class= "startup-class"><%=startup.funding %></p>
+                </div>
+
 
         </figure>
       <% end %>
