@@ -11,11 +11,14 @@
   min-height: 100vh;
 }
 
-#introduction-search{
+#white-text{
   color:white !important;
+}
+
+.text-index-page{
   margin-top: 1em;
-  font-family: $body-font;
-  font-size: 19px;
+  font-family: $body-font !important;
+  font-size: 19px !important;
 }
 
 .grey-back {
