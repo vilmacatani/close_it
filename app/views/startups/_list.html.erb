@@ -3,27 +3,21 @@
   <div class= "startups-cards">
     <div class="gallery">
     <% startups.each do |startup| %>
-
-
-
+      <div class="card-height">
         <figure class="gallery__item gallery__item--1">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 1">
-
-             <div class="card-short-descr">
-
-                <div class="title-boxed">
-                  <h2><%= startup.user.company_name %></h2>
-                  <h3 class= "startup-industry"><%=startup.industry%></h3>
-                </div>
+          <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
+          <div class="card-short-descr">
+            <div class="title-boxed">
+              <h2><%= startup.user.company_name[0..30]%></h2>
+              <h3 class= "startup-industry"><%=startup.industry%></h3>
             </div>
-
-                <div class="class-boxed">
-                  <p class= "startup-class"><%=startup.funding %></p>
-                </div>
-
-
+          </div>
+          <div class="class-boxed">
+            <p class= "startup-class"><%=startup.funding %></p>
+          </div>
         </figure>
-      <% end %>
+      </div>
+    <% end %>
 
         <%# <figure class="gallery__item gallery__item--2">
           <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 2">

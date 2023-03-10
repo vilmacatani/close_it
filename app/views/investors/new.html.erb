@@ -9,8 +9,8 @@
     <div class="investor-signup-page">
       <%= simple_form_for [current_user, @investor] do |f| %>
         <p class="investor-title">INVESTOR</p>
-        <%= f.collection_select :investor_type, Investor::INVESTORS, :to_s, :humanize, { include_blank: 'Select investor type' } %>
-        <%= f.collection_select :funding_type, Investor::FUNDINGS, :to_s, :humanize, { include_blank: 'Select funding type' } %>
+        <%= f.collection_select :investor_type, Investor::INVESTORS, :to_s, :titleize, { include_blank: 'Select investor type' } %>
+        <%= f.collection_select :funding_type, Investor::FUNDINGS, :to_s, :titleize, { include_blank: 'Select funding type' } %>
         <%= f.input :private, disabled: false %>
         <%= f.submit class: "create-button" %>
       <% end %>
