@@ -8,6 +8,7 @@ class Investor < ApplicationRecord
   after_create :set_type
   validates :investor_type, inclusion: { in: INVESTORS }
   validates :funding_type, inclusion: { in: FUNDINGS }
+
   def set_type
     self.user.update(user_type: "investor")
   end
