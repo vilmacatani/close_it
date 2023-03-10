@@ -14,8 +14,11 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # get 'index', to: "pages#index"
   resources :users do
-    resources :investors, only: %i[new create]
+    resources :investors, only: %i[new create show]
   end
+
+  get 'startups/:id/team', to: "startups#team", as: :startup_team
+  resources :startups
 
   # get '/investors/new', to: "investors#new"
   # post 'investors', to: "investors#create"

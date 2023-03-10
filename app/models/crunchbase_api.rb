@@ -5,8 +5,8 @@ class CrunchbaseApi
 
   def self.organization_summary
 
-    # key = "https://api.crunchbase.com/v3.1/odm-organizations?user_key=6613fc4ccb90bbea7d33fc240ba027e2"
-    response = HTTParty.get("https://api.crunchbase.com/v3.1/odm-organizations?user_key=0b5041bde0103ab6e54fd62b44897169",
+    key = "https://api.crunchbase.com/v3.1/odm-organizations?user_key=38db4d15fdad030d92cdd22e20b64a56"
+    response = HTTParty.get(key,
               headers: {
                 'X-cb-user-key' => '0b5041bde0103ab6e54fd62b44897169',
                 'Content-Type' => 'application/json'
