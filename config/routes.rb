@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
   get 'startups/:id/team', to: "startups#team", as: :startup_team
   resources :startups
+
   # get '/investors/new', to: "investors#new"
   # post 'investors', to: "investors#create"
 
