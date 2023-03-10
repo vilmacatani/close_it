@@ -1,22 +1,28 @@
 require "httparty"
 require 'json'
+require "uri"
+require "net/http"
+require "cgi"
 
 class CrunchbaseApi
 
   def self.organization_summary
-
-    key = "https://api.crunchbase.com/v3.1/odm-organizations?user_key=38db4d15fdad030d92cdd22e20b64a56"
-    response = HTTParty.get(key,
+    user_key = "38db4d15fdad030d92cdd22e20b64a56"
+    limit = 10
+    industry = CGI.escape("Delivery")
+    url = "https://api.crunchbase.com/api/v4/autocompletes?query=#{industry}&collection_ids=categories&limit=#{limit}&user_key=#{user_key}"
+    response = HTTParty.get(url,
               headers: {
-                'X-cb-user-key' => '0b5041bde0103ab6e54fd62b44897169',
-                'Content-Type' => 'application/json'
+                'Accept' => 'application/json'
               })
-
-    data = JSON.parse(response.body)
   end
-
 end
 
+# airbnb uuid: bcb617c3-9e43-d5b0-1d14-82b795f2642f
+
+# curl -X 'GET' \
+#   'https://api.crunchbase.com/api/v4/autocompletes?query=energy&collection_ids=categories,category_groups&user_key=38db4d15fdad030d92cdd22e20b64a56' \
+#   -H 'accept: application/json'
 
 # class OutlookApi
 #   # this url lets you grant a user consent for an API permission
@@ -33,3 +39,17 @@ end
 #     JSON.parse(response.body)
 #   end
 # end
+
+# require "uri"
+# require "net/http"
+
+# url = URI("https://api.crunchbase.com/api/v4/autocompletes?query=renewable%20energy&collection_ids=categories%2Ccategory_groups&limit=10&user_key=38db4d15fdad030d92cdd22e20b64a56")
+
+# https = Net::HTTP.new(url.host, url.port)
+# https.use_ssl = true
+
+# request = Net::HTTP::Get.new(url)
+# request["accept"] = "application/json"
+
+# response = https.request(request)
+# puts response.read_body

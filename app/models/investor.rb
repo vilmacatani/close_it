@@ -1,9 +1,8 @@
 class Investor < ApplicationRecord
-  INVESTORS = ["Angel Investor", "Peer-to-Peer Lenders", "Personal Investors", "Banks", "Venture Capitalists"]
-  FUNDINGS = ["Series A", "Series B", "Series C", "Series D"]
+
   belongs_to :user
-  INVESTORS = ["Angel Investor", "Peer-to-Peer Lenders", "Personal Investors", "Banks", "Venture Capitalists"]
-  FUNDINGS = ["Series A", "Series B", "Series C", "Series D"]
+  INVESTORS = ["Angel Investor", "Peer-to-Peer Lender", "Personal Investor", "Bank", "Venture Capitalist"]
+  FUNDINGS = ["Pre-Seed", "Seed","Series A", "Series B", "Series C"]
   # validates :private, :funding_type, :investor_type, :user_id, presence: true
   validates :investor_type, inclusion: { in: INVESTORS }
   validates :funding_type, inclusion: { in: FUNDINGS }
