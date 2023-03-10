@@ -108,18 +108,21 @@ select#industry {
   padding: 12px;
   font-family: $headers-font;
   color: $blue;
+  width: 13em;
 }
 
 select#country {
   padding: 12px;
   font-family: $headers-font;
   color: $blue;
+  width: 13em;
 }
 
 select#funding {
   padding: 12px;
   font-family: $headers-font;
   color: $blue;
+  width: 12em;
 }
 
 
@@ -216,4 +219,9 @@ select#investor_funding_type{
       font-family: "Montserrat", sans-serif;
     }
   }
+}
+
+.card-height{
+  height:200px;
+  margin-bottom: 4em;
 }
