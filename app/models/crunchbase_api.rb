@@ -6,10 +6,10 @@ require "cgi"
 
 class CrunchbaseApi
 
-  def self.organization_summary
+  def self.organization_summary(search)
     user_key = "38db4d15fdad030d92cdd22e20b64a56"
-    limit = 10
-    industry = CGI.escape("Delivery")
+    limit = 2
+    industry = CGI.escape(search)
     url = "https://api.crunchbase.com/api/v4/autocompletes?query=#{industry}&collection_ids=categories&limit=#{limit}&user_key=#{user_key}"
     response = HTTParty.get(url,
               headers: {

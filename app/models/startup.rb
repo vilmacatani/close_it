@@ -1,7 +1,9 @@
 class Startup < ApplicationRecord
   INDUSTRIES = ["Delivery", "Healthcare Tech", "Artificial Intelligence",
-    "Educational Technology", "Financial Technology", "Shared Mobility", "Supply Chain Management & Logistics",
-    "Real Estate", "Ecommerce", "Big Data", "Blockchain Technology", "B2B Software", "Retail"]
+  "Educational Technology", "Financial Technology", "Shared Mobility",
+  "Supply Chain Management & Logistics", "Real Estate", "Ecommerce",
+  "Big Data", "Blockchain Technology", "B2B Software", "Retail"]
+
   belongs_to :user
   # validates :funding, :funding_round_end, :funding_amount, :industry, :user_id, :headcount, :turnover, presence: true
   has_many :members
