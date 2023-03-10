@@ -42,6 +42,17 @@ class PagesController < ApplicationController
     end
   end
 
+  # def index
+  #   if current_user.user_type == "investor"
+  #     @listings = Investor.where(private: false)
+  #   else
+  #     @listings = Startup.all
+  #   end
+  # end
+
+  def uikit
+  end
+
   def filter_params
     params.permit(:industry, :funding).delete_if { |_key, value| value.blank? }
   end

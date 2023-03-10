@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
   # get 'index', to: "pages#index"
+
+  get 'uikit', to: "pages#uikit", as: :uikit
+
+  get 'investors/new', to: "investors#new"
+  post 'investors', to: "investors#create"
+
   resources :users do
     resources :investors, only: %i[new create show]
   end

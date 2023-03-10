@@ -84,7 +84,10 @@ input.search-bar {
 }
 
 .list-itself {
-  width: 49em;
+  width: 562px;
+  height: 700px;
+  margin-top: 45px;
+  margin-right: 111px
 }
 
 select#industry {
@@ -109,4 +112,50 @@ select#funding {
 input.search-bar-home {
   width: 33em;
   height: 2.6em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(8, 16vw);
+  grid-gap: 15px;
+  max-height: 80vh;
+  overflow: scroll;
+}
+
+
+.gallery__img {
+  flex: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.gallery__item {
+  position: relative;
+
+  .card-short-descr {
+    position: absolute;
+    top: 0;
+    padding-left: 10px;
+
+    h2{
+      background-color: #eaeaea;
+      color: #17185E;
+    }
+
+    h3{
+      background-color: #eaeaea;
+      color: #17185E;
+      font-family: "Grotesk medium";
+      font-size: smaller;
+    }
+
+    p{
+      background-color: #eaeaea;
+      color: #17185E !important;
+      font-family: "Montserrat", sans-serif;
+    }
+  }
 }
