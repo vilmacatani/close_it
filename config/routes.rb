@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'meetings/create'
   # get 'connections/create'
   # get 'startups/index'
-  # get 'startups/show'
+  get 'startup', to: "startups#show"
   # get 'startups/new'
   # get 'startups/create'
   # get 'investors/new'

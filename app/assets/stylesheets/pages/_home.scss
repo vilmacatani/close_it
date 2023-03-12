@@ -3,7 +3,7 @@
   margin: 2em 7em 2em
 }
 .blue-back {
-  background-color: #17185E ;
+  background-color: #17185E !important ;
   color: white;
 }
 
@@ -14,14 +14,14 @@
 .grey-back {
   background-color: #eaeaea ;
   color: white;
-  p {
-    color: $blue;
+ p {
+    color: $white;
   }
   .container-fluid{
-    border-bottom: 1px solid $blue;
+    border-bottom: 1px solid $white;
   }
   .footer {
-    border-top: 1px solid $blue;
+    border-top: 1px solid $white;
     color: white;
   }
 
@@ -62,3 +62,43 @@ letter-spacing: 2px;
   color:white;
   text-decoration: none;
 }
+.white-link{
+  color : white;
+  text-decoration: none;
+}
+
+.graph-box {
+  height: 80%;
+}
+
+.graph-one {
+  width: 40%;
+}
+
+.graph-two {
+  width: 15%;
+}
+
+.graph-three {
+  width: 25%;
+}
+
+.chart{
+  width: 40px;
+  height: 200px;
+  border:black 2px solid;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding: 2px;
+  background:white;
+}
+ .chart-inside{
+  background: green;
+  width: 40px;
+  height: 140px;
+ }
+ .white-link{
+  color :white;
+  text-decoration: none;
+ }

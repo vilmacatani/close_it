@@ -1,9 +1,10 @@
-<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon grey-back <%= 'blue-back' if blue_pages %>">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "CLOSE-IT WHITE.svg" %>
-    <% end %>
+
+    <div class="d-flex gap-3 align-items-end">
+      <div class="h1 mb-0"><%= startup.industry.upcase %></div>
+      <div class="">OVERVIEW</div>
+    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>

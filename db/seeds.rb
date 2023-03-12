@@ -1,9 +1,19 @@
 require 'faker'
+<<<<<<< HEAD
 Connection.destroy_all
 User.destroy_all
 
 funding = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
 
+=======
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
 Startup.destroy_all
 Investor.destroy_all
 User.destroy_all
@@ -14,7 +24,10 @@ User.create!(email: "martacatani@gmail.com", password: "111111", user_type: 'sta
 FUNDING = ["Seed", "Pre-Seed", "Series A", "Series B", "Series C"]
 user_type = ["investor", "startup"]
 investor_type = ["Angel", "Venture Capital", "Private Equity Fund", "Bank"]
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
 i = 1
 
 7.times do
@@ -28,7 +41,11 @@ i = 1
     company_name: Faker::Company.name,
     city: Faker::Address.city_suffix,
     country: Faker::Address.country,
+<<<<<<< HEAD
     user_type: "investor"
+=======
+    user_type: user_type.sample
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
   )
 
   Investor.create!(
@@ -37,6 +54,12 @@ i = 1
     funding_type: FUNDING.sample,
     investor_type: investor_type.sample
   )
+<<<<<<< HEAD
+=======
+  i += 1
+end
+j = 1
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
 
 end
 j = 1
@@ -51,7 +74,11 @@ j = 1
     company_name: Faker::Company.name,
     city: Faker::Address.city_suffix,
     country: Faker::Address.country,
+<<<<<<< HEAD
     user_type: "startup"
+=======
+    user_type: user_type.sample
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
   )
 
   Startup.create!(
@@ -64,6 +91,7 @@ j = 1
     headcount: Faker::Number.between(from: 1, to: 500),
     turnover: Faker::Number.between(from: 1, to: 200)
   )
+<<<<<<< HEAD
 
 end
 
@@ -97,4 +125,7 @@ startup_ids = Startup.all.pluck(:id)
     bio: Faker::Company.industry,
     position: Faker::Company.bs
   )
+=======
+  j += 1
+>>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
 end

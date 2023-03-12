@@ -1,12 +1,11 @@
-<% grey_pages = current_page?(controller: 'registrations', action: 'new') || current_page?(controller: 'investors', action: 'new') || current_page?(controller: 'startups', action: 'new') || current_page?(controller: 'investors', action: 'index') || current_page?(controller: 'startups', action: 'index') || current_page?(controller: 'startups', action: 'show') %>
-<div class="footer <%= grey_pages ? 'grey-back' : 'blue-back'%>">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-  </div>
+<% blue_pages = current_page?(startup_path) || current_page?(root_path) || current_page?(new_user_session_path) || params[:id].present? %>
+<div class="footer grey-back <%= 'blue-back' if blue_pages %>">
+<div class="footer-links">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
 </div>
