@@ -3,7 +3,7 @@ class Investor < ApplicationRecord
   FUNDINGS = ["Pree-Seed", "Seed", "Series A", "Series B", "Series C", "Series D"]
   belongs_to :user
 
-  validates :private, :funding_type, :investor_type, :user_id, presence: true
+  # validates :private, :funding_type, :investor_type, :user_id, presence: true
 
   def new
     @user = User.find(params[:user_id])
