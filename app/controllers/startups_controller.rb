@@ -1,6 +1,7 @@
 class StartupsController < ApplicationController
   def show
     @startup = Startup.find(params[:id])
+    @connection = Connection.new
   end
 
   # before_action :set_user, only: %i[new create]
