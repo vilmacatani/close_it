@@ -109,7 +109,8 @@ letter-spacing: 2px;
 }
 .list-startups{
   display: flex;
-  justify-content:space-between;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .startup-search-bar {
@@ -301,11 +302,11 @@ select#investor_funding_type{
 }
 
 .card-left-details {
-  position: relative;
+  position: absolute;
   width: 33em;
   height: 20em;
-  margin-left: 5em;
-  margin-top: 6em;
+  top:4em;
+  left:4.4em;
   background-size: 100%;
   object-fit: cover;
   background-position: center;
