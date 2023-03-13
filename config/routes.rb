@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'starts_up/new'
   # get "about",           to: "pages#about",      as: :about
   # get 'meetings/create'
   # get 'connections/create'
   # get 'startups/index'
-  # get 'startups/show'
+  get 'startup', to: "startups#show"
   # get 'startups/new'
   # get 'startups/create'
   # get 'investors/new'
@@ -18,6 +19,17 @@ Rails.application.routes.draw do
 
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
+  resources :startups, only: :show
+  #resources :users do
+    #resources :starts_up, only: [:new]
+
+    #resources :starts_up do
+      #resources :starts_up, only: [:index, :new, :create]
+   # end
+    #resources :starts_up, only: [:destroy]
+    #resources :starts_up, only: [:show, :edit, :update, :destroy]
+  #end
+
 
   resources :users do
     resources :investors, only: %i[new create show]

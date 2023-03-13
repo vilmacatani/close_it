@@ -3,6 +3,15 @@ class Investor < ApplicationRecord
   FUNDINGS = ["Pree-Seed", "Seed", "Series A", "Series B", "Series C", "Series D"]
   belongs_to :user
 
+  validates :private, :funding_type, :investor_type, :user_id, presence: true
+
+  def new
+    @user = User.find(params[:user_id])
+    @investor = Investor.new
+  end
+
+  # validates :private, :funding_type, :investor_type, :user_id, presence: true
+
   # validates :private, :funding_type, :investor_type, :user_id, presence: true
 
   after_create :set_type
@@ -12,4 +21,5 @@ class Investor < ApplicationRecord
   def set_type
     self.user.update(user_type: "investor")
   end
+
 end

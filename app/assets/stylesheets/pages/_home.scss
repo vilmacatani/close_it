@@ -24,8 +24,12 @@
 .grey-back {
   background-color: #d8d8d8 ;
   color: white;
+
+ p {
+    color: $white;
   .home-container p {
   color: $blue !important;
+
   }
   .container-fluid{
     border-bottom: 1px solid $white;
@@ -76,6 +80,48 @@ letter-spacing: 2px;
   color:white;
   text-decoration: none;
 }
+
+.white-link{
+  color : white;
+  text-decoration: none;
+}
+
+.graph-box {
+  height: 80%;
+}
+
+.graph-one {
+  width: 40%;
+}
+
+.graph-two {
+  width: 15%;
+}
+
+.graph-three {
+  width: 25%;
+}
+
+.chart{
+  width: 40px;
+  height: 200px;
+  border:black 2px solid;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  padding: 2px;
+  background:white;
+}
+ .chart-inside{
+  background: green;
+  width: 40px;
+  height: 140px;
+ }
+ .white-link{
+  color :white;
+  text-decoration: none;
+ }
+=======
 
 .startup-search-container {
   margin-top: 0.5em;
@@ -262,3 +308,4 @@ select#investor_funding_type{
   height:200px;
   margin-bottom: 4em;
 }
+
