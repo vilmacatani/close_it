@@ -1,10 +1,9 @@
 .startup-info-container{
+  display: flex;
   height: 28em;
   width: 38em;
   margin-left: 1.5em;
-  margin-top: 0;
-  background-color: #dc3545;
-
+  margin-top: 1.1em;
 }
 
 .row{
@@ -12,21 +11,21 @@
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 15px;
+  column-gap: 5px;
 }
 
-// .column {
+// .column{
 //   display: flex;
-//   flex-direction: column;
-//   flex-basis: 100%;
-//   flex: 1;
+//   flex-direction: row;
+//   column-gap: 5px;
 // }
 
 .description-startup-boxes{
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  background-color: #f3f305;
   padding: 2px;
+  margin-top: 1.5em;
 }
 
 
@@ -38,7 +37,7 @@
   padding: 6px;
   bottom: 20px;
   margin-bottom: 0;
-  margin-left: 15px;
+  margin-left: 1.5em;
 
   p{
     position: relative;
@@ -54,7 +53,7 @@
   padding: 6px;
   bottom: 20px;
   margin-bottom: 0;
-  margin-left: 15px;
+  margin-left: 20px;
   height: 39px;
 
   p{
@@ -68,10 +67,10 @@
 .card-startup-descripion{
   box-sizing: border-box;
 
-  position: absolute;
+  // position: absolute;
   width: 652px;
   height: 290px;
-  margin-top: 10px;
+  margin-top: 15px;
 
   border: 1px solid $blue;
 
@@ -92,7 +91,7 @@
 
   p{
 
-    position: absolute;
+    //position: absolute;
 
     font-family: 'Montserrat';
     font-style: normal;

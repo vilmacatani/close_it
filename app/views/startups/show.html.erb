@@ -22,23 +22,64 @@
       </div>
 
       <div class="startup-info-container">
-          <div class="row">
-            <div class= "card-startup-descripion" >
+
+          <%# <div class="description-image">
+            <div class="column">
+                <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+
+                <div class="description-image">
+                  <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+                </div>
+            </div>
+          </div> %>
+            <div class="row">
+              <div class= "card-startup-descripion" >
                   <h2><%= @startup.user.company_name[0..30]%></h2>
                   <p> <%= @startup.bio %></p>
+              </div>
+
+              <div class= "countdown-box" >
+                <table id= "countdown" >
+                  <tr id="countdown-timer">
+                    <td><span id= "days">x</span></td>
+                    <td><span id= "hours">x</span></td>
+                    <td><span id= "minutes">x</span></td>
+                    <td><span id= "seconds">x</span></td>
+                  </tr>
+                  <tr id="countdown-labels">
+                    <td><span>Days</span></td>
+                    <td><span>Hours</span></td>
+                    <td><span>Minutes</span></td>
+                    <td><span>Seconds</span></td>
+                  </tr>
+                </table>
+
+                <script>
+                  const raisingDeadline = new Date('jan 01, 2024 00:00:00');
+
+                  setCountdown(raisingDeadline);
+
+                  function setCountdown(countingDownTime) {
+
+                    let now = new Date();
+                    let timeRemaining = countingDownTime - now
+
+                    let seconds = Math.floor(timeRemaining / 1000);
+                    let minutes = Math.floor(timeRemaining / (1000*60));
+                    let hours = Math.floor(timeRemaining / (1000*60*60));
+                    let days = Math.floor(timeRemaining / (1000*60*60*24));
+
+                    console.log(days, hours, minutes, seconds);
+                  }
+                </script>
+
+              </div>
+
+              <div class= "raising-funding-box" >
+
+              </div>
             </div>
-
-            <div class= "countdown-box" >
-
-            </div>
-
-            <div class= "raising-funding-box" >
-
-            </div>
-
-          </div>
-
-      </div>
+    </div>
 
       <div></div>
 
