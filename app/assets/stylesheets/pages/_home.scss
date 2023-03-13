@@ -109,7 +109,7 @@ letter-spacing: 2px;
 }
 .list-startups{
   display: flex;
-  justify-content: flex-end;
+  justify-content:space-between;
 }
 
 .startup-search-bar {
@@ -298,4 +298,43 @@ select#investor_funding_type{
 .card-height{
   height:200px;
   margin-bottom: 4em;
+}
+
+.card-left-details {
+  position: relative;
+  width: 33em;
+  height: 20em;
+  margin-left: 5em;
+  margin-top: 6em;
+  background-size: 100%;
+  object-fit: cover;
+  background-position: center;
+}
+
+.card-left-info {
+  font-family: $headers-font;
+  width: 28em;
+  color: $blue;
+  height: 15em;
+  padding:1.5em;
+  margin: 3em;
+  background-color: #ffffff96;
+}
+
+.card-left-info-list li {
+  list-style: none;
+  float:left;
+}
+
+ul.card-left-info-list {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  font-size: 10px;
+  margin-top: 92px;
+  padding: 0;
+}
+
+.card-left-info-list p{
+  margin: 4px;
 }
