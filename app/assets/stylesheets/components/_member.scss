@@ -1,0 +1,68 @@
+.description-team-members{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.card-member-descripion{
+  width: 531px;
+  height: 531px;
+  background-color: #EAEAEA;
+  margin-left: 32px;
+  margin-top: 45px;
+
+  h1{
+    font-family: Grotesk medium;
+    margin-top: 4rem;
+    margin-bottom: 0.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    color:  #17185E;
+  }
+
+  p{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 1.2;
+    color:  #17185E;
+  }
+
+  h2{
+    font-family: Grotesk medium;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+    color:  #17185E;
+  }
+
+  li {
+    font-family: "Montserrat", sans-serif;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 1.2;
+    color:  #17185E;
+  }
+}
+
+.list-member{
+  width: 562px;
+  height: 700px;
+  background-color: #af9918;
+  margin-top: 45px;
+  margin-right: 111px;
+
+  .row {
+    display: flex;
+  }
+
+  .column {
+    flex: 50%;
+    height: 200em;
+    width: 200em;
+    column-gap: 4;
+  }
+}

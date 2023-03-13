@@ -1,13 +1,25 @@
 class Investor < ApplicationRecord
+  INVESTORS = ["Angel Investor", "Peer-to-Peer Lenders", "Personal Investors", "Banks", "Venture Capitalists"]
+  FUNDINGS = ["Pree-Seed", "Seed", "Series A", "Series B", "Series C", "Series D"]
   belongs_to :user
-<<<<<<< HEAD
+
   validates :private, :funding_type, :investor_type, :user_id, presence: true
 
   def new
     @user = User.find(params[:user_id])
     @investor = Investor.new
   end
-=======
+
   # validates :private, :funding_type, :investor_type, :user_id, presence: true
->>>>>>> 0e16ded05713a1f10347f10c51d2a962cb0b5612
+
+  # validates :private, :funding_type, :investor_type, :user_id, presence: true
+
+  after_create :set_type
+  validates :investor_type, inclusion: { in: INVESTORS }
+  validates :funding_type, inclusion: { in: FUNDINGS }
+
+  def set_type
+    self.user.update(user_type: "investor")
+  end
+
 end

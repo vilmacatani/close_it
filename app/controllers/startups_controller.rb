@@ -9,6 +9,7 @@ class StartupsController < ApplicationController
   #   @starts_up = Startup.new
   # end
 
+
   # def create
   #   @start_up = Start_up.new(startup_params)
   #   @start_up.user = @user
@@ -34,4 +35,13 @@ class StartupsController < ApplicationController
   #   @start_up.destroy
   #   redirect_to user_path(@start_up.user), status: :see_other
   #end
+
+  def create
+  end
+
+  def team
+    @startup = Startup.find(params[:id])
+    @teammembers = @startup.members
+  end
+
 end

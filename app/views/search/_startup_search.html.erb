@@ -1,0 +1,19 @@
+<p id="white-text" class="text-index-page">Narrow your search using the filters:</p>
+<div class="startup-search-container">
+  <div class="startup-filter-form" >
+    <%= form_with url: root_path, method: :get, html: {class: "mb-4"},
+    data: { filter_list_target: "form", action: "submit->filter-list#filter"} do |f| %>
+      <%= f.collection_select :industry, Startup::INDUSTRIES, :to_s, :titleize, {:prompt => 'Select Industry'}, data: {filter_list_target: "industry"}%>
+      <%= f.collection_select :country, Country::COUNTRIES, :to_s, :titleize, {:prompt => 'Select Country'}, data: {filter_list_target: "country"} %>
+      <%= f.collection_select :funding, Investor::FUNDINGS, :to_s, :titleize, {:prompt => 'Select Funding'}, data: {filter_list_target: "funding"}%>
+      <%= f.button :submit, id:"submit-button-search-filter" do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      <% end %>
+    <% end %>
+  </div>
+
+  <form class="startup-search-bar" >
+    <input class= "search-bar-home" type="text" data-action="input->filter-list#search" />
+    <button id="button-search"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </form>
+</div>

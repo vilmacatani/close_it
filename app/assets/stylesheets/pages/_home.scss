@@ -1,21 +1,35 @@
 // Specific CSS for your home-page
 .all-container{
-  margin: 2em 7em 2em
+  margin: 0em 7em 2em
 }
 .blue-back {
   background-color: #17185E !important ;
-  color: white;
+  color: white !important;
 }
 
 .full-screen {
   min-height: 100vh;
 }
 
+#white-text{
+  color:white !important;
+}
+
+.text-index-page{
+  margin-top: 1em;
+  font-family: $body-font !important;
+  font-size: 19px !important;
+}
+
 .grey-back {
-  background-color: #eaeaea ;
+  background-color: #d8d8d8 ;
   color: white;
+
  p {
     color: $white;
+  .home-container p {
+  color: $blue !important;
+
   }
   .container-fluid{
     border-bottom: 1px solid $white;
@@ -25,12 +39,16 @@
     color: white;
   }
 
+  p.investor-title{
+    color: white !important;
+  }
 }
 
 .home-container p {
   font-family: $headers-font;
   font-size: 1.5em;
   line-height: normal;
+  color:white !important;
 }
 
 .home-description {
@@ -62,6 +80,7 @@ letter-spacing: 2px;
   color:white;
   text-decoration: none;
 }
+
 .white-link{
   color : white;
   text-decoration: none;
@@ -102,3 +121,191 @@ letter-spacing: 2px;
   color :white;
   text-decoration: none;
  }
+=======
+
+.startup-search-container {
+  margin-top: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+.list-startups{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.startup-search-bar {
+  position: absolute;
+  left: 58em;
+}
+
+input.search-bar {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+.list-itself {
+
+  width: 562px;
+  margin-right: 78px;
+}
+
+select#industry {
+  padding: 12px;
+  font-family: $headers-font;
+  color: $blue;
+  width: 13em;
+}
+
+select#country {
+  padding: 12px;
+  font-family: $headers-font;
+  color: $blue;
+  width: 13em;
+}
+
+select#funding {
+  padding: 12px;
+  font-family: $headers-font;
+  color: $blue;
+  width: 12em;
+}
+
+
+input.search-bar-home {
+  position: relative;
+  width: 33em;
+  outline: none;
+  height: 2.6em;
+}
+
+
+#button-search{
+  position: absolute;
+  right: 8px;
+  border: none;
+  color: $blue;
+  background-color: #d9d9d9;
+  top: 7px;
+}
+
+select#investor_investor_type{
+  width: 100%;
+  height: 3em;
+  font-family: $headers-font;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  color:$blue;
+  text-align: center;
+}
+
+select#investor_funding_type{
+  width: 100%;
+  height: 3em;
+  font-family: $headers-font;
+  color:$blue;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+#submit-button-search-filter{
+  border: none;
+  font-size: 20px;
+  width: 2em;
+  background-color: white;
+  height: 2.1em;
+  position: absolute;
+  top: 203.5px;
+  margin-left: 5px;
+  color: $blue;
+  border-radius: 2px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  max-height: 63vh;
+  overflow: scroll;
+  width: 33em;
+}
+
+
+.gallery__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.gallery__item {
+  position: relative;
+
+  .card-short-descr {
+    position: absolute;
+    top: 0;
+    padding-left: 4px;
+    }
+
+    h2{
+     // background-color: #eaeaea;
+     color: #17185E;
+     font-family: "Grotesk medium";
+     padding: 9px;
+     font-size: 18px;
+     padding-bottom: 0;
+    }
+
+    h3{
+     // background-color: #eaeaea;
+      color: #17185E;
+      font-family: "Grotesk";
+      padding: 9px;
+      font-size: 15px;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    // p{
+    //  // background-color: #eaeaea;
+    //   color: #17185E !important;
+    //   font-family: "Montserrat", sans-serif;
+    // }
+
+    .title-boxed{
+     // border: 1px solid green;
+      background-color:  #eaeaea !important;
+      opacity: 90%;
+      padding-top: 2px;
+      margin-top: 5px;
+      margin-right: 4px;
+
+    }
+
+    .class-boxed{
+      //border: 1px solid green;
+      background-color:  #eaeaea !important;
+      opacity: 90%;
+      padding: 6px;
+      position: absolute;
+      bottom: 10px;
+      margin-bottom: 0;
+      margin-left: 5px;
+    }
+
+     .class-boxed p{
+       margin: 0;
+       color: #17185E !important;
+       font-family: "Montserrat", sans-serif;
+       font-size: 12px;
+
+
+     }
+}
+
+.card-height{
+  height:200px;
+  margin-bottom: 4em;
+}
+
