@@ -25,6 +25,12 @@ class PagesController < ApplicationController
     end
   end
 
+  def dashboard
+
+
+
+  end
+
   private
 
   def filter_search

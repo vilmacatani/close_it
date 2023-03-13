@@ -1,65 +1,73 @@
 <div class="container">
 
-
   <div class="header-container">
     <%= render "show_banner", startup: @startup%>
   </div>
 
+  <% if current_user.user_type == "investor" %>
+    <%= render "connections/new", startup: @startup, connection:@connection %>
 
-  <div class="description-container d-flex mt-5">
-    <div class="description-text w-75">
-
-      We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
-      high-potential startups and offering entrepreneurs a platform to showcase their business.
-
-    </div>
+  <% else %>
 
 
-    <div class="description-image ms-auto">
+    <div class="description-container d-flex mt-5">
+      <div class="description-text w-75">
 
-        <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded mr-4">
-    </div>
+        We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
+        high-potential startups and offering entrepreneurs a platform to showcase their business.
 
-    <div class="description-image">
-      <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded"style="margin-left:10px;" >
-    </div>
-
-  </div>
-
-  <div class="d-flex justify-content-between pt-4">
-      <div class="graph-one">
-        <div class="border p-4 d-flex graph-box justify-content-evenly align-items-center">
-          <div class="w-50 border-end px-5">
-            <p class="fs-1 fw-bold bg-white text-center p-1" style="color: red;">5</p>
-            <p>PENDING <br>REQUEST</p>
-          </div>
-
-          <div class="w-50 px-5">
-            <p class="bg-white fw-bold text-center p-1 fs-1" style="color:green;">3</p>
-            <p>UPCOMIMG <br>MEETINGS</p>
-          </div>
-        </div>
-        <p> Requests Status</p>
       </div>
 
-      <div class="graph-two" style="padding-left: 20px;">
-        <div class="border pt-4 px-3 graph-box">
-          <div class="d-flex justify-content-end h-100 align-items-end">
-            <div class="chart">
-              <div class="chart-inside"></div>
+
+      <div class="description-image ms-auto">
+
+          <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded mr-4">
+      </div>
+
+      <div class="description-image">
+        <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded"style="margin-left:10px;" >
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-between pt-4">
+        <div class="graph-one">
+          <div class="border p-4 d-flex graph-box justify-content-evenly align-items-center">
+            <div class="w-50 border-end px-5">
+              <p class="fs-1 fw-bold bg-white text-center p-1" style="color: red;">5</p>
+              <p>PENDING <br>REQUEST</p>
+            </div>
+
+            <div class="w-50 px-5">
+              <p class="bg-white fw-bold text-center p-1 fs-1" style="color:green;">3</p>
+              <p>UPCOMIMG <br>MEETINGS</p>
             </div>
           </div>
-        </div>
-        <div class="d-flex justify-items-between">
-          <p>Founding status</p>
-          <p>43%</p>
+          <p> Requests Status</p>
         </div>
 
-      </div>
+        <div class="graph-two" style="padding-left: 20px;">
+          <div class="border pt-4 px-3 graph-box">
+            <div class="d-flex justify-content-end h-100 align-items-end">
+              <div class="chart">
+                <div class="chart-inside"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-items-between">
+            <p>Founding status</p>
+            <p>43%</p>
+          </div>
 
-      <div class="pl-4 pt-5 graph-three" style="padding-left: 20px;">
-        <h2 class="d-flex border-top p-3 align-items-center mb-0"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">TEAM</a></h2>
-        <h2 class="d-flex border-top border-bottom p-3 align-items-center"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">ARCHIVE</a></h2>
-      </div>
-  </div>
+        </div>
+
+        <div class="pl-4 pt-5 graph-three" style="padding-left: 20px;">
+          <h2 class="d-flex border-top p-3 align-items-center mb-0"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">TEAM</a></h2>
+          <h2 class="d-flex border-top border-bottom p-3 align-items-center"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">ARCHIVE</a></h2>
+        </div>
+    </div>
+
+  <% end %>
+
+
 </div>
