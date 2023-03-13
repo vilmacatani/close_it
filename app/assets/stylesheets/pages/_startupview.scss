@@ -1,0 +1,123 @@
+.startup-info-container{
+  height: 28em;
+  width: 38em;
+  margin-left: 1.5em;
+  margin-top: 0;
+  background-color: #dc3545;
+
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 15px;
+}
+
+// .column {
+//   display: flex;
+//   flex-direction: column;
+//   flex-basis: 100%;
+//   flex: 1;
+// }
+
+.description-startup-boxes{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: #f3f305;
+  padding: 2px;
+}
+
+
+.industry-boxed{
+  background-color: $blue !important;
+  width: 136px;
+  height: 39px;
+  opacity: 90%;
+  padding: 6px;
+  bottom: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
+
+  p{
+    position: relative;
+    color: #FFFFFF;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.funding-boxed{
+  background-color: $blue !important;
+  opacity: 90%;
+  padding: 6px;
+  bottom: 20px;
+  margin-bottom: 0;
+  margin-left: 15px;
+  height: 39px;
+
+  p{
+    position: relative;
+    color: #FFFFFF;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.card-startup-descripion{
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 652px;
+  height: 290px;
+  margin-top: 10px;
+
+  border: 1px solid $blue;
+
+  h2{
+    position: absolute;
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+
+    font-family: 'Haas Grot Disp';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    /* identical to box height */
+
+    color: $blue;
+  }
+
+  p{
+
+    position: absolute;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    padding-top: 3.5em;
+    padding-left: 0.8em;
+    padding-right: 0.8em;
+    overflow: scroll;
+
+    color: $blue;
+  }
+}
+
+.countdown-box{
+  box-sizing: border-box;
+  width: 290px;
+  height: 106px;
+  border: 1px solid $blue;
+}
+
+.raising-funding-box{
+  box-sizing: border-box;
+  width: 337px;
+  height: 106px;
+  border: 1px solid $blue;
+}
