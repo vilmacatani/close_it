@@ -57,7 +57,9 @@
                 <script>
                   const raisingDeadline = new Date('jan 01, 2024 00:00:00');
 
-                  setCountdown(raisingDeadline);
+                  setInterval(function () {
+                    setCountdown(raisingDeadline);
+                  },1000)
 
                   function setCountdown(countingDownTime) {
 
@@ -69,7 +71,24 @@
                     let hours = Math.floor(timeRemaining / (1000*60*60));
                     let days = Math.floor(timeRemaining / (1000*60*60*24));
 
-                    console.log(days, hours, minutes, seconds);
+                    // console.log(days, hours, minutes, seconds);
+
+                    let daysToDisplay = days;
+                    let hoursToDisplay = hours - (days * 24);
+                    let minutesToDisplay = minutes - (hours * 60);
+                    let secondsToDisplay = seconds - (minutes * 60);
+
+                   // console.log(daysToDisplay, hoursToDisplay, minutesToDisplay, secondsToDisplay);
+                    const daysEl = document.getElementbyId('days');
+                    const hoursEl = document.getElementbyId('hours');
+                    const minutesEl = document.getElementbyId('minutes');
+                    const secondsEl = document.getElementbyId('seconds');
+
+                    daysEl.textContent = daysToDisplay;
+                    hoursEl.textContent = hoursToDisplay;
+                    minutesEl.textContent = minutesToDisplay;
+                    secondsEl.textContent = secondsToDisplay;
+
                   }
                 </script>
 
