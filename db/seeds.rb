@@ -1,4 +1,5 @@
 require 'faker'
+Member.destroy_all
 
 Startup.destroy_all
 Investor.destroy_all
@@ -140,3 +141,16 @@ end
 #   )
 #   j += 1
 # end
+
+Startup.all.each do |startup|
+  6.times do
+    Member.create!(
+      startup: startup,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      bio: Faker::Company.catch_phrase,
+      position: ["CEO", "CTO", "Founder", "Co-Founder"].sample
+    )
+  end
+
+end
