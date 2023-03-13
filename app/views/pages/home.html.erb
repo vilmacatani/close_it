@@ -13,14 +13,13 @@
 
   <% else %>
     <div class="home-description">
-      <p id="white-text">We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
-      high-potential startups and offering entrepreneurs a platform to showcase their business.</p>
+      <p id="white-text">We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
     </div>
     <div class="home-signup">
       <ul>
-      <li>SIGN UP AS</li>
-      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "START UP",  new_user_registration_path  %></li>
-      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "INVESTOR",  new_user_registration_path %></li>
+      <li id="sign-up-as">SIGN UP AS</li>
+      <li><i class="fa-solid fa-arrow-right-long"></i> <%= link_to "START UP",  new_user_registration_path  %></li>
+      <li><i class="fa-solid fa-arrow-right-long"></i> <%= link_to "INVESTOR",  new_user_registration_path %></li>
       </ul>
     </div>
   <% end %>

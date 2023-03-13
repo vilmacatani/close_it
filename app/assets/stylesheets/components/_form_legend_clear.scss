@@ -108,9 +108,17 @@ p.investor-title {
   font-size: 3em !important;
 }
 
+.form-control {
+  border-radius: 0;
+}
+
 .form-inputs {
   max-height: 21em;
   overflow-y: scroll;
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 0;
 }
 
 p#joining-text  {
@@ -143,4 +151,12 @@ i.fa-solid.fa-arrow-right {
 
 .country-label {
   margin-bottom: 6px;
+}
+
+select#investor_investor_type {
+  border-radius: 0;
+}
+
+select#investor_funding_type {
+  border-radius: 0;
 }
