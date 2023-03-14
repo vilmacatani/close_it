@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :startups, only: :show do
     resources :connections, only: %i[new create]
   end
-
+  resources :connections, only: %i[update]
 
 
   resources :users do

@@ -1,4 +1,22 @@
-<div class="container-dashboard">
-  <div class="requests">what's up your pending requests</div>
+<div class="container-dashboard" data-controller="update-pending-requests">
+  <div class="requests" data-update-pending-request-target="list">
+    <h3>Requests I've received</h3>
+    <% @my_connection_requests_sent.each do |request| %>
+      <p>Company name: <%= User.where(id:request.receiver_id).select(:company_name).first.company_name %></p>
+      <%= simple_form_for request do |f| %>
+        <%= f.input :pending, :as => :hidden, :input_html => { :value => false } %>
+        <%= f.input :accepted, :as => :hidden, :input_html => { :value => true } %>
+        <%= f.button :submit, "Accept", class: "btn btn-success"%>
+      <% end %>
+      <%= simple_form_for request, data: { update_pending_requests_target: "decline", action: "submit->update-pending-requests#answer"} do |f|  %>
+        <%= f.input :pending, :as => :hidden, :input_html => { :value => false }, data: {update_pending_requests_target: "pending"} %>
+        <%= f.input :accepted, :as => :hidden, :input_html => { :value => false }, data: {update_pending_requests_target: "accepted"} %>
+        <%= f.button :submit, "Decline", class: "btn btn-danger"%>
+      <% end %>
+
+    <% end %>
+  </div>
+
+
   <div class="requests"> what is up my pending requests</div>
 </div>
