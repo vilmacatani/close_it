@@ -1,17 +1,16 @@
-<div class="container-dashboard" data-controller="update-pending-requests">
-  <div class="requests" data-update-pending-request-target="list">
+<div class="container-dashboard">
+  <div class="requests">
     <h3>Requests I've received</h3>
-    <% @my_connection_requests_sent.each do |request| %>
+    <% @my_connection_requests_received.each do |request| %>
       <p>Company name: <%= User.where(id:request.receiver_id).select(:company_name).first.company_name %></p>
-      <%= simple_form_for request do |f| %>
-        <%= f.input :pending, :as => :hidden, :input_html => { :value => false } %>
-        <%= f.input :accepted, :as => :hidden, :input_html => { :value => true } %>
-        <%= f.button :submit, "Accept", class: "btn btn-success"%>
-      <% end %>
-      <%= simple_form_for request, data: { update_pending_requests_target: "decline", action: "submit->update-pending-requests#answer"} do |f|  %>
-        <%= f.input :pending, :as => :hidden, :input_html => { :value => false }, data: {update_pending_requests_target: "pending"} %>
-        <%= f.input :accepted, :as => :hidden, :input_html => { :value => false }, data: {update_pending_requests_target: "accepted"} %>
-        <%= f.button :submit, "Decline", class: "btn btn-danger"%>
+      <% if request.pending == true and request.accepted == false %>
+        <%= render 'connections/accept', request: request %>
+        <%= render 'connections/decline', request: request %>
+      <%# elsif request.pending == false && request.accepted == true %>
+
+      <%# else %>
+      <% else %>
+        <%= render 'connections/confirmation', request: request %>
       <% end %>
 
     <% end %>

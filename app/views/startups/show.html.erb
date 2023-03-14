@@ -5,7 +5,7 @@
   </div>
 
   <% if current_user.user_type == "investor" %>
-
+      <%= render "connections/new", startup: @startup, connection:@connection%>
       <div class= "description-startup-boxes">
         <div class="row">
             <div class="industry-boxed">

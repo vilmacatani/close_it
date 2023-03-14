@@ -1,0 +1,7 @@
+<%= simple_form_for(request, html: { data: {
+  controller: "update-pending-requests",
+  update_pending_requests_target: "form", action: "submit->update-pending-requests#answer"}}) do |f| %>
+  <%= f.input :pending, :as => :hidden, :input_html => { :value => false } %>
+  <%= f.input :accepted, :as => :hidden, :input_html => { :value => false } %>
+  <%= f.button :submit, "Decline", class: "btn btn-danger"%>
+<% end %>
