@@ -22,16 +22,6 @@
       </div>
 
       <div class="startup-info-container">
-
-          <%# <div class="description-image">
-            <div class="column">
-                <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
-
-                <div class="description-image">
-                  <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
-                </div>
-            </div>
-          </div> %>
             <div class="row">
               <div class= "card-startup-descripion" >
                   <h2><%= @startup.user.company_name[0..30]%></h2>
@@ -57,7 +47,7 @@
                 <script>
                   const raisingDeadline = new Date('jan 01, 2024 00:00:00');
 
-                  setInterval(function () {
+                  setInterval(function() {
                     setCountdown(raisingDeadline);
                   },1000)
 
@@ -96,6 +86,15 @@
 
               <div class= "raising-funding-box" >
 
+              </div>
+              <div class="description-image">
+                <div class="column">
+                  <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+
+                  <div class="description-image">
+                    <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+                  </div>
+                </div>
               </div>
             </div>
     </div>
