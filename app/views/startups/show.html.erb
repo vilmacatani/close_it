@@ -69,10 +69,10 @@
 
                    // console.log(daysToDisplay, hoursToDisplay, minutesToDisplay, secondsToDisplay);
 
-                    const daysEl = document.getElementbyId('days');
-                    const hoursEl = document.getElementbyId('hours');
-                    const minutesEl = document.getElementbyId('minutes');
-                    const secondsEl = document.getElementbyId('seconds');
+                    const daysEl = document.getElementById('days');
+                    const hoursEl = document.getElementById('hours');
+                    const minutesEl = document.getElementById('minutes');
+                    const secondsEl = document.getElementById('seconds');
 
                     daysEl.textContent = daysToDisplay;
                     hoursEl.textContent = hoursToDisplay;
@@ -82,9 +82,12 @@
                 </script>
               </div>
 
+              <% precent = (4 / @startup.funding_amount)*100 %>
               <div class= "raising-funding-box" >
               <div class="row">
-
+                <div id="myProgress">
+                  <div id="myBar" style="width: <%= precent %>%;"></div>
+                </div>
               </div>
             </div>
 
@@ -104,7 +107,7 @@
                   </div>
                 </div>
             </div>
-            
+
              <%= render "connections/new", startup: @startup, connection:@connection%>
 
             <div class="team-link">
