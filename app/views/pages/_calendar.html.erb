@@ -1,5 +1,16 @@
 <div class="simple-calendar">
-    <%= month_calendar do |date| %>
-      <%= date %>
-    <% end %>
+  <%= month_calendar(events: @meetings) do |date, meetings| %>
+    <div class="date"><%= date.strftime("%d").to_i %></div>
+
+    <div class="date-info">
+      <% meetings.each do |meeting| %>
+        <% if meeting.title.length > 25 %>
+          <p><%= meeting.start_time.strftime("%H:%M%p").downcase %> <%= meeting.title.first(30) %>...</p>
+        <% else %>
+          <p><%= meeting.start_time.strftime("%H:%M%p").downcase %> <%= meeting.title %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+  <% end %>
 </div>
