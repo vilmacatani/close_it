@@ -1,0 +1,10 @@
+<%= simple_form_for(request) , data: { update_pending_requests_target: "form"}do |f| %>
+  <%= f.input :pending, :as => :hidden, :input_html => { :value => false , data: {update_pending_requests_target: "pending"}} %>
+  <%= f.input :accepted, :as => :hidden, :input_html => { :value => true , data: {update_pending_requests_target: "accepted"}} %>
+  <%= f.button :submit, "Accept", class: "btn btn-success"%>
+<% end %>
+<%= simple_form_for(request), data: { update_pending_requests_target: "form"} do |f|  %>
+  <%= f.input :pending, :as => :hidden, :input_html => { :value => false , data: {update_pending_requests_target: "pending"}} %>
+  <%= f.input :accepted, :as => :hidden, :input_html => { :value => false , data: {update_pending_requests_target: "accepted"}} %>
+  <%= f.button :submit, "Decline", class: "btn btn-danger"%>
+<% end %>
