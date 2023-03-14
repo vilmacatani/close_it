@@ -1,8 +1,7 @@
   <div class="send-a-message">
     <h1>Connect with <%= @startup.industry %></h1>
     <%= simple_form_for [startup, connection] do |f| %>
+      <%= f.input :message, as: :text, html5: true, placeholder: "Type your message here, if you want" %>
       <%= f.submit %>
-      <%= f.input :message, as: :text, html5: true, placeholder: "fgdsfdsfdsfdsf" %>
-      <%#= f.input :placeholder "get connected with startup send a mex" %>
     <% end %>
   </div>
