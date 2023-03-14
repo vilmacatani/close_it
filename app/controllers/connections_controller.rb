@@ -16,6 +16,10 @@ class ConnectionsController < ApplicationController
     end
   end
 
+  def update
+    raise
+  end
+
   private
 
   def set_startup
