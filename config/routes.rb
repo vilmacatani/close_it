@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # get 'investors/show'
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
-  get "profile", to: "pages#dashboard", as: :dashboard
+  get "dashboard", to: "pages#dashboard", as: :dashboard
   # get 'index', to: "pages#index"
 
   get 'uikit', to: "pages#uikit", as: :uikit
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :startups, only: :show do
     resources :connections, only: %i[new create]
   end
-
+  resources :connections, only: %i[update]
 
 
   resources :users do
