@@ -11,7 +11,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 15px;
-  column-gap: 23px;
+  column-gap: 25px;
 }
 
 .column{
@@ -32,9 +32,9 @@
 .industry-boxed{
   background-color: $blue !important;
   width: 136px;
-  height: 39px;
+  height: 43px;
   opacity: 90%;
-  padding: 6px;
+  padding: 10px;
   bottom: 20px;
   margin-bottom: 0;
   margin-left: 1.5em;
@@ -42,25 +42,31 @@
   p{
     position: relative;
     color: #FFFFFF;
-    justify-content: center;
-    align-content: center;
+    //padding-left: 15px;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
+    text-align: center;
   }
 }
 
 .funding-boxed{
   background-color: $blue !important;
   opacity: 90%;
-  padding: 6px;
+  padding: 10px;
   bottom: 20px;
   margin-bottom: 0;
   margin-left: 20px;
-  height: 39px;
+  height: 43px;
 
   p{
     position: relative;
     color: #FFFFFF;
     justify-content: center;
     align-content: center;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
   }
 }
 
@@ -137,8 +143,34 @@
     flex-direction: row;
     align-items: center;
     margin-top: 5em;
+    border-bottom-color: white;
+    border-bottom-style: dashed;
+    padding-bottom: 5px;
+    border-top-color: white;
+    border-top-style: dashed;
+    padding-top: 5px;
 
     a{
       margin-left: 10px;
+      font-family: $headers-font;
+      font-size: 40px;
+      line-height: 60px;
     }
+}
+
+.startup-font-title{
+  font-family: $headers-font;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 75px;
+  color: $blue;
+}
+
+.page-startup-font-title{
+  font-family: $headers-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 60px;
+  color: #7e7e7e;
 }
