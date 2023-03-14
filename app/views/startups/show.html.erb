@@ -1,6 +1,5 @@
 <div class="container">
 
-
   <div class="header-container">
     <%= render "show_banner", startup: @startup%>
   </div>
@@ -110,7 +109,29 @@
         We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors with
         high-potential startups and offering entrepreneurs a platform to showcase their business.
 
-      </div>
+        <div class="graph-two" style="padding-left: 20px;">
+          <div class="border pt-4 px-3 graph-box">
+            <div class="d-flex justify-content-end h-100 align-items-end">
+              <div class="chart">
+                <div class="chart-inside"></div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-items-between">
+            <p>Founding status</p>
+            <p>43%</p>
+          </div>
+
+        </div>
+
+        <div class="pl-4 pt-5 graph-three" style="padding-left: 20px;">
+          <h2 class="d-flex border-top p-3 align-items-center mb-0"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">TEAM</a></h2>
+          <h2 class="d-flex border-top border-bottom p-3 align-items-center"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">ARCHIVE</a></h2>
+        </div>
+    </div>
+
+  <% end %>
+
 
 
       <div class="description-image ms-auto">
