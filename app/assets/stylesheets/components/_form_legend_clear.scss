@@ -122,10 +122,11 @@ p.investor-title {
 }
 
 p#joining-text  {
-  color: white !important;
+  color: #17185E !important;
   position: absolute;
-  left: 13em;
-  font-size: 3em;
+  left: 29.9em;
+  top: 6.6em;
+  font-size: 2em;
 }
 
 input.create-button{
@@ -160,3 +161,4 @@ select#investor_investor_type {
 select#investor_funding_type {
   border-radius: 0;
 }
+

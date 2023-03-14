@@ -24,10 +24,9 @@
 .grey-back {
   background-color: #d8d8d8 ;
   color: white;
-}
 
- p {
-    color: $white;
+
+
   .home-container p {
     color: $blue !important;
   }
@@ -49,7 +48,7 @@
     position: absolute;
     left: 23.9em;
     font-size: 2.5em;
-    top: 4.7em;
+    top: 5.1em;
   }
 
   .home-description {
@@ -59,7 +58,12 @@
 
   .home-description p {
     font-size: 2.3em !important;
+    color: $blue !important;
   }
+
+  // .avatar {
+  //   background-color: #D9D9D9;
+  // }
 
 
 }
