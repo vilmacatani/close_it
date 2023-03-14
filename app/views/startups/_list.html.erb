@@ -20,17 +20,17 @@
           </div>
           <div class="card-left-details d-none "data-startup="<%= startup.id %>" style="background-image:url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>')">
             <div class="card-left-info">
-              <h2><%= startup.industry %></h2>
-              <p>Startup description</p>
+              <h2><%= startup.user.company_name %></h2>
+              <p><%= startup.bio[0..50] %></p>
               <ul class="card-left-info-list">
                 <li><div id="card-left-industry">
-                  <p>INDUSTRY</p><p>Healthcare Tech</p>
+                  <p>INDUSTRY</p><p><%= startup.industry %></p>
                 </div></li>
                 <li><div id="card-left-class">
-                  <p>CLASS</p><p>B</p>
+                  <p>CLASS</p><p><%= startup.funding %></p>
                 </div></li>
                 <li><div id="card-left-funding">
-                  <p>RAISING</p><p>40%</p>
+                  <p>RAISING</p><p><%= startup.funding_amount %></p>
                 </div></li>
               </ul>
             </div>
