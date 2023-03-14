@@ -1,10 +1,14 @@
 require 'faker'
-
+Member.destroy_all
+Connection.destroy_all
 Startup.destroy_all
 Investor.destroy_all
 User.destroy_all
 
 User.create!(email: "vilmacatani@gmail.com", password: "111111", user_type: 'investor')
+
+# Get id of our main investor vilma
+investor_vilma = User.last.id
 
 # Create Startups
 j = 1
@@ -62,6 +66,37 @@ Investor::INVESTORS.each do |i|
   end
 end
 
+Startup.all.each do |startup|
+  6.times do
+    Member.create!(
+      startup: startup,
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      bio: Faker::Company.catch_phrase,
+      position: ["CEO", "CTO", "Founder", "Co-Founder"].sample
+    )
+  end
+end
+
+10.times do
+  Connection.create!(
+    message: "What's up sexy",
+    pending: true,
+    accepted: false,
+    receiver_id: investor_vilma,
+    sender_id: Startup.all.sample.user.id
+  )
+end
+
+5.times do
+  Connection.create!(
+    message: "I'm great hottie",
+    pending: true,
+    accepted: false,
+    receiver_id: Startup.all.sample.user.id,
+    sender_id: investor_vilma
+  )
+end
 
 # j = 1
 # 5.times do

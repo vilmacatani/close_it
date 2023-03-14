@@ -3,10 +3,13 @@
   padding: 0;
 }
 
+.gray-back{
+  background:$darker-grey !important;
+}
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: #17185E;
+  background: #17185E ;
 }
 
 .navbar-lewagon .navbar-collapse {

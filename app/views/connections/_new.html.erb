@@ -1,0 +1,11 @@
+<div>
+  <h1>Connect with startup</h1>
+
+  <div>
+    <%= simple_form_for [startup, connection] do |f| %>
+      <%= f.input :message, as: :text, html5: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</div>

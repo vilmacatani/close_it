@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'meetings/create'
   # get 'connections/create'
   # get 'startups/index'
-  # get 'startups/show'
+  get 'startup', to: "startups#show"
   # get 'startups/new'
   # get 'startups/create'
   # get 'investors/new'
@@ -12,15 +12,22 @@ Rails.application.routes.draw do
   # get 'investors/show'
   devise_for :users, controllers: { registrations: "registrations" }
   root to: "pages#home"
+  get "dashboard", to: "pages#dashboard", as: :dashboard
   # get 'index', to: "pages#index"
 
   get 'uikit', to: "pages#uikit", as: :uikit
 
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
+  resources :startups, only: :show do
+    resources :connections, only: %i[new create]
+  end
+  resources :connections, only: %i[update]
+
 
   resources :users do
     resources :investors, only: %i[new create show]
+    resource :investors, only: %i[new create show]
   end
 
   get 'startups/:id/team', to: "startups#team", as: :startup_team

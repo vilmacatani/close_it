@@ -12,11 +12,17 @@
   </head>
 
   <body>
+
+  <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
+  <%# add startup path show and OTHERS!!! %>
+
   <%# <% home_user = current_page?(root_path) && !current_user %>
   <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) || current_page?(user_session_path)%>
   <div class="grey-back <%= 'blue-back' if blue_pages %> full-screen">
     <div class= "all-container">
-      <%= render "shared/navbar" %>
+      <% if params[:id].nil? %>
+        <%= render "shared/navbar" %>
+      <% end %>
       <%= render "shared/flashes" %>
       <%= yield %>
       <%= render "shared/footer" %>

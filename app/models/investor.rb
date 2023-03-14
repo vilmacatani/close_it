@@ -5,6 +5,15 @@ class Investor < ApplicationRecord
 
   # validates :private, :funding_type, :investor_type, :user_id, presence: true
 
+  def new
+    @user = User.find(params[:user_id])
+    @investor = Investor.new
+  end
+
+  # validates :private, :funding_type, :investor_type, :user_id, presence: true
+
+  # validates :private, :funding_type, :investor_type, :user_id, presence: true
+
   after_create :set_type
   validates :investor_type, inclusion: { in: INVESTORS }
   validates :funding_type, inclusion: { in: FUNDINGS }
@@ -12,4 +21,5 @@ class Investor < ApplicationRecord
   def set_type
     self.user.update(user_type: "investor")
   end
+
 end

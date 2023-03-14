@@ -1,0 +1,13 @@
+.container-dashboard {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.requests {
+  width: 60%;
+  border-style: solid;
+}

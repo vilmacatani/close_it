@@ -12,3 +12,6 @@ application.register("filter-list", FilterListController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import UpdatePendingRequestsController from "./update_pending_requests_controller"
+application.register("update-pending-requests", UpdatePendingRequestsController)
