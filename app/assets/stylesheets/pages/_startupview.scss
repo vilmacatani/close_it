@@ -174,3 +174,35 @@
   line-height: 60px;
   color: #7e7e7e;
 }
+
+.send-a-message{
+
+  box-sizing: border-box;
+  width: 315px;
+  height: 290px;
+  border: 1px solid  #125E2D;
+  margin-top: 15px;
+
+  h1{
+    font-family: $headers-font;
+    font-size: 20px;
+    color: #125E2D;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color:#125E2D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
+    width: 314px;
+  }
+  
+}
