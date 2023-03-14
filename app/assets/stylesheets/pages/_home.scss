@@ -171,7 +171,8 @@ input.search-bar {
 
 .list-itself {
   width: 33em;
-  margin-right: 111px;
+  margin-right: 124px;
+  padding: 0;
   border-top: 1px solid white;
 }
 
@@ -358,29 +359,59 @@ select#investor_funding_type{
 }
 
 .card-left-info {
-  font-family: $headers-font;
+  font-family: "Grotesk medium";
   width: 28em;
-  color: $blue;
+  color: #17185E !important;
   height: 15em;
-  padding:1.5em;
+  padding: 1.5em;
+  position: relative;
   margin: 3em;
   background-color: #ffffff96;
 }
 
 .card-left-info-list li {
+  color: #17185E !important;
   list-style: none;
   float:left;
 }
 
 ul.card-left-info-list {
+  color: #17185E !important;
   display: flex;
   text-align: center;
   justify-content: space-between;
   font-size: 10px;
-  margin-top: 50px;
+  /* margin-top: 50px; */
+  gap: 8.7em;
+  position: absolute;
+  bottom: 0em;
   padding: 0;
 }
 
 .card-left-info-list p{
   margin: 4px;
 }
+
+#card-left-desc {
+  font-size: 1em;
+  color: #17185E !important;
+  max-height: 5em;
+  overflow: scroll;
+}
+
+#card-left-title {
+  font-size: 1.5em;
+  color: #17185E !important;
+}
+
+ #card-left-industry p {
+  color: #17185E !important;
+ }
+
+ #card-left-funding p {
+  color: #17185E !important;
+ }
+
+ #card-left-class p {
+  color: #17185E !important;
+ }
