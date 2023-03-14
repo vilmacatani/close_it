@@ -167,6 +167,11 @@
 
 .description-image{
 
+  img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  }
 }
 
 .container-dx{
@@ -180,7 +185,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 2em;
     border-bottom-color: white;
     border-bottom-style: dashed;
     padding-bottom: 5px;
@@ -217,17 +222,17 @@
 
  // box-sizing: border-box;
   width: 315px;
-  height: 290px;
+  height: 170px;
   //border: 1px solid  #125E2D;
-  margin-top: 15px;
-  background-color: #FFFFFF;
+  margin-top: 27px;
+  background-color: #ffffff;
 
   h1{
     font-family: $headers-font;
     font-size: 20px;
     color: #125E2D;
-    padding-left: 10px;
-    padding-top: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
   }
 
   input[type=button], input[type=submit], input[type=reset] {
@@ -241,7 +246,10 @@
     text-transform: uppercase;
     font-family: $headers-font;
     letter-spacing: 0.7px;
-    width: 310px;
+    //width: 310px;
+    position: relative;
+    margin-left: 36px;
+    bottom: 18px;
   }
 
   label{
@@ -250,13 +258,15 @@
 
   ::placeholder{
     color: #7e7e7e;
-    font-size: 10px;
+    font-size: 15px;
+    font-family: $body-font;
   }
 }
 
 .form-control {
   border-radius: 0;
   border: 0;
+  height: 100px;
 }
 
 #myProgress {
