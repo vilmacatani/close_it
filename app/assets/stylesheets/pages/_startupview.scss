@@ -114,11 +114,49 @@
 }
 
 .countdown-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   box-sizing: border-box;
   width: 290px;
   height: 106px;
   border: 1px solid $blue;
 }
+
+#countdown-timer{
+  font-family: 'Haas Grot Disp';
+  font-style: normal;
+  //font-weight: 500;
+  font-size: 25px;
+  color: #FFFFFF;
+ // background-color: $blue !important;
+  height: 43px;
+  text-align: center;
+
+
+  #minutes,
+  #hours,
+  #days,
+  #seconds{
+   background-color: $blue;
+   padding: 8px 16px;
+    display: block;
+    position: static;
+  }
+}
+
+#countdown-labels{
+  //display: block;
+  //align-items: center;
+  //justify-content: space-evenly;
+  font-size: 12px;
+  text-align: center;
+  color:#7e7e7e;
+  font-family: $body-font;
+  margin-top: 5px;
+}
+
+
 
 .raising-funding-box{
   box-sizing: border-box;
@@ -222,13 +260,17 @@
 }
 
 #myProgress {
+  //margin: auto;
   width: 70%;
   height: 50px;
   background-color: #fff;
+  left: 0;
  // align-content: center;
 }
 
 #myBar {
+  //left: 0;
+  //margin: auto;
   height: 30px;
   background-color: $blue;
   align-content: center;
