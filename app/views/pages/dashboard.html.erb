@@ -1,4 +1,8 @@
+<div>
+   <%= render 'calendar' %>
+</div>
 <div class="container-dashboard">
+
   <div class="requests">
     <h3>Requests I've received</h3>
     <% @my_connection_requests_received.each do |request| %>
@@ -8,10 +12,10 @@
         <%= render 'connections/accept', request: request %>
         <%= render 'connections/decline', request: request %>
       </div>
-
       <% else %>
         <% if request.pending == false && request.accepted == true %>
           <div class="btn btn-outline-success">Accepted!</div>
+          <div class="btn btn-outline-primary">Set up a meeting!</div>
         <% elsif request.pending == false && request.accepted == false %>
           <div class="btn btn-outline-danger">Declined!</div>
         <% end %>
@@ -19,6 +23,9 @@
     <% end %>
   </div>
 
-
-  <div class="requests"> what is up my pending requests</div>
+  <%# <div class="requests">
+    <%# @my_connection_requests_sent.each do |request| %>
+      <p>Company name: <%#= User.where(id:request.receiver_id).select(:company_name).first.company_name %></p>
+    <%# end %>
+  </div> %>
 </div>

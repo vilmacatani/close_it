@@ -28,7 +28,6 @@ class PagesController < ApplicationController
   def dashboard
     @my_connection_requests_sent = Connection.where(sender_id: current_user)
     @my_connection_requests_received = Connection.where(receiver_id: current_user)
-
   end
 
   # def update_status_of_connection_requests

@@ -38,9 +38,7 @@ Startup::INDUSTRIES.each do |s|
     )
 
     j += 1
-
   end
-
 end
 
 k = 1
@@ -98,6 +96,26 @@ end
   )
 end
 
+5.times do
+  connection = Connection.create!(
+    message: "I'm great hottie",
+    pending: false,
+    accepted: true,
+    receiver_id: Startup.all.sample.user.id,
+    sender_id: investor_vilma
+  )
+  date = Faker::Date.forward(days: 10)
+  time = rand(8...16)
+  duration = [30, 45, 60]
+
+  Meeting.create!(
+    connection_id: connection.id,
+    meeting_time: DateTime.new(date.year, date.month, date.day, time, 0, 0),
+    duration: duration.sample,
+    meeting_pending: false,
+    meeting_accepted: true
+  )
+end
 # j = 1
 # 5.times do
 #   user = User.create!(
