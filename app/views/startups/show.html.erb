@@ -9,7 +9,7 @@
       <div class= "description-startup-boxes">
         <div class="row">
             <div class="industry-boxed">
-              <p><%= @startup.industry %> </p>
+              <p><%= @startup.industry %></p>
             </div>
         </div>
 
@@ -27,23 +27,23 @@
                   <p> <%= @startup.bio %></p>
               </div>
 
-              <div class= "countdown-box" >
-                <table id= "countdown" >
-                  <tr id="countdown-timer">
-                    <td><span id= "days">x</span></td>
-                    <td><span id= "hours">x</span></td>
-                    <td><span id= "minutes">x</span></td>
-                    <td><span id= "seconds">x</span></td>
-                  </tr>
-                  <tr id="countdown-labels">
-                    <td><span>Days</span></td>
-                    <td><span>Hours</span></td>
-                    <td><span>Minutes</span></td>
-                    <td><span>Seconds</span></td>
-                  </tr>
-                </table>
+             <div class= "countdown-box" >
+                  <table id= "countdown" >
+                    <tr id="countdown-timer">
+                      <td><span id= "days">x</span></td>
+                      <td><span id= "hours">x</span></td>
+                      <td><span id= "minutes">x</span></td>
+                      <td><span id= "seconds">x</span></td>
+                    </tr>
+                    <tr id="countdown-labels">
+                      <td><span>Days</span></td>
+                      <td><span>Hours</span></td>
+                      <td><span>Minutes</span></td>
+                      <td><span>Seconds</span></td>
+                    </tr>
+                  </table>
 
-                <script>
+               <script>
                   const raisingDeadline = new Date('jan 01, 2024 00:00:00');
 
                   setInterval(function() {
@@ -77,30 +77,36 @@
                     hoursEl.textContent = hoursToDisplay;
                     minutesEl.textContent = minutesToDisplay;
                     secondsEl.textContent = secondsToDisplay;
-
                   }
                 </script>
-
               </div>
 
               <div class= "raising-funding-box" >
+              <div class="row">
 
-              </div>
-              <div class="description-image">
-                <div class="column">
-                  <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
-
-                  <div class="description-image">
-                    <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
-                  </div>
-                </div>
               </div>
             </div>
-    </div>
-
-      <div></div>
 
 
+            </div>
+
+            <div class="description-image">
+              <div class="img-dx">
+                  <div class="column">
+                    <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+
+                    <div class="img-sx">
+                      <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup">
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div class="pl-4 pt-5 graph-three" style="padding-left: 20px;">
+             <h2 class="d-flex border-top p-3 align-items-center mb-0"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">TEAM</a></h2>
+            </div>
+
+      </div>
 
   <% else %>
     <div class="description-container d-flex mt-5">
@@ -128,9 +134,9 @@
           <h2 class="d-flex border-top p-3 align-items-center mb-0"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">TEAM</a></h2>
           <h2 class="d-flex border-top border-bottom p-3 align-items-center"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">ARCHIVE</a></h2>
         </div>
-    </div>
-     <div class="description-image ms-auto">
+      </div>
 
+      <div class="description-image">
           <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded mr-4">
       </div>
 
@@ -138,7 +144,6 @@
         <img src="https://source.unsplash.com/random/150x200/?portrait" alt="Startup" class="rounded"style="margin-left:10px;" >
       </div>
 
-    </div>
 
     <div class="d-flex justify-content-between pt-4">
         <div class="graph-one">
@@ -176,9 +181,6 @@
           <h2 class="d-flex border-top border-bottom p-3 align-items-center"><i class="fa-sharp fa-solid fa-arrow-right"></i><a href="#" class="white-link">ARCHIVE</a></h2>
         </div>
       </div>
-  <% end %>
-
-
-
-
+   </div>
+<% end %>
 </div>
