@@ -44,6 +44,16 @@ class PagesController < ApplicationController
   #   @booking.save
   #   redirect_to bookings_path
   # end
+  def profile
+    @user = current_user
+    @investor = Investor.where(user: current_user)
+  end
+
+  def update_profile
+    @user = current_user
+    @user.update(user_params)
+    redirect_to update_profile_path
+  end
 
   private
 
@@ -72,6 +82,10 @@ class PagesController < ApplicationController
   # end
 
   def uikit
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :company_name, :city, :country, :address)
   end
 
   def filter_params

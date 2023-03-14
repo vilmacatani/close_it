@@ -35,6 +35,8 @@ legend ~ div.form-check:first-of-type {
   position: absolute;
   right: 16em;
   top: 15em;
+  padding: 2em;
+
 }
 
 
@@ -86,15 +88,9 @@ right: 22em;
   text-decoration: none;
 }
 
-#new_user {
-  padding: 2em;
-}
+
 
 #new_investor{
-  padding: 2em;
-}
-
-#edit_user{
   padding: 2em;
 }
 
@@ -150,6 +146,16 @@ i.fa-solid.fa-arrow-right {
   left: 12em;
 }
 
+i.fa-solid.fa-check {
+  background-color: white;
+  color: #17185E;
+  font-size: 2em;
+  position: absolute;
+  padding: 7px;
+  bottom: -0.5em;
+  left: 12em;
+}
+
 .country-label {
   margin-bottom: 6px;
 }
@@ -161,4 +167,3 @@ select#investor_investor_type {
 select#investor_funding_type {
   border-radius: 0;
 }
-
