@@ -1,15 +1,31 @@
 <div class= "home-container">
-  <div class="home-description">
-    <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
+  <div class="signup-container">
+    <div class="investor-as-text">
+      <p id="investor-text">EDIT YOUR INFO AS A</p>
+    </div>
+    <div class="investor-edit-page">
+      <%= simple_form_for @investor do |f| %>
+        <p class="investor-title">INVESTOR</p>
+        <%= f.collection_select :investor_type, Investor::INVESTORS, :to_s, :titleize, { include_blank: 'Select investor type' } %>
+        <%= f.collection_select :funding_type, Investor::FUNDINGS, :to_s, :titleize, { include_blank: 'Select funding type' } %>
+        <%= f.input :private, disabled: false %>
+        <div class="form-actions">
+          <%= f.button :button, class: "create-button" do %>
+            <i class="fa-solid fa-check"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    </div>
   </div>
   <div class="signup-container">
-    <div class="joining-as-text">
-      <p id="joining-text">EDIT YOUR INFO AS A</p>
+    <div class="user-as-text">
+      <p id="user-text">EDIT YOUR INFO AS A</p>
     </div>
     <div class="home-signup-page">
       <%= simple_form_for @user, method: :patch, url: update_profile_path(@user) do |f| %>
         <%= f.error_notification %>
-        <p class="investor-title">USER</p>
+        <p class="user-edit-title">USER</p>
         <div class="form-inputs">
           <%= f.input :email, required: true, autofocus: true %>
 

@@ -34,18 +34,18 @@ legend ~ div.form-check:first-of-type {
   height: 30em;
   position: absolute;
   right: 16em;
-  top: 15em;
+  top: 13em;
   padding: 2em;
 
 }
 
 
 .home-signup-page ul {
-background-color: #D9D9D9;
-width: 27em;
-height: 25em;
-position: absolute;
-right: 22em;
+  background-color: #D9D9D9;
+  width: 27em;
+  height: 25em;
+  position: absolute;
+  right: 22em;
 }
 
 
@@ -59,13 +59,46 @@ right: 22em;
   text-decoration: none;
 }
 
+.investor-edit-page {
+  background-color: #17185E;
+  width: 31em;
+  height: 30em;
+  position: absolute;
+  right: 64em;
+  top: 13em;
+  padding: 2em;
+}
+
+
+.investor-edit-page ul {
+background-color: $blue;
+width: 27em;
+height: 25em;
+position: absolute;
+right: 22em;
+}
+
+
+.investor-edit-page li {
+  border-bottom: 1px dotted white;
+  text-align: justify;
+}
+
+.investor-edit-page a {
+  color:white;
+  text-decoration: none;
+}
+
+
+
+
 .investor-signup-page {
   background-color: $blue;
   width: 31em;
   height: 30em;
   position: absolute;
   right: 16em;
-  top: 15em;
+  top: 13em;
 }
 
 
@@ -120,9 +153,33 @@ p.investor-title {
 p#joining-text  {
   color: #17185E !important;
   position: absolute;
-  left: 29.9em;
-  top: 6.6em;
+  left: 23.9em;
+  top: 4.3em;
   font-size: 2em;
+}
+
+p#investor-text  {
+  color: #17185E !important;
+  position: absolute;
+  left: 29.9em;
+  top: 5.65em;
+  font-size: 2em;
+}
+
+p#user-text  {
+  color: #17185E !important;
+  position: absolute;
+  left: 5.9em;
+  top: 5.5em;
+  font-size: 2em;
+  font-family: "Grotesk medium";
+}
+
+p.user-edit-title {
+  font-size: 3em;
+  font-family: "Grotesk medium";
+  margin-bottom: 0;
+  margin-top: -4px;
 }
 
 input.create-button{

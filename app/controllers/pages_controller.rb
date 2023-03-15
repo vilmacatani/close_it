@@ -46,10 +46,15 @@ class PagesController < ApplicationController
   # end
   def profile
     @user = current_user
-    @investor = Investor.where(user: current_user)
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+
   end
 
   def update_profile
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+    @investor.update(investor_params)
     @user = current_user
     @user.update(user_params)
     redirect_to update_profile_path
@@ -82,6 +87,10 @@ class PagesController < ApplicationController
   # end
 
   def uikit
+  end
+
+  def investor_params
+    params.require(:investor).permit(:funding_type, :investor_type, :private)
   end
 
   def user_params

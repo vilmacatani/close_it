@@ -29,9 +29,10 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :investors, only: %i[new create show]
-    resource :investors, only: %i[new create show]
+    resources :investors, only: %i[new create]
   end
+
+  resources :investors, only: %i[edit show update]
 
   get 'startups/:id/team', to: "startups#team", as: :startup_team
   resources :startups
