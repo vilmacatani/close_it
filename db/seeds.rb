@@ -53,9 +53,12 @@ Investor::INVESTORS.each do |i|
       first_name: "Vilma",
       last_name: "Aurela",
       user_type: "investor",
+      address: "Amsterdam",
+      city: "Amsterdam",
       country: Country::COUNTRIES.sample,
       company_name: company["identifier"]["value"]
     )
+
     Investor.create!(
       user_id: user.id,
       private: false,
