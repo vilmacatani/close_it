@@ -2,13 +2,7 @@
 
 // }
 
-
-
 .simple-calendar {
-  width: 93.8%;
-  margin-left: 2em;
-
-
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
@@ -58,6 +52,16 @@
     border-left-width: 1px;
     font-size: 12px;
 
+    .date {
+      font-size: 16px;
+      color: $blue;
+    }
+
+    #today {
+      color: $white;
+      background: $blue;
+    }
+
   }
 
   // .date-info {
@@ -71,10 +75,10 @@
     background: $light-gray;
   }
 
-  .date {
-    font-size: 16px;
-    color: $blue;
-  }
+  // .date {
+  //   font-size: 16px;
+  //   color: $blue;
+  // }
 
   .day {
     height: 80px;
@@ -88,11 +92,18 @@
   .wday-5 {}
   .wday-6 {}
 
+  .today {
+    background: $blue;
+  }
 
   .past {}
   .future {}
 
-  .start-date {}
+  // .start-date .td .date {
+
+  //   color:white;
+
+  // }
 
   .prev-month {
     background: $darker-grey;
@@ -103,9 +114,4 @@
 
 
   .has-events {}
-
-  .today {
-    background: $blue;
-    color: white !important;
-  }
 }
