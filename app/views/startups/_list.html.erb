@@ -26,7 +26,6 @@
     <div class= "startups-cards col-4">
       <div class="gallery">
         <% startups.each do |startup| %>
-
           <div class="card-height" data-startup="<%= startup.id %>">
             <figure class="gallery__item gallery__item--1">
               <%= link_to startup_path(startup.id) do %>
