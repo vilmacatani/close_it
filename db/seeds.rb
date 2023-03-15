@@ -6,7 +6,17 @@ Startup.destroy_all
 Investor.destroy_all
 User.destroy_all
 
-User.create!(email: "vilmacatani@gmail.com", password: "111111", user_type: 'investor')
+User.create!(
+  email: "vilmacatani@gmail.com",
+  password: "111111",
+  user_type: 'investor',
+  first_name: "Vilma",
+  last_name: "Aurela",
+  address: "Amsterdam",
+  city: "Amsterdam",
+  country: Country::COUNTRIES.sample,
+  company_name: company["identifier"]["value"]
+)
 
 # Get id of our main investor vilma
 investor_vilma = User.last.id
