@@ -1,5 +1,6 @@
 require 'faker'
 Member.destroy_all
+Meeting.destroy_all
 Connection.destroy_all
 Startup.destroy_all
 Investor.destroy_all
@@ -28,20 +29,18 @@ Startup::INDUSTRIES.each do |s|
     Startup.create!(
       user_id: user.id,
       industry: s,
-      funding_amount: Faker::Number.between(from: 1, to: 100),
+      funding_amount: Faker::Number.between(from: 60, to: 100),
       funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
       funding: Investor::FUNDINGS.sample,
       team: Faker::Number.between(from: 1, to: 10),
       bio: company["short_description"],
       headcount: Faker::Number.between(from: 1, to: 500),
       turnover: Faker::Number.between(from: 1, to: 200),
-      raised_amount: Faker::Number.between(from: 1, to: 90)
+      raised_amount: Faker::Number.between(from: 1, to: 55)
     )
 
     j += 1
-
   end
-
 end
 
 k = 1
@@ -54,9 +53,12 @@ Investor::INVESTORS.each do |i|
       first_name: "Vilma",
       last_name: "Aurela",
       user_type: "investor",
+      address: "Amsterdam",
+      city: "Amsterdam",
       country: Country::COUNTRIES.sample,
       company_name: company["identifier"]["value"]
     )
+
     Investor.create!(
       user_id: user.id,
       private: false,
@@ -99,6 +101,31 @@ end
   )
 end
 
+10.times do
+  connection = Connection.create!(
+    message: "I'm great hottie",
+    pending: false,
+    accepted: true,
+    receiver_id: Startup.all.sample.user.id,
+    sender_id: investor_vilma
+  )
+  date = Faker::Date.forward(days: 35)
+  time = rand(8...16)
+  min = [30, 45, 60].sample
+  starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
+  ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
+  company = User.where(id: connection.receiver_id)
+
+  Meeting.create!(
+    connection_id: connection.id,
+    start_time: starting_time,
+    end_time: ending_time,
+    duration: min,
+    title: "Intro with #{company.first.company_name}",
+    meeting_pending: false,
+    meeting_accepted: true
+  )
+end
 # j = 1
 # 5.times do
 #   user = User.create!(

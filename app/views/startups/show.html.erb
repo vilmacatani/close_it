@@ -84,14 +84,14 @@
                   <p>Headcount</p>
               </div>
 
-              <% percent = (@startup.funding_amount / @startup.raised_amount)*100 %>
+              <% percent = (@startup.raised_amount/@startup.funding_amount)*100 %>
               <div class= "raising-funding-box" >
                <div class="row gap-4">
                  <div class="col-12" id="myProgress">
                     <div id="myBar" style="width: <%= percent %>%;"></div>
                 </div>
                 <div class="col-12 text-center">
-                 <p id=raising_per> <%= percent %> %</p>
+                 <p id=raising_per> <%= percent.floor %> %</p>
                 </div>
               </div>
                 <p>Raising status</p>

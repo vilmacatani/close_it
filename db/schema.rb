@@ -38,13 +38,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_090545) do
   end
 
   create_table "meetings", force: :cascade do |t|
-    t.datetime "meeting_time"
+    t.datetime "start_time"
     t.integer "duration"
     t.boolean "meeting_accepted"
     t.boolean "meeting_pending"
     t.bigint "connection_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "end_time"
+    t.string "title"
     t.index ["connection_id"], name: "index_meetings_on_connection_id"
   end
 

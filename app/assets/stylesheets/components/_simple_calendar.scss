@@ -1,0 +1,111 @@
+// .calendar-container {
+
+// }
+
+
+
+.simple-calendar {
+  width: 93.8%;
+  margin-left: 2em;
+
+
+  table {
+    -webkit-border-horizontal-spacing: 0px;
+    -webkit-border-vertical-spacing: 0px;
+    background-color: white;
+    border: 1px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    box-sizing: border-box;
+    width: 100%;
+
+  }
+
+  tr {
+    border-collapse: collapse;
+    max-height: 50px;
+
+  }
+
+  th {
+    padding: 6px;
+    border-bottom: 2px solid rgb(221, 221, 221);
+    border-collapse: collapse;
+    border-left: 1px solid rgb(221, 221, 221);
+    border-right: 1px solid rgb(221, 221, 221);
+    border-top: 0px none rgb(51, 51, 51);
+    box-sizing: border-box;
+    text-align: left;
+
+  }
+
+  td {
+    padding: 6px;
+    vertical-align: top;
+    width: 14%;
+
+    border: 1px solid #ddd;
+    border-top-color: white;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-color: rgb(221, 221, 221);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-bottom-color: rgb(221, 221, 221);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(221, 221, 221);
+    border-left-style: solid;
+    border-left-width: 1px;
+    font-size: 12px;
+
+  }
+
+  // .date-info {
+
+  //   font-size: 10px;
+  //   border-style: solid;
+  //   border-width: 1px;
+  //   color: $white;
+  // }
+  .current-month {
+    background: $light-gray;
+  }
+
+  .date {
+    font-size: 16px;
+    color: $blue;
+  }
+
+  .day {
+    height: 80px;
+  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {
+    background: $darker-grey;
+  }
+  .next-month {
+    background: $darker-grey;
+  }
+
+
+  .has-events {}
+
+  .today {
+    background: $blue;
+    color: white !important;
+  }
+}

@@ -52,6 +52,11 @@ gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "sassc-rails"
 
+gem 'bootstrap', '~> 4.0.0'
+
+# Simple calendar
+gem "simple_calendar"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
