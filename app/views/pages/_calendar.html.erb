@@ -3,7 +3,7 @@
     <% if date.today? %>
       <div id="today"><%= date.strftime("%d").to_i %></div>
     <% else %>
-      <div><%= date.strftime("%d").to_i %></div>
+      <div class="other-days"><%= date.strftime("%d").to_i %></div>
     <% end %>
     <div class="date-info">
       <% meetings.each do |meeting| %>

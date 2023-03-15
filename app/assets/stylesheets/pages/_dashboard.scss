@@ -6,15 +6,56 @@
   align-items: flex-start;
   margin-bottom: 1em;
   gap: 4em;
-  margin: 4em;
+  margin-top: 4em;
+  margin-right: 4em;
+  margin-left: 4em;
+  margin-bottom: 0;
 }
 
-.requests {
+.requests-left {
   width: 60%;
-  border-style: 1px solid white;
+  border: 2px solid white;
   padding: 2em;
-  max-height: 50em;
-  overflow: scroll;
+  height: 40em;
+  background-color: #17185E;
+  color: white;
+  margin-bottom: 4em;
+}
+
+.requests-right {
+  width: 60%;
+  border: 2px solid #17185E;
+  padding: 2em;
+  height: 40em;
   background-color: white;
   color: #17185E;
+  margin-bottom: 4em;
+}
+
+input.btn {
+  border-radius: 0;
+}
+
+div.btn {
+  border-radius: 0;
+}
+
+button.btn {
+  border-radius: 0;
+}
+
+#requests-left-title {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+
+#requests-right-title {
+  border-bottom: 1px solid $blue;
+  padding-bottom: 15px;
+}
+
+.requests-content-container {
+  max-height: 32em;
+  padding-top: 10px;
+  overflow: scroll;
 }
