@@ -105,36 +105,46 @@
 }
 
 .description-team-members{
-  width: 535px;
-  background-color: red;
+  width: 320px;
+  height: 320px;
+  background-color: white;
   margin-top: 7em;
+  margin-left: 133px;
 }
 
 .card-member-descripion{
 
+  margin-top: 4em;
+  margin-left: 2em;
+
   h1{
     font-family: Grotesk medium;
-    margin-top: 4rem;
-    margin-bottom: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
+    margin-bottom: 0.8rem;
+    padding-left: 1px;
+    // padding-right: 30px;
+    padding-top: 30px;
     color:  #17185E;
+    font-size: 35px;
+    text-transform: uppercase;
+    line-height: 38px;
   }
 
   h2{
     font-family: Grotesk medium;
-    margin-top: 4rem;
     margin-bottom: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 1px;
+    // padding-right: 30px;
+    padding-top: 11px;
     color:  #17185E;
+    font-size: 25px;
   }
 
   p{
     font-family: "Montserrat", sans-serif;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 1px;
+    //padding-right: 30px;
     line-height: 1.2;
     color:  #17185E;
+    font-size: 15px;
   }
 }
