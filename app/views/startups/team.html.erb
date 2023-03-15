@@ -1,10 +1,31 @@
 <%= render "shared/navbar" %>
 <%# <div class="home-container"> %>
-<div class="list-members row" data-controller="bio-show">
+<div class="members-cointainer d-flex">
+  <div class="list-members" data-controller="bio-show">
  <%#  <div class= "list-itself" data-filter-list-target="list"> %>
-<%#     <div class="col-8">
+  <%#     <div class="col-8">
     <div startups-cards col-4> %>
-      <div class="list-members">
+      <div class= "description-team-members">
+        <%# @members.each do |member| %>
+           <div class= "card-member-descripion" >
+             <h1> Vilma</h1>
+              <p> <br> very smart too!! <br>Lorem ipsum dolor sit amet, consectetur adipiscin
+                 elit, sed do eiusmod tempor incididunt ut laborelaboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <h2>ROLE</h2>
+              <p>Founder</p>
+              <h2>EDUCATION</h2>
+              <ul>
+                <li>2015-2020 sexyschool</li>
+                <li>2015-2020 sexyschool</li>
+                <li>2015-2020 sexyschool</li>
+                <li>2015-2020 sexyschool</li>
+              </ul>
+           </div>
+          <%# end %>
+        </div>
+      </div>
+
         <div class= "members-list-itself" data-filter-list-target="list">
         <div class= "members-cards">
           <div class="gallery">
@@ -28,9 +49,12 @@
             </div>
         </div>
 
-      </div>
 
     </div>
+
+</div>
+
+
 </div>
 
 
