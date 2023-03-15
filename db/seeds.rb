@@ -29,13 +29,14 @@ Startup::INDUSTRIES.each do |s|
     Startup.create!(
       user_id: user.id,
       industry: s,
-      funding_amount: Faker::Number.between(from: 1, to: 10),
+      funding_amount: Faker::Number.between(from: 1, to: 100),
       funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
       funding: Investor::FUNDINGS.sample,
       team: Faker::Number.between(from: 1, to: 10),
       bio: company["short_description"],
       headcount: Faker::Number.between(from: 1, to: 500),
-      turnover: Faker::Number.between(from: 1, to: 200)
+      turnover: Faker::Number.between(from: 1, to: 200),
+      raised_amount: Faker::Number.between(from: 1, to: 90)
     )
 
     j += 1

@@ -1,0 +1,26 @@
+<div class= "home-container">
+
+  <% if user_signed_in? %>
+    <% #if current_user.user_type == "start-up" %>
+      <div class="search-list-user" data-controller="filter-list">
+        <%= render 'search/startup_search' %>
+        <%= render "user/list", user: @users %>
+      </div>
+    <% #else %>
+
+    <% #end %>
+
+
+  <% else %>
+    <div class="home-description">
+      <p id="white-text">We stand alongside all organizations that’ve achieved so much for the community, and we continue to learn from them. It'll take a lot more listening and a load more action but, together with them, we're taking a small step that we hope to make a big difference in our everyday lives.</p>
+    </div>
+    <div class="home-signup">
+      <ul>
+      <li>SIGN UP AS</li>
+      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "START UP",  new_user_registration_path  %></li>
+      <li><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "INVESTOR",  new_user_registration_path %></li>
+      </ul>
+    </div>
+  <% end %>
+</div>

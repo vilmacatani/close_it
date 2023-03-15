@@ -13,13 +13,16 @@
 
   <body>
 
+
+  <% blue_pages =  current_page?(root_path) || current_page?(new_user_session_path)  %>
   <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
+
   <%# add startup path show and OTHERS!!! %>
 
   <%# <% home_user = current_page?(root_path) && !current_user %>
-  <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
+  <% blue_pages_two = current_page?(root_path) || current_page?(new_user_session_path) %>
 
-  <div class="grey-back <%= 'blue-back' if blue_pages %> full-screen">
+  <div class="grey-back <%= 'blue-back' if blue_pages||blue_pages_two %> full-screen">
     <div class= "all-container">
       <% if params[:id].nil? %>
         <%= render "shared/navbar" %>
@@ -31,6 +34,29 @@
   </div>
   <script>
     feather.replace()
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
   </script>
   </body>
 
