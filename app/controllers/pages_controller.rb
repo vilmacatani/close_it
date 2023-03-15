@@ -28,8 +28,10 @@ class PagesController < ApplicationController
   def dashboard
     @my_connection_requests_sent = Connection.where(sender_id: current_user)
     @my_connection_requests_received = Connection.where(receiver_id: current_user)
-
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @meetings = Meeting.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
+
 
   # def update_status_of_connection_requests
   #   @booking = Booking.find(params[:booking])
@@ -44,6 +46,21 @@ class PagesController < ApplicationController
   #   @booking.save
   #   redirect_to bookings_path
   # end
+  def profile
+    @user = current_user
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+
+  end
+
+  def update_profile
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+    @investor.update(investor_params)
+    @user = current_user
+    @user.update(user_params)
+    redirect_to update_profile_path
+  end
 
   private
 
@@ -72,6 +89,14 @@ class PagesController < ApplicationController
   # end
 
   def uikit
+  end
+
+  def investor_params
+    params.require(:investor).permit(:funding_type, :investor_type, :private)
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :company_name, :city, :country, :address)
   end
 
   def filter_params
