@@ -13,18 +13,30 @@
 
         <% if request.pending == true %>
         <div class="forms-container">
-          <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
-          <%= render 'connections/accept', request: request, counter: counter %>
-          <%= render 'connections/decline', request: request, counter: counter %>
+          <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
+          <div class="requester-info">
+            <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
+            <div class="requester-status">
+              <%= render 'connections/accept', request: request, counter: counter %>
+              <%= render 'connections/decline', request: request, counter: counter %>
+            </div>
+          </div>
         </div>
         <% else %>
           <% if request.pending == false && request.accepted == true %>
-            <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
-            <div class="btn btn-outline-success">Accepted!</div>
-            <%# Bootstrap %>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=counter%>">
-              Set up a meeting
-            </button>
+            <div class="forms-container">
+              <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
+              <div class="requester-info">
+                <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
+                 <div class="requester-status">
+                  <div class="btn btn-outline-success accepted">Accepted!</div>
+                  <%# Bootstrap %>
+                  <button type="button" class="btn btn-primary meeting-set" data-toggle="modal" data-target="#exampleModal<%=counter%>">
+                    Set up a meeting!
+                  </button>
+                </div>
+              </div>
+            </div>
             <%= render 'meetings/popup', counter: counter, request: request %>
             <%# Bootstrap %>
             <%# Check if there is a meeting already set%>
@@ -47,24 +59,40 @@
       <% counter = 0 %>
       <% @my_connection_requests_sent.each do |request| %>
         <% counter += 1 %>
-        <p>Company name: <%= User.where(id:request.receiver_id).select(:company_name).first.company_name %></p>
-        <% if request.pending == true %>
-          <div class="btn btn-outline-warning">Pending</div>
-        <% else %>
-          <% if request.pending == false && request.accepted == true %>
-
-            <div class="btn btn-outline-success">Accepted!</div>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=counter%>">
-              Set up a meeting
-            </button>
-            <%= render 'meetings/popup', counter: counter, request: request %>
-            <% meetings = Meeting.where(connection_id: request) %>
-            <% connection_meetings = meetings.where(meeting_pending: false) %>
-            <%= render 'show_meetings', connection_meetings: connection_meetings, request: request, counter:counter %>
-          <% elsif request.pending == false && request.accepted == false %>
-            <div class="btn btn-outline-danger">Declined!</div>
+          <% if request.pending == true %>
+            <div class="forms-container2">
+              <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
+              <div class="requester-info">
+                <p>Company name: <%= User.where(id:request.receiver_id).select(:company_name).first.company_name %></p>
+                <div class="btn btn-outline-warning pending">Pending</div>
+              </div>
+            </div>
+          <% else %>
+            <% if request.pending == false && request.accepted == true %>
+              <div class="forms-container2">
+                <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
+                <div class="requester-info">
+                  <div class="requester-status">
+                    <div class="btn btn-outline-success accepted-right">Accepted!</div>
+                    <button type="button" class="btn btn-primary metting-right" data-toggle="modal" data-target="#exampleModal<%=counter%>">
+                      Set up a meeting!
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <%= render 'meetings/popup', counter: counter, request: request %>
+              <% meetings = Meeting.where(connection_id: request) %>
+              <% connection_meetings = meetings.where(meeting_pending: false) %>
+              <%= render 'show_meetings', connection_meetings: connection_meetings, request: request, counter:counter %>
+            <% elsif request.pending == false && request.accepted == false %>
+              <div class="forms-container2">
+                <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
+                <div class="requester-info">
+                  <div class="btn btn-outline-danger">Declined!</div>
+                </div>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
       <% end %>
     </div>
   </div>

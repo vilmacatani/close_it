@@ -59,3 +59,110 @@ button.btn {
   padding-top: 10px;
   overflow: scroll;
 }
+
+.requester-img {
+  object-fit: cover;
+  height: 110px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  width: 110px;
+  background-position: center;
+  border-radius: 50% !important;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #292ba2;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.forms-container2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.requester-info {
+  padding-left: 1em;
+}
+
+.requester-status {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.btn.btn-primary.meeting-set {
+  background-color: white;
+  color: $blue;
+  font-family: $headers-font;
+}
+
+.btn.btn-primary.meeting-set:hover {
+  border: 1px solid white;
+  background-color: $blue;
+  color: white;
+  transition: ease 3ms;
+}
+
+.btn.btn-outline-success.accepted {
+  color:#7affc1;
+  border: 1px solid #7affc1;
+  font-family: $headers-font;
+}
+
+.btn.btn-outline-success.accepted:hover {
+  color:#7affc1;
+  border: 1px solid #7affc1;
+  background-color: $blue;
+  font-family: $headers-font;
+  cursor:not-allowed;
+}
+
+.btn.btn-outline-warning.pending {
+  cursor: wait;
+  color: #cd9b03;
+  border: 1px solid #cd9b03;
+  font-family: $headers-font;
+  background-color: white;
+}
+
+.btn.btn-outline-warning.pending:hover{
+  cursor: wait;
+  font-family: $headers-font;
+  background-color: white;
+  color: #cd9b03;
+  border: 1px solid #cd9b03;
+}
+
+.btn.btn-outline-success.accepted-right {
+  color:#0a9d4c;
+  border: 1px solid #0a9d4c;
+  font-family: $headers-font;
+}
+
+.btn.btn-outline-success.accepted-right:hover {
+  color:#0a9d4c;
+  border: 1px solid #0a9d4c;
+  background-color: white;
+  font-family: $headers-font;
+  cursor:not-allowed;
+}
+
+.btn.btn-primary.metting-right{
+  background-color: $blue;
+  color: $white;
+  font-family: $headers-font;
+}
+
+.btn.btn-primary.metting-right:hover {
+  border: 1px solid $blue;
+  background-color: white;
+  color: $blue;
+  transition: ease 3ms;
+}
