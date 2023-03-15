@@ -1,9 +1,9 @@
 <% if request.pending == false && request.accepted == true %>
     <div class="btn btn-outline-success">Accepted!</div>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=counter%>">
-          Set up a meeting
-        </button>
-        <%= render 'meetings/popup', counter: counter, request: request %>
+        Set up a meeting
+    </button>
+    <%= render 'meetings/popup', counter: counter, request: request %>
 <% elsif request.pending == false && request.accepted == false %>
     <div class="btn btn-outline-danger">Declined!</div>
 <% end %>

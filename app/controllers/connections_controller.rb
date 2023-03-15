@@ -18,7 +18,7 @@ class ConnectionsController < ApplicationController
   def update
     @connection = Connection.find(params[:id])
     @connection.update(pending_params)
-    @counter = params[:id].to_i
+    @counter = params[:counter]
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
@@ -37,6 +37,6 @@ class ConnectionsController < ApplicationController
   end
 
   def pending_params
-    params.require(:connection).permit(:pending, :accepted)
+    params.require(:connection).permit(:pending, :accepted, :counter)
   end
 end
