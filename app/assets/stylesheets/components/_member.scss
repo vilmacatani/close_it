@@ -50,7 +50,7 @@
 
 .members-list-itself{
   width: 33em;
-  margin-left: 230px;
+  margin-left: 355px;
   padding: 0;
   border-top: 1px solid white;
   margin-top: 7em;
@@ -106,10 +106,10 @@
 
 .description-team-members{
   width: 320px;
-  height: 320px;
-  background-color: white;
+  height: 250px;
+  background-color: #17185E;
   margin-top: 7em;
-  margin-left: 133px;
+  margin-left: 150px;
 }
 
 .card-member-descripion{
@@ -123,10 +123,10 @@
     padding-left: 1px;
     // padding-right: 30px;
     padding-top: 30px;
-    color:  #17185E;
+    color:  white;
     font-size: 35px;
     text-transform: uppercase;
-    line-height: 38px;
+    line-height: 37px;
   }
 
   h2{
@@ -135,8 +135,8 @@
     padding-left: 1px;
     // padding-right: 30px;
     padding-top: 11px;
-    color:  #17185E;
-    font-size: 25px;
+    color:   #EAEAEAe;
+    font-size: 23px;
   }
 
   p{
@@ -144,7 +144,7 @@
     padding-left: 1px;
     //padding-right: 30px;
     line-height: 1.2;
-    color:  #17185E;
-    font-size: 15px;
+    color: white;
+    font-size: 16px;
   }
 }

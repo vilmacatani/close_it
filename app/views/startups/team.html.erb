@@ -11,7 +11,7 @@
              <h1> <%= @members.first.first_name %> <%= @members.first.last_name %></h1>
               <p> <%= @members.first.bio %>
               </p>
-              <h2>ROLE</h2>
+              <h2>Role</h2>
               <p><%= @members.first.position %></p>
 
           </div>
@@ -24,7 +24,7 @@
           <% @members.each do |member| %>
             <div class="card-height">
               <figure class="gallery__item gallery__item--1">
-                <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
+                <img src="https://source.unsplash.com/random/300x300/?portrait&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
                 <div class="card-member-name">
                   <div class="name-boxed">
                     <h3 class= "member-name"><%=member.first_name%></h3>
