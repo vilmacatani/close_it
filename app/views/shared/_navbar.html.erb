@@ -1,6 +1,6 @@
 <% blue_pages = current_page?(root_path) || current_page?(new_user_session_path) %>
-<% blue_pages_two = current_page?(startup_path) || current_page?(root_path) || current_page?(startup_team_path)||current_page?(new_user_session_path) || params[:id].present? %>
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon grey-back <%= 'blue-back' if blue_pages||blue_pages_two %>">
+<%# <% blue_pages_two = current_page?(startup_path) || current_page?(root_path) || current_page?(startup_team_path)||current_page?(new_user_session_path) || params[:id].present? %>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon grey-back <%= 'blue-back' if blue_pages %>">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "CLOSE-IT WHITE.svg" %>
@@ -14,7 +14,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <% if blue_pages||blue_pages_two %>
+            <% if blue_pages %>
               <%= image_tag "LOGO-graywhite.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
               <%= image_tag "logo-blue-white.svg", class: "avatar-grey-page dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

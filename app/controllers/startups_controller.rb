@@ -1,7 +1,7 @@
 class StartupsController < ApplicationController
   before_action :set_user, only: %i[new create]
   def show
-    @start_ups = Startup.find(params[:id])
+    @startup = Startup.find(params[:id])
     @connection = Connection.new
   end
 
@@ -18,6 +18,7 @@ class StartupsController < ApplicationController
   def create
     @start_ups = Start_up.new(startup_params)
     @start_ups.user = @user
+    @start_up = Start_up.connection
     if @start_up.save
       redirect_to user_path(@user)
     else

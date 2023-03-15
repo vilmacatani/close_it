@@ -13,7 +13,7 @@
 
   <body>
 
-  <% blue_pages = current_page?(startup_path) || current_page?(root_path) || current_page?(startup_team_path)||current_page?(new_user_session_path) || params[:id].present? %>
+  <% blue_pages =  current_page?(root_path) || current_page?(new_user_session_path)  %>
   <%# add startup path show and OTHERS!!! %>
 
   <%# <% home_user = current_page?(root_path) && !current_user %>

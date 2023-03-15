@@ -3,11 +3,11 @@
   // grid-template-columns: 1fr 1fr;
   // gap: 20px 20px;
   // max-height: 60vh;
-  // margin-top: 40px;
+   //margin-top: 40px;
   // rounded:abs 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 15px;
+  gap: 20px 20px;
   max-height: 63vh;
   overflow: scroll;
   width: 33em;
@@ -15,19 +15,16 @@
 
 .name{
   position: absolute;
-  bottom: 5px;
+  bottom: -150px;
   left: 10px;
   background-color: white;
   color:$blue;
   padding:10px;
+
 }
 .team-photo{
   height: 50%;
   width: 50%;
   object-fit: cover;
-  position: relative;
-}
-
-.gallery__item {
   position: relative;
 }

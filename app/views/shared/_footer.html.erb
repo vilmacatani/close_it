@@ -1,4 +1,4 @@
-<% blue_pages = current_page?(startup_path) || current_page?(root_path) || current_page?(new_user_session_path) || params[:id].present? %>
+<% blue_pages =  current_page?(root_path) || current_page?(new_user_session_path) %>
 <div class="footer grey-back <%= 'blue-back' if blue_pages %>">
 <div class="footer-links">
   <a href="#"><i class="fab fa-github"></i></a>
