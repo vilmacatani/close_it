@@ -28,18 +28,21 @@
         <% startups.each do |startup| %>
           <div class="card-height" data-startup="<%= startup.id %>">
             <figure class="gallery__item gallery__item--1">
-              <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
-              <div class="card-short-descr">
-                <div class="title-boxed">
-                  <h2><%= startup.user.company_name[0..30]%></h2>
-                  <h3 class= "startup-industry"><%=startup.industry%></h3>
+              <%= link_to startup_path(startup.id) do %>
+                <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
+                <div class="card-short-descr">
+                  <div class="title-boxed">
+                    <h2><%= startup.user.company_name[0..30]%></h2>
+                    <h3 class= "startup-industry"><%=startup.industry%></h3>
+                  </div>
                 </div>
-              </div>
-              <div class="class-boxed">
-                <p class= "startup-class"><%=startup.funding %></p>
-              </div>
+                <div class="class-boxed">
+                  <p class= "startup-class"><%=startup.funding %></p>
+                </div>
+              <% end %>
             </figure>
           </div>
+
         <% end %>
         </div>
       </div>
