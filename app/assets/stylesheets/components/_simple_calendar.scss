@@ -1,17 +1,29 @@
+// .calendar-container {
+
+// }
+
+
+
 .simple-calendar {
+  width: 93.8%;
+  margin-left: 2em;
+
+
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: white;
     border: 1px solid rgb(221, 221, 221);
     border-collapse: collapse;
     box-sizing: border-box;
     width: 100%;
+
   }
 
   tr {
     border-collapse: collapse;
     max-height: 50px;
+
   }
 
   th {
@@ -23,6 +35,7 @@
     border-top: 0px none rgb(51, 51, 51);
     box-sizing: border-box;
     text-align: left;
+
   }
 
   td {
@@ -45,22 +58,23 @@
     border-left-width: 1px;
     font-size: 12px;
 
-
-    // .date-info {
-    //   border-radius: 30px;
-    //   width: 80%;
-    //   font-size: 10px;
-    //   border-color: black;
-    //   border-style: solid;
-    //   border-width: 1px;
-    // }
   }
 
+  // .date-info {
+
+  //   font-size: 10px;
+  //   border-style: solid;
+  //   border-width: 1px;
+  //   color: $white;
+  // }
+  .current-month {
+    background: $light-gray;
+  }
 
   .date {
     font-size: 16px;
+    color: $blue;
   }
-
 
   .day {
     height: 80px;
@@ -74,9 +88,6 @@
   .wday-5 {}
   .wday-6 {}
 
-  .today {
-    background: rgb(207, 143, 143);
-  }
 
   .past {}
   .future {}
@@ -84,12 +95,17 @@
   .start-date {}
 
   .prev-month {
-    background: #5b5757;
+    background: $darker-grey;
   }
   .next-month {
-    background: #5b5757;
+    background: $darker-grey;
   }
-  .current-month {}
+
 
   .has-events {}
+
+  .today {
+    background: $blue;
+    color: white !important;
+  }
 }

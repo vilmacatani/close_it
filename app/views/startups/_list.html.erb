@@ -1,7 +1,6 @@
-
 <div class="list-startups row" data-controller="cards-show">
   <div class= "list-itself" data-filter-list-target="list">
-    <div class="col-8">
+    <div class="col-8 static">
       <% startups.each do |startup| %>
         <%# add d-none to card-left-details !!!!!  %>
         <div class="card-left-details d-none" data-startup="<%= startup.id %>" style="background-image:url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>')">
