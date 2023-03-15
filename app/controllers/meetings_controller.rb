@@ -1,8 +1,6 @@
 class MeetingsController < ApplicationController
-  before_action :set_connection, only: %i[new create]
-  def new
-    @meeting = Meeting.new
-  end
+  before_action :set_connection, only: %i[create]
+
 
   def create
     @meeting = Meeting.new(meeting_params)

@@ -18,10 +18,11 @@ class ConnectionsController < ApplicationController
   def update
     @connection = Connection.find(params[:id])
     @connection.update(pending_params)
+    @counter = params[:id].to_i
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
-      format.text { render partial: "connections/confirmation", locals: { request: @connection }, formats: [:html] }
+      format.text { render partial: "connections/confirmation", locals: { request: @connection, counter: @counter }, formats: [:html] }
     end
   end
 

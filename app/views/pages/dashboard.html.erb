@@ -4,16 +4,26 @@
 <div class="container-dashboard">
   <div class="requests">
     <h3>Requests I've received</h3>
+    <% counter = 0 %>
     <% @my_connection_requests_received.each do |request| %>
+      <% counter += 1 %>
       <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
       <% if request.pending == true %>
       <div class="forms-container">
         <%= render 'connections/accept', request: request %>
         <%= render 'connections/decline', request: request %>
+
       </div>
       <% else %>
         <% if request.pending == false && request.accepted == true %>
           <div class="btn btn-outline-success">Accepted!</div>
+          <%# Bootstrap %>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=counter%>">
+            Launch demo modal
+          </button>
+
+          <%= render 'meetings/popup', counter: counter, request: request %>
+          <%# Bootstrap %>
           <%# Check if there is a meeting already set%>
           <% connection_meetings = Meeting.where(connection_id: request) %>
           <%= render 'show_meetings', connection_meetings: connection_meetings, request: request %>
