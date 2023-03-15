@@ -1,16 +1,15 @@
+
+
 <%= render "shared/navbar" %>
 <%# <div class="home-container"> %>
 <div class="members-cointainer d-flex">
   <div class="list-members" data-controller="bio-show">
- <%#  <div class= "list-itself" data-filter-list-target="list"> %>
-  <%#     <div class="col-8">
-    <div startups-cards col-4> %>
+
       <div class= "description-team-members">
         <%# @members.each do |member| %>
            <div class= "card-member-descripion" >
              <h1> <%= @members.first.first_name %> <%= @members.first.last_name %></h1>
-              <p> <%= @members.first.bio %>
-              </p>
+              <p> <%= @members.first.bio %></p>
               <h2>Role</h2>
               <p><%= @members.first.position %></p>
 
@@ -27,7 +26,7 @@
                 <img src="https://source.unsplash.com/random/300x300/?portrait&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
                 <div class="card-member-name">
                   <div class="name-boxed">
-                    <h3 class= "member-name"><%=member.first_name%></h3>
+                    <h3 class= "member-name"><%=member.first_name%> <%=member.last_name%></h3>
                   </div>
                 </div>
                 <%# <div class="class-boxed">
