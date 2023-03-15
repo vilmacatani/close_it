@@ -5,6 +5,10 @@ class StartupsController < ApplicationController
     @connection = Connection.new
   end
 
+  def index
+    @startups = @Startup.all
+  end
+
   def team
     @start_up = Startup.find(params[:id])
     @members = @start_up.members
