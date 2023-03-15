@@ -118,6 +118,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -219,6 +220,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    simple_calendar (2.4.3)
+      rails (>= 3.0)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -271,6 +274,7 @@ DEPENDENCIES
   dotenv-rails
   faker
   font-awesome-sass
+  htmlbeautifier
   httparty
   jbuilder
   jsbundling-rails
@@ -280,6 +284,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   sassc-rails
   selenium-webdriver
+  simple_calendar
   simple_form!
   sprockets-rails
   stimulus-rails
