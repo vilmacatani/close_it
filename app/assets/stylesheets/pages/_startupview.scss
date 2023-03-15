@@ -11,13 +11,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   row-gap: 15px;
-  column-gap: 5px;
+  column-gap: 25px;
 }
 
 .column{
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
+  column-gap: 15px;
 }
 
 .description-startup-boxes{
@@ -32,9 +32,9 @@
 .industry-boxed{
   background-color: $blue !important;
   width: 136px;
-  height: 39px;
+  height: 43px;
   opacity: 90%;
-  padding: 6px;
+  padding: 10px;
   bottom: 20px;
   margin-bottom: 0;
   margin-left: 1.5em;
@@ -42,26 +42,42 @@
   p{
     position: relative;
     color: #FFFFFF;
-    justify-content: center;
-    align-content: center;
+    //padding-left: 15px;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
+    text-align: center;
   }
 }
 
 .funding-boxed{
   background-color: $blue !important;
   opacity: 90%;
-  padding: 6px;
+  padding: 10px;
   bottom: 20px;
   margin-bottom: 0;
   margin-left: 20px;
-  height: 39px;
+  height: 43px;
 
   p{
     position: relative;
     color: #FFFFFF;
     justify-content: center;
     align-content: center;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
   }
+}
+
+
+p#raising_per{
+  font-size: 12px;
+  text-align: center;
+  color:#7e7e7e !important;
+  font-family: $body-font;
+  top: 641px;
+  left: 671px;
 }
 
 .card-startup-descripion{
@@ -71,8 +87,17 @@
   width: 652px;
   height: 290px;
   margin-top: 15px;
-
   border: 1px solid $blue;
+  h3{
+    font-size: 12px;
+    color: $blue;
+    font-family: $body-font;
+    margin-top: 5px;
+    bottom: 257px;
+    left: 204px;
+    position: absolute;
+    text-transform: uppercase;
+  }
 
   h2{
     position: absolute;
@@ -108,15 +133,199 @@
 }
 
 .countdown-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   box-sizing: border-box;
   width: 290px;
   height: 106px;
   border: 1px solid $blue;
+
+  p{
+    font-size: 12px;
+    color: $blue;
+    font-family: $body-font;
+    margin-top: 5px;
+    bottom: 111px;
+    left: 204px;
+    position: absolute;
+    text-transform: uppercase;
+  }
 }
+
+#countdown-timer{
+  font-family: 'Haas Grot Disp';
+  font-style: normal;
+  //font-weight: 500;
+  font-size: 25px;
+  color: #FFFFFF;
+ // background-color: $blue !important;
+  height: 43px;
+  text-align: center;
+
+
+  #minutes,
+  #hours,
+  #days,
+  #seconds{
+   background-color: $blue;
+   padding: 8px 16px;
+    display: block;
+    position: static;
+  }
+}
+
+#countdown-labels{
+  //display: block;
+  //align-items: center;
+  //justify-content: space-evenly;
+  font-size: 12px;
+  text-align: center;
+  color:#7e7e7e;
+  font-family: $body-font;
+  margin-top: 5px;
+}
+
+
 
 .raising-funding-box{
   box-sizing: border-box;
   width: 337px;
   height: 106px;
   border: 1px solid $blue;
+
+  p{
+    font-size: 12px;
+    color: $blue;
+    font-family: $body-font;
+    margin-top: 5px;
+    bottom: 111px;
+    left: 520px;
+    position: absolute;
+    text-transform: uppercase;
+  }
+}
+
+.description-image{
+
+  img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  }
+}
+
+.container-dx{
+ display: flex;
+ flex-direction: column;
+ margin-left: 215px;
+ margin-top: 1.1em;
+}
+
+.team-line-link{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1.7em;
+    border-bottom-color: white;
+    border-bottom-style: dashed;
+    padding-bottom: 5px;
+    border-top-color: white;
+    border-top-style: dashed;
+    padding-top: 5px;
+
+    a{
+      margin-left: 10px;
+      font-family: $headers-font;
+      font-size: 40px;
+      line-height: 60px;
+    }
+}
+
+.startup-font-title{
+  font-family: $headers-font;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 75px;
+  color: $blue;
+}
+
+.page-startup-font-title{
+  font-family: $headers-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 60px;
+  color: #7e7e7e;
+}
+
+.send-a-message{
+
+ // box-sizing: border-box;
+  width: 315px;
+  height: 170px;
+  //border: 1px solid  #125E2D;
+  margin-top: 27px;
+  background-color: #ffffff;
+
+  h1{
+    font-family: $headers-font;
+    font-size: 20px;
+    color: #125E2D;
+    padding-left: 15px;
+    padding-top: 15px;
+  }
+
+  input[type=button], input[type=submit], input[type=reset] {
+    background-color:#125E2D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    //margin: 2px 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: $headers-font;
+    letter-spacing: 0.7px;
+    //width: 310px;
+    position: relative;
+    margin-left: 36px;
+    bottom: 18px;
+  }
+
+  label{
+    display: none;
+  }
+
+  ::placeholder{
+    color: #7e7e7e;
+    font-size: 15px;
+    font-family: $body-font;
+  }
+}
+
+.form-control {
+  border-radius: 0;
+  border: 0;
+  height: 100px;
+}
+
+#myProgress {
+  width: 73%;
+  height: 50px;
+  position: relative;
+  background-color: #fff;
+  left: 38px;
+  top: 25px;
+}
+
+#myBar {
+  height: 43px;
+  position: absolute;
+  background-color: #17185E;
+  align-content: center;
+  top: 3px;
+  left: 4px;
 }
