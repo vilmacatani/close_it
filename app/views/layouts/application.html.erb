@@ -24,8 +24,8 @@
 
   <div class="grey-back <%= 'blue-back' if blue_pages||blue_pages_two %> full-screen">
     <div class= "all-container">
-      <% if params[:id].nil? %>
-        <%= render "shared/navbar" %>
+      <% if params[:id].nil?  %>
+        <%= render "shared/navbar" unless current_page?(new_startup_registration_path)%>
       <% end %>
       <%= render "shared/flashes" %>
       <%= yield %>
