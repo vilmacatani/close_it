@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard", as: :dashboard
   # get 'index', to: "pages#index"
 
+  get "profile", to: "pages#profile", as: :profile
+  patch "profile/:id", to:"pages#update_profile", as: :update_profile
+
   get 'uikit', to: "pages#uikit", as: :uikit
 
   get 'investors/new', to: "investors#new"
@@ -31,9 +34,10 @@ Rails.application.routes.draw do
 
 
   resources :users do
-    resources :investors, only: %i[new create show]
-    resource :investors, only: %i[new create show]
+    resources :investors, only: %i[new create]
   end
+
+  resources :investors, only: %i[edit show update]
 
   get 'startups/:id/team', to: "startups#team", as: :startup_team
   resources :startups

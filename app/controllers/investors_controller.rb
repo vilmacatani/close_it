@@ -14,6 +14,16 @@ class InvestorsController < ApplicationController
     end
   end
 
+  def edit
+    @investor = Investor.find(params[:id])
+  end
+
+  def update
+    @investor = Investor.find(params[:id])
+    @investor.update(investor_params)
+    redirect_to update_profile_path
+  end
+
   private
 
   def investor_params

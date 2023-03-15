@@ -32,6 +32,36 @@ class PagesController < ApplicationController
     @meetings = Meeting.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
 
+
+  # def update_status_of_connection_requests
+  #   @booking = Booking.find(params[:booking])
+  #   @booking.pending = false
+
+  #   if params[:status] == "accept"
+  #     @booking.accepted = true
+  #   else
+  #     @booking.accepted = false
+  #   end
+
+  #   @booking.save
+  #   redirect_to bookings_path
+  # end
+  def profile
+    @user = current_user
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+
+  end
+
+  def update_profile
+    array = Investor.where(user_id: @user.id)
+    @investor = Investor.find(array.first.id)
+    @investor.update(investor_params)
+    @user = current_user
+    @user.update(user_params)
+    redirect_to update_profile_path
+  end
+
   private
 
   def filter_search
@@ -59,6 +89,14 @@ class PagesController < ApplicationController
   # end
 
   def uikit
+  end
+
+  def investor_params
+    params.require(:investor).permit(:funding_type, :investor_type, :private)
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :first_name, :last_name, :company_name, :city, :country, :address)
   end
 
   def filter_params
