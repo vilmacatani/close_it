@@ -1,5 +1,6 @@
 require 'faker'
 Member.destroy_all
+Meeting.destroy_all
 Connection.destroy_all
 Startup.destroy_all
 Investor.destroy_all
@@ -39,9 +40,7 @@ Startup::INDUSTRIES.each do |s|
     )
 
     j += 1
-
   end
-
 end
 
 k = 1
@@ -99,6 +98,31 @@ end
   )
 end
 
+10.times do
+  connection = Connection.create!(
+    message: "I'm great hottie",
+    pending: false,
+    accepted: true,
+    receiver_id: Startup.all.sample.user.id,
+    sender_id: investor_vilma
+  )
+  date = Faker::Date.forward(days: 35)
+  time = rand(8...16)
+  min = [30, 45, 60].sample
+  starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
+  ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
+  company = User.where(id: connection.receiver_id)
+
+  Meeting.create!(
+    connection_id: connection.id,
+    start_time: starting_time,
+    end_time: ending_time,
+    duration: min,
+    title: "Intro with #{company.first.company_name}",
+    meeting_pending: false,
+    meeting_accepted: true
+  )
+end
 # j = 1
 # 5.times do
 #   user = User.create!(

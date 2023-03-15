@@ -1,0 +1,11 @@
+<div>
+  <h1>Set up a new meeting</h1>
+  <div>
+    <%= simple_form_for [@connection, @meeting] do |f| %>
+      <%= f.input :title, as: :string, html5: true%>
+      <%= f.input :duration, collection: Meeting::DURATION, prompt: 'Select duration' %>
+      <%= f.input :start_time, as: :datetime, html5: true %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

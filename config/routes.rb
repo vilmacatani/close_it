@@ -25,9 +25,9 @@ Rails.application.routes.draw do
     resources :connections, only: %i[new create]
   end
 
-
-  resources :connections, only: %i[update]
-
+  resources :connections, only: %i[update] do
+    resources :meetings, only: %i[new create update]
+  end
 
 
   resources :users do

@@ -28,22 +28,9 @@ class PagesController < ApplicationController
   def dashboard
     @my_connection_requests_sent = Connection.where(sender_id: current_user)
     @my_connection_requests_received = Connection.where(receiver_id: current_user)
-
+    start_date = params.fetch(:start_date, Date.today).to_date
+    @meetings = Meeting.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
   end
-
-  # def update_status_of_connection_requests
-  #   @booking = Booking.find(params[:booking])
-  #   @booking.pending = false
-
-  #   if params[:status] == "accept"
-  #     @booking.accepted = true
-  #   else
-  #     @booking.accepted = false
-  #   end
-
-  #   @booking.save
-  #   redirect_to bookings_path
-  # end
 
   private
 
