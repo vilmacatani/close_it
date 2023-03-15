@@ -43,7 +43,7 @@ export default class extends Controller {
   search(e) {
     const query = e.currentTarget.value;
     console.log(query)
-    // console.log(`${this.formTarget.action}?search=${query}`)
+
     fetch(`${this.formTarget.action}?query=${query}`, {headers: {"Accept": "text/plain"}})
     .then(response => response.text())
     .then((data) => {
