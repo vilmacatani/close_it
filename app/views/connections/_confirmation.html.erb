@@ -1,6 +1,6 @@
 <% if request.pending == false && request.accepted == true %>
     <div class="btn btn-outline-success">Accepted!</div>
-    <div class="btn btn-outline-primary">Set up date!</div>
+    <div class="btn btn-outline-primary"><%= link_to "Set up a meeting <3", new_connection_meeting_path(request.id) %></div>
 <% elsif request.pending == false && request.accepted == false %>
     <div class="btn btn-outline-danger">Declined!</div>
 <% end %>
