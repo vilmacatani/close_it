@@ -1,29 +1,75 @@
 <%# <%= @teammembers.first.first_name %>
- <div class="team-container">
-    <div class= "description-team-members">
-      <div class= "card-member-descripion" >
-        <h1>VILMA CATANI</h1>
-        <p> Vilma is a sexy gurl from Finland <br> very smart too!! <br>Lorem ipsum dolor sit amet, consectetur adipiscin
-        elit, sed do eiusmod tempor incididunt ut laborelaboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <h2>ROLE</h2>
-        <p>CEO of sexyness</p>
-        <h2>EDUCATION</h2>
-        <ul>
-          <li>2015-2020 sexyschool</li>
-          <li>2015-2020 sexyschool</li>
-          <li>2015-2020 sexyschool</li>
-          <li>2015-2020 sexyschool</li>
-        </ul>
-      </div>
-
-      <div class= "list-member">
-        <div class="row">
-          <div class="column" style="background: #CCCCCC;">what's going on</div>
-          <div class="column" style="background: #d3d3d3;">plese work</div>
+  <%= render "shared/navbar" %>
+  <div class="container">
+   <div class="head-container">
+     <div class="w-200 border-end pt-2 pb-2">
+      <div class= "description-team-members">
+      <% #@members.each do |member| %>
+          <div class= "card-member-descripion" >
+             <h1>Vilma</h1>
+              <p> <br> very smart too!! <br>Lorem ipsum dolor sit amet, consectetur adipiscin
+          elit, sed do eiusmod tempor incididunt ut laborelaboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+           <h2>ROLE</h2>
+          <p>Founder</p>
+          <h2>EDUCATION</h2>
+          <ul>
+            <li>2015-2020 sexyschool</li>
+            <li>2015-2020 sexyschool</li>
+            <li>2015-2020 sexyschool</li>
+            <li>2015-2020 sexyschool</li>
+          </ul>
         </div>
 
-      </div>
+   <div class="team-picture-grid">
+
+
+
+    <div class="team-photo">
+    <h3 class="name">Vilma</h3>
+    <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
     </div>
+    <div class="team-photo">
+    <h3 class="name">Marta</h3>
+     <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
+     </div>
+     <div class="team-photo">
+     <h3 class="name"> Maria</h3>
+      <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
+      </div>
+      <div class="team-photo">
+      <h3 class="name">Aurela</h3>
+       <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
+       </div>
+       <div class="team-photo">
+       <h3 class="name">Francesca</h3>
+        <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
+        </div>
+        <div class="team-photo">
+        <h3 class="name">Martini</h3>
+         <img src="https://source.unsplash.com/random/300x300/?portrait" alt="Startup">
+        </div>
+
+      <%# end %>
+       <%# <div class= "list-member">
+        <div class="row">
+         <div class="column" style="background: #CCCCCC;">What's going on</div>
+          <div class="column" style="background: #d3d3d3;">please work</div>
+       </div>
+          </div>
+             </div>
+                </div>%>
+
+
+
+
+
+
+
+
+  </div>
+  </div>
+
+
 
   </div>
