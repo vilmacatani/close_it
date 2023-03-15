@@ -1,40 +1,48 @@
-<div class="list-startups">
+
+<div class="list-startups row" data-controller="cards-show">
   <div class= "list-itself" data-filter-list-target="list">
-  <div class= "startups-cards">
-    <div class="gallery">
-    <% startups.each do |startup| %>
-      <div class="card-height">
-        <figure class="gallery__item gallery__item--1">
-          <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
-          <div class="card-short-descr">
-            <div class="title-boxed">
-              <h2><%= startup.user.company_name[0..30]%></h2>
-              <h3 class= "startup-industry"><%=startup.industry%></h3>
-            </div>
+    <div class="col-8">
+      <% startups.each do |startup| %>
+        <%# add d-none to card-left-details !!!!!  %>
+        <div class="card-left-details d-none" data-startup="<%= startup.id %>" style="background-image:url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>')">
+          <div class="card-left-info">
+            <h2 id="card-left-title"><%= startup.user.company_name %></h2>
+            <p id="card-left-desc"><%= startup.bio %></p>
+            <ul class="card-left-info-list">
+              <li><div id="card-left-industry">
+                <p>INDUSTRY</p><p><%= startup.industry %></p>
+              </div></li>
+              <li><div id="card-left-class">
+                <p>CLASS</p><p><%= startup.funding.last.capitalize %></p>
+              </div></li>
+              <li><div id="card-left-funding">
+                <p>RAISING</p><p><%= startup.funding_amount %></p>
+              </div></li>
+            </ul>
           </div>
-          <div class="class-boxed">
-            <p class= "startup-class"><%=startup.funding %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class= "startups-cards col-4">
+      <div class="gallery">
+        <% startups.each do |startup| %>
+          <div class="card-height" data-startup="<%= startup.id %>">
+            <figure class="gallery__item gallery__item--1">
+              <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
+              <div class="card-short-descr">
+                <div class="title-boxed">
+                  <h2><%= startup.user.company_name[0..30]%></h2>
+                  <h3 class= "startup-industry"><%=startup.industry%></h3>
+                </div>
+              </div>
+              <div class="class-boxed">
+                <p class= "startup-class"><%=startup.funding %></p>
+              </div>
+            </figure>
           </div>
-        </figure>
+        <% end %>
+        </div>
       </div>
-    <% end %>
-
-        <%# <figure class="gallery__item gallery__item--2">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 2">
-        </figure>
-        <figure class="gallery__item gallery__item--3">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 3">
-        </figure>
-        <figure class="gallery__item gallery__item--4">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 4">
-        </figure>
-        <figure class="gallery__item gallery__item--5">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 5">
-        </figure>
-        <figure class="gallery__item gallery__item--6">
-          <img src="https://source.unsplash.com/random/?home&1" class="gallery__img" alt="Image 6">
-        </figure> %>
-      </div>
+    </div>
   </div>
-
 </div>
