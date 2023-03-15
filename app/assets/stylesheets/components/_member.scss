@@ -1,4 +1,4 @@
-.description-team-members{
+/* .description-team-members{
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -46,15 +46,28 @@
     line-height: 1.2;
     color:  #17185E;
   }
+} */
+
+.members-list-itself{
+  width: 33em;
+  margin-right: 124px;
+  padding: 0;
+  border-top: 1px solid white;
+  margin-top: 7em;
 }
 
-.list-member{
-  width: 562px;
+
+.list-members{
+
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  /* width: 562px;
   height: 700px;
   background-color: #af9918;
   margin-top: 45px;
   margin-right: 111px;
-
+ */
   .row {
     display: flex;
   }
@@ -65,4 +78,30 @@
     width: 200em;
     column-gap: 4;
   }
+}
+
+.card-member-name{
+  position: absolute;
+  top: 0;
+  padding-left: 4px;
+}
+
+.name-boxed{
+    background-color: #eaeaea !important;
+    opacity: 90%;
+    /* padding: 2px 4px; */
+    bottom: -215px;
+    margin-left: 4px;
+    position: relative;
+    width: 100px;
+
+    h3{
+      // background-color: #eaeaea;
+       color: #17185E;
+       font-family: "Grotesk";
+       font-size: 15px;
+       padding: 7px;
+        text-align: center;
+     }
+
 }
