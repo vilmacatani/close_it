@@ -27,8 +27,8 @@ class PagesController < ApplicationController
 
   def dashboard
 
-    @my_connection_requests_sent = Connection.where(sender_id: current_user)
-    @my_connection_requests_received = Connection.where(receiver_id: current_user)
+    @my_connection_requests_sent = Connection.where(sender_id: current_user).order(created_at: :desc)
+    @my_connection_requests_received = Connection.where(receiver_id: current_user).order(created_at: :desc)
     connections_sent = Connection.where(sender_id: current_user)
     connections_received = Connection.where(receiver_id: current_user)
     sent_connection_ids = connections_sent.pluck(:id)
