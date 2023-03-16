@@ -3,7 +3,7 @@
     <div class="col-8 static">
       <% startups.each do |startup| %>
         <%# add d-none to card-left-details !!!!!  %>
-        <div class="card-left-details d-none" data-startup="<%= startup.id %>" style="background-image:url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>')">
+        <div class="card-left-details d-none" style="background-image: linear-gradient(black, black), url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>'); background-blend-mode: saturation" data-startup="<%= startup.id %>">
           <div class="card-left-info">
             <h2 id="card-left-title"><%= startup.user.company_name %></h2>
             <p id="card-left-desc"><%= startup.bio %></p>
