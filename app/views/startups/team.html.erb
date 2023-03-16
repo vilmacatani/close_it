@@ -1,6 +1,16 @@
 <%= render "shared/navbar" %>
+<%# <div></div>
+ <%= link_to root_path, class: "navbar-brand" do %>
 
 <div class="members-cointainer row members-gap">
+          <div class="startup-link">
+             <h2 class="startup-line-link">
+             <i class="fa-sharp fa-solid fa-arrow-left"></i>
+
+              <%= link_to "STARTUP", :back, class: "white-link"%>
+            </div>
+         
+
   <div class="col-6" data-controller="team-show">
     <% @members.each do |member| %>
       <div class= "description-team-members d-none info-card-<%= member.id %>"%>
@@ -25,9 +35,6 @@
                 <div class="name-boxed">
                   <h3 class= "member-name"><%=member.first_name%> <%=member.last_name%></h3>
               </div>
-              <%# <div class="class-boxed">
-                <p class= "startup-class"><%=@startup.funding %></p>
-              <%# </div> %>
             </figure>
           </div>
         <% end %>

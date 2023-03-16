@@ -244,6 +244,28 @@ p#raising_per{
     }
 }
 
+.home-line-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.7em;
+  border-bottom-color: white;
+  border-bottom-style: dashed;
+  padding-bottom: 5px;
+  border-top-color: white;
+  border-top-style: dashed;
+  padding-top: 5px;
+  width: 300px;
+
+  a{
+    margin-left: 10px;
+    font-family: $headers-font;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+
 .startup-font-title{
   font-family: $headers-font;
   font-weight: 500;
