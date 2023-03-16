@@ -10,7 +10,7 @@
       <% counter = 0 %>
       <% @my_connection_requests_received.each do |request| %>
         <% counter += 1 %>
-        <%# <% raise %> 
+        <%# <% raise %>
         <% if request.pending == true %>
         <div class="forms-container">
           <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
@@ -72,6 +72,7 @@
               <div class="forms-container2">
                 <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
                 <div class="requester-info">
+                  <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
                   <div class="requester-status">
                     <div class="btn btn-outline-success accepted-right">Accepted!</div>
                     <button type="button" class="btn btn-primary metting-right" data-toggle="modal" data-target="#exampleModal<%=counter%>">

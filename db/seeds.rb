@@ -93,7 +93,7 @@ end
 startups = Startup.all
 array = (0..startups.length - 1).to_a
 
-2.times do
+4.times do
   i = array.sample
   startup = startups[i]
   messages = ["Hi #{startup.user.first_name}, very interesting company let's connect",
@@ -102,12 +102,12 @@ array = (0..startups.length - 1).to_a
 
   connection_sent = Connection.create!(
     message: messages.sample,
-    pending: pending.sample,
-    accepted: accepted.sample,
+    pending: false,
+    accepted: true,
     receiver_id: startup.user.id,
     sender_id: investor_vilma
   )
-  date = Faker::Date.forward(days: 35)
+  date = Faker::Date.forward(days: 10)
   time = rand(8...16)
   min = [30, 45, 60].sample
   starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
@@ -121,8 +121,8 @@ array = (0..startups.length - 1).to_a
       end_time: ending_time,
       duration: min,
       title: "Intro with #{company.first.company_name}",
-      meeting_pending: pending.sample,
-      meeting_accepted: accepted.sample
+      meeting_pending: false,
+      meeting_accepted: true
     )
   end
   # startup.members.destroy_all
@@ -130,7 +130,7 @@ array = (0..startups.length - 1).to_a
   puts "we are done with sent"
 end
 
-3.times do
+6.times do
   j = array.sample
   startup = startups[j]
   messages = ["Hi #{vilma.first_name}, we are looking for seed funding let's connect",
@@ -139,12 +139,12 @@ end
 
   connection_sent = Connection.create!(
     message: messages.sample,
-    pending: pending.sample,
-    accepted: accepted.sample,
+    pending: false,
+    accepted: true,
     receiver_id: investor_vilma,
     sender_id: startup.user.id
   )
-  date = Faker::Date.forward(days: 35)
+  date = Faker::Date.forward(days: 10)
   time = rand(8...16)
   min = [30, 45, 60].sample
   starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
@@ -158,8 +158,8 @@ end
       end_time: ending_time,
       duration: min,
       title: "Intro with #{company.first.company_name}",
-      meeting_pending: pending.sample,
-      meeting_accepted: accepted.sample
+      meeting_pending: false,
+      meeting_accepted: true
     )
   end
   # startup.members.destroy_all

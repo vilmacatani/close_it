@@ -24,7 +24,7 @@
     flex: 50%;
     height: 200em;
     width: 200em;
-    column-gap: 4;
+    column-gap: 0,5rem;
   }
 }
 
@@ -135,4 +135,25 @@
   color: #17185E !important;
   max-height: 5em;
   overflow: scroll;
+}
+
+.startup-line-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.7em;
+  border-bottom-color: white;
+  border-bottom-style: dashed;
+  padding-bottom: 5px;
+  border-top-color: white;
+  border-top-style: dashed;
+  padding-top: 5px;
+  width: 460px;
+
+  a{
+    margin-left: 10px;
+    font-family: $headers-font;
+    font-size: 20px;
+    line-height: 40px;
+  }
 }

@@ -5,21 +5,25 @@
   </div>
 
   <% if current_user.user_type == "investor" %>
-
-      <div class= "description-startup-boxes">
-        <div class="row">
-            <div class="industry-boxed">
-              <p><%= @startup.industry %></p>
+      <div class= "links-plus-description">
+        <div class= "description-startup-boxes">
+          <div class="row">
+              <div class="industry-boxed">
+                <p><%= @startup.industry %></p>
+              </div>
+          </div>
+            <div class="funding-boxed">
+              <div class="column">
+                  <p><%= @startup.funding %></p>
+              </div>
             </div>
         </div>
-
-          <div class="funding-boxed">
-            <div class="column">
-                <p><%= @startup.funding %></p>
-            </div>
-          </div>
+        <div class="all-startup-link">
+            <h2 class="home-line-link">
+            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+            <%= link_to "ALL STARTUPS", root_path, class: "white-link"%>
+        </div>
       </div>
-
       <div class="startup-info-container">
             <div class="row">
               <div class= "card-startup-descripion" >
@@ -121,7 +125,7 @@
             <div class="team-link">
              <h2 class="team-line-link">
              <i class="fa-sharp fa-solid fa-arrow-right"></i>
-             <a href="#" class="white-link">TEAM</a></h2>
+             <%= link_to "TEAM", startup_team_path(@startup), class: "white-link"%>
             </div>
           </div>
       </div>
@@ -201,4 +205,16 @@
       </div>
    </div>
 <% end %>
+</div>
+
+<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path)|| current_page?(user_session_path) %>
+<div class="footer grey-back d-none <%= 'blue-back' if blue_pages %>">
+<div class="footer-links">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
 </div>
