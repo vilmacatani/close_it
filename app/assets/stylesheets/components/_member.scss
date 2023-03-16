@@ -1,60 +1,21 @@
-.description-team-members{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  min-height: 100vh;
+.members-list-itself{
+  width: 33em;
+  margin-left: 355px;
+  padding: 0;
+  border-top: 1px solid white;
+  margin-top: 7em;
 }
 
-.card-member-descripion{
-  width: 531px;
-  height: 531px;
-  background-color: #EAEAEA;
-  margin-left: 32px;
-  margin-top: 45px;
 
-  h1{
-    font-family: Grotesk medium;
-    margin-top: 4rem;
-    margin-bottom: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
-    color:  #17185E;
-  }
+.list-members{
 
-  p{
-    font-family: "Montserrat", sans-serif;
-    padding-left: 30px;
-    padding-right: 30px;
-    line-height: 1.2;
-    color:  #17185E;
-  }
-
-  h2{
-    font-family: Grotesk medium;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 16px;
-    color:  #17185E;
-  }
-
-  li {
-    font-family: "Montserrat", sans-serif;
-    padding-left: 30px;
-    padding-right: 30px;
-    line-height: 1.2;
-    color:  #17185E;
-  }
-}
-
-.list-member{
-  width: 562px;
+  position: relative;
+  /* width: 562px;
   height: 700px;
   background-color: #af9918;
   margin-top: 45px;
   margin-right: 111px;
-
+ */
   .row {
     display: flex;
   }
@@ -65,4 +26,113 @@
     width: 200em;
     column-gap: 4;
   }
+}
+
+.card-member-name{
+  position: absolute;
+  top: 0;
+  padding-left: 4px;
+}
+
+.members-gap{
+  gap: 5.5rem;
+}
+.name-boxed{
+    background-color: #eaeaea !important;
+    opacity: 90%;
+    /* padding: 2px 4px; */
+    bottom: -197px;
+    margin-left: 4px;
+    position: relative;
+    width: 100px;
+
+    h3{
+      // background-color: #eaeaea;
+       color: #17185E;
+       font-family: "Grotesk";
+       font-size: 15px;
+       padding: 7px;
+      //text-align: center;
+     }
+
+}
+
+.description-team-members{
+  width: 320px;
+  height: 250px;
+  background-color: #17185E;
+  margin-top: 7em;
+  margin-left: 150px;
+}
+
+.card-member-descripion{
+
+  margin-top: 4em;
+  margin-left: 2em;
+
+  h1{
+    font-family: Grotesk medium;
+    margin-bottom: 0.8rem;
+    padding-left: 1px;
+    // padding-right: 30px;
+    padding-top: 30px;
+    color:  white;
+    font-size: 35px;
+    text-transform: uppercase;
+    line-height: 37px;
+  }
+
+  h2{
+    font-family: Grotesk medium;
+    margin-bottom: 0.5rem;
+    padding-left: 1px;
+    // padding-right: 30px;
+    padding-top: 11px;
+    color: #eaeaea;
+    font-size: 23px;
+  }
+
+  p{
+    font-family: "Montserrat", sans-serif;
+    padding-left: 1px;
+    //padding-right: 30px;
+    line-height: 1.2;
+    color: white;
+    font-size: 16px;
+  }
+
+}
+
+.card-left-member {
+  position: absolute;
+  width: 33em;
+  height: 20em;
+  top:4em;
+  left:4.4em;
+  background-size: 100%;
+  object-fit: cover;
+  background-position: center;
+}
+
+.card-left-bio {
+  font-family: "Grotesk medium";
+  width: 28em;
+  color: #17185E !important;
+  height: 15em;
+  padding: 1.5em;
+  position: relative;
+  margin: 3em;
+  background-color: #ffffff96;
+}
+
+#card-left-name {
+  font-size: 1.5em;
+  color: #17185E !important;
+}
+
+#card-left-role {
+  font-size: 1em;
+  color: #17185E !important;
+  max-height: 5em;
+  overflow: scroll;
 }

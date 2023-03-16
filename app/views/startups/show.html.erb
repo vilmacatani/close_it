@@ -25,24 +25,28 @@
               <div class= "card-startup-descripion" >
                   <h2><%= @startup.user.company_name[0..30]%></h2>
                   <p> <%= @startup.bio %></p>
-                  <h3>About <%= @startup.user.company_name[0..30]%> </h3>
+                  <%# <h3>About <%= @startup.user.company_name[0..30]%> </h3>
               </div>
 
-             <div class= "countdown-box" >
-                  <table id= "countdown" >
-                    <tr id="countdown-timer">
-                      <td><span id= "days">x</span></td>
-                      <td><span id= "hours">x</span></td>
-                      <td><span id= "minutes">x</span></td>
-                      <td><span id= "seconds">x</span></td>
-                    </tr>
-                    <tr id="countdown-labels">
-                      <td><span>Days</span></td>
-                      <td><span>Hours</span></td>
-                      <td><span>Minutes</span></td>
-                      <td><span>Seconds</span></td>
-                    </tr>
-                  </table>
+
+             <div class= "countdown-border" >
+                  Headcount
+                  <div class="countdown-box">
+                    <table id= "countdown" >
+                      <tr id="countdown-timer">
+                        <td><span id= "days">x</span></td>
+                        <td><span id= "hours">x</span></td>
+                        <td><span id= "minutes">x</span></td>
+                        <td><span id= "seconds">x</span></td>
+                      </tr>
+                      <tr id="countdown-labels">
+                        <td><span>Days</span></td>
+                        <td><span>Hours</span></td>
+                        <td><span>Minutes</span></td>
+                        <td><span>Seconds</span></td>
+                      </tr>
+                    </table>
+                  </div>
 
                <script>
                   const raisingDeadline = new Date('jan 01, 2024 00:00:00');
@@ -81,23 +85,21 @@
                     secondsEl.textContent = secondsToDisplay;
                   }
                 </script>
-                  <p>Headcount</p>
+
               </div>
 
               <% percent = (@startup.raised_amount/@startup.funding_amount)*100 %>
+
               <div class= "raising-funding-box" >
-               <div class="row gap-4">
-                 <div class="col-12" id="myProgress">
-                    <div id="myBar" style="width: <%= percent %>%;"></div>
+                  Raising status
+
+                <div class="col-12 progress-bar" id="myProgress">
+                  <div id="myBar" style="width: <%= percent %>%;"></div>
                 </div>
-                <div class="col-12 text-center">
-                 <p id=raising_per> <%= percent.floor %> %</p>
-                </div>
+
+                <span id=raising_per><%= percent.floor %> %</span>
+
               </div>
-                <p>Raising status</p>
-            </div>
-
-
             </div>
 
           <div class="container-dx">

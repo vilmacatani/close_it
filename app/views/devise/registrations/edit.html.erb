@@ -3,10 +3,10 @@
     <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
   </div>
   <div class="signup-container">
-    <div class="joining-as-text">
-      <p id="joining-text">EDIT YOUR INFO</p>
-    </div>
     <div class="home-signup-page">
+      <div class="joining-as-text">
+        <p id="joining-text">EDIT YOUR INFO</p>
+      </div>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
         <p class="investor-title">INVESTOR</p>
@@ -20,21 +20,25 @@
           <%= f.input :first_name,
                       hint: "",
                       required: false,
+                      class: "form-control string optional signup",
                       input_html: { autocomplete: "first name" } %>
 
           <%= f.input :last_name,
                       hint: "",
                       required: false,
+                      class: "form-control string optional signup",
                       input_html: { autocomplete: "last name" } %>
 
           <%= f.input :address,
                       hint: "",
                       required: false,
+                      class: "form-control string optional signup",
                       input_html: { autocomplete: "address" } %>
 
           <%= f.input :city,
                       hint: "",
                       required: false,
+                      class: "form-control string optional signup",
                       input_html: { autocomplete: "city" } %>
 
             <label class="country-label" for="">Country</label>
@@ -47,6 +51,7 @@
           <%= f.input :company_name,
                       hint: "",
                       required: false,
+                      class: "form-control string optional",
                       input_html: { autocomplete: "company-name" } %>
 
           <%#= f.input :password,
@@ -64,7 +69,7 @@
 
         <div class="form-actions">
           <%= f.button :button, "Next", class: "signup-button" do %>
-            <i class="fa-solid fa-arrow-right"></i>
+            <i class="fa-solid fa-arrow-right signup"></i>
           <% end %>
         </div>
       <% end %>

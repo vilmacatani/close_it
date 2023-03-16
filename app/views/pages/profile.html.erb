@@ -1,9 +1,9 @@
 <div class= "home-container">
   <div class="signup-container">
-    <div class="investor-as-text">
-      <p id="investor-text">EDIT YOUR INFO AS A</p>
-    </div>
     <div class="investor-edit-page">
+      <div class="investor-as-text">
+        <p id="investor-text">EDIT YOUR INFO AS A</p>
+      </div>
       <%= simple_form_for @investor do |f| %>
         <p class="investor-title">INVESTOR</p>
         <%= f.collection_select :investor_type, Investor::INVESTORS, :to_s, :titleize, { include_blank: 'Select investor type' } %>

@@ -21,7 +21,7 @@ class InvestorsController < ApplicationController
   def update
     @investor = Investor.find(params[:id])
     @investor.update(investor_params)
-    redirect_to update_profile_path
+    redirect_to update_profile_path, notice: "Profile updated."
   end
 
   private

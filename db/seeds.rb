@@ -1,7 +1,8 @@
 require 'faker'
-Member.destroy_all
+
 Meeting.destroy_all
 Connection.destroy_all
+Member.destroy_all
 Startup.destroy_all
 Investor.destroy_all
 User.destroy_all
@@ -11,26 +12,159 @@ vilma = User.create!(
   password: "111111",
   user_type: 'investor',
   first_name: "Vilma",
-  last_name: "Aurela",
+  last_name: "Catani",
   address: "Amsterdam",
   city: "Amsterdam",
-  country: Country::COUNTRIES.sample,
-  company_name: "Angel Vilma OY"
+  country: "Netherlands",
+  company_name: "VMC Ventures Oy"
 )
 
 Investor.create!(
   user_id: vilma.id,
   private: false,
-  funding_type: Investor::FUNDINGS.sample,
+  funding_type: "Seed",
   investor_type: "Angel Investor"
 )
 # Get id of our main investor vilma
 investor_vilma = vilma.id
+pending = [true, false]
+accepted = [true, false]
+technologies = ["Education Technology", "Healthcare Technology"]
+# Demo data
+h = 1
+technologies.each do |tech|
+  limit = 5
+  data = CrunchbaseApi.organization_summary(tech, limit)
+  data["entities"].each do |company|
+    user = User.create!(
+      email: "maria.massano#{h}@gmail.com",
+      password: "111111",
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      user_type: "startup",
+      country: "Portugal",
+      company_name: company["identifier"]["value"]
+    )
+    t = tech
+    puts "Users created"
+    Startup.create!(
+      user_id: user.id,
+
+      funding_amount: Faker::Number.between(from: 60, to: 100),
+      funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
+      funding: "Seed",
+      team: Faker::Number.between(from: 1, to: 4),
+      bio: "#{company["short_description"]}. #{user.company_name} is a #{tech} startup has created revolutionizing
+      innovation. Our mission is to become leading #{tech.downcase } company, and we believe that we can make a
+      significant difference in market by our unique selling proposition.
+      Our team is comprised of experienced professionals and passionate individuals. We're excited to be on this journey,
+      and we invite you to join us as we build a better #{tech.downcase} for all.",
+      headcount: Faker::Number.between(from: 1, to: 15),
+      turnover: Faker::Number.between(from: 1, to: 10),
+      industry: t,
+      raised_amount: Faker::Number.between(from: 1, to: 75)
+    )
+    h += 1
+  end
+  puts "Startups created"
+  Startup.all.each do |sup|
+    4.times do
+      Member.create!(
+        startup_id: sup.id,
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        bio: Faker::Company.catch_phrase,
+        position: ["CEO", "CTO", "Founder", "Co-Founder"].sample
+      )
+    end
+  end
+  puts "members created"
+end
+
+startups = Startup.all
+array = (0..startups.length - 1).to_a
+
+2.times do
+  i = array.sample
+  startup = startups[i]
+  messages = ["Hi #{startup.user.first_name}, very interesting company let's connect",
+    "Hello #{startup.user.first_name}, let's connect!",
+    "Hi, we are looking for #{startup.industry} driven startups and your idea seems great. Let's have a chat! Greetings, #{vilma.first_name}"]
+
+  connection_sent = Connection.create!(
+    message: messages.sample,
+    pending: pending.sample,
+    accepted: accepted.sample,
+    receiver_id: startup.user.id,
+    sender_id: investor_vilma
+  )
+  date = Faker::Date.forward(days: 35)
+  time = rand(8...16)
+  min = [30, 45, 60].sample
+  starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
+  ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
+  company = User.where(id: connection_sent.receiver_id)
+
+  if connection_sent.pending == false && connection_sent.accepted == true
+    Meeting.create!(
+      connection_id: connection_sent.id,
+      start_time: starting_time,
+      end_time: ending_time,
+      duration: min,
+      title: "Intro with #{company.first.company_name}",
+      meeting_pending: pending.sample,
+      meeting_accepted: accepted.sample
+    )
+  end
+  # startup.members.destroy_all
+  array.delete(i)
+  puts "we are done with sent"
+end
+
+3.times do
+  j = array.sample
+  startup = startups[j]
+  messages = ["Hi #{vilma.first_name}, we are looking for seed funding let's connect",
+    "Hello #{vilma.first_name}, let's connect!",
+    "Hi, we are looking for #{vilma.first_name} I see you are looking for #{technologies.sample} driven startups. Let's have a chat so we can present our company!"]
+
+  connection_sent = Connection.create!(
+    message: messages.sample,
+    pending: pending.sample,
+    accepted: accepted.sample,
+    receiver_id: investor_vilma,
+    sender_id: startup.user.id
+  )
+  date = Faker::Date.forward(days: 35)
+  time = rand(8...16)
+  min = [30, 45, 60].sample
+  starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
+  ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
+  company = User.where(id: connection_sent.receiver_id)
+
+  if connection_sent.pending == false && connection_sent.accepted == true
+    Meeting.create!(
+      connection_id: connection_sent.id,
+      start_time: starting_time,
+      end_time: ending_time,
+      duration: min,
+      title: "Intro with #{company.first.company_name}",
+      meeting_pending: pending.sample,
+      meeting_accepted: accepted.sample
+    )
+  end
+  # startup.members.destroy_all
+  array.delete(j)
+  puts "we are done with received"
+end
+
+#-------------------------------------------------------------------------------------------------------------------------
 
 # Create Startups
 j = 1
 Startup::INDUSTRIES.each do |s|
-  data = CrunchbaseApi.organization_summary(s)
+  limit = 4
+  data = CrunchbaseApi.organization_summary(s, limit)
   data["entities"].each do |company|
     user = User.create!(
       email: "marta#{j}@gmail.com",
@@ -38,13 +172,15 @@ Startup::INDUSTRIES.each do |s|
       first_name: "Marta",
       last_name: "Maria",
       user_type: "startup",
-      country: Country::COUNTRIES.sample,
+      address: "London",
+      city: "London",
+      country: "UK",
       company_name: company["identifier"]["value"]
     )
-
+    indu = s
     Startup.create!(
       user_id: user.id,
-      industry: s,
+
       funding_amount: Faker::Number.between(from: 60, to: 100),
       funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
       funding: Investor::FUNDINGS.sample,
@@ -52,6 +188,7 @@ Startup::INDUSTRIES.each do |s|
       bio: company["short_description"],
       headcount: Faker::Number.between(from: 1, to: 500),
       turnover: Faker::Number.between(from: 1, to: 200),
+      industry: indu,
       raised_amount: Faker::Number.between(from: 1, to: 55)
     )
 
@@ -61,7 +198,8 @@ end
 
 k = 1
 Investor::INVESTORS.each do |i|
-  data = CrunchbaseApi.organization_summary(i)
+  limit = 4
+  data = CrunchbaseApi.organization_summary(i, limit)
   data["entities"].each do |company|
     user = User.create!(
       email: "vilma#{k}@gmail.com",
@@ -69,24 +207,24 @@ Investor::INVESTORS.each do |i|
       first_name: "Vilma",
       last_name: "Aurela",
       user_type: "investor",
-      address: "Amsterdam",
-      city: "Amsterdam",
-      country: Country::COUNTRIES.sample,
+      address: "Paris",
+      city: "Paris",
+      country: "France",
       company_name: company["identifier"]["value"]
     )
 
     Investor.create!(
       user_id: user.id,
-      private: false,
+      private: [false, true].sample,
       funding_type: Investor::FUNDINGS.sample,
       investor_type: i
     )
     k += 1
   end
 end
-
+puts "Create more members"
 Startup.all.each do |startup|
-  6.times do
+  4.times do
     Member.create!(
       startup: startup,
       first_name: Faker::Name.first_name,
@@ -97,9 +235,29 @@ Startup.all.each do |startup|
   end
 end
 
-10.times do
+2.times do
   Connection.create!(
-    message: "What's up sexy",
+    message: "Hello, interesting company",
+    pending: true,
+    accepted: false,
+    receiver_id: Investor.all.sample.user_id,
+    sender_id: Startup.all.sample.user.id
+  )
+end
+puts "Create more connections"
+# 3.times do
+#   Connection.create!(
+#     message: "Hi let's connect!",
+#     pending: true,
+#     accepted: false,
+#     receiver_id: Startup.all.sample.user.id,
+#     sender_id: investor_vilma
+#   )
+# end
+
+6.times do
+  Connection.create!(
+    message: "Hi let's connect!",
     pending: true,
     accepted: false,
     receiver_id: investor_vilma,
@@ -107,25 +265,15 @@ end
   )
 end
 
-5.times do
-  Connection.create!(
-    message: "I'm great hottie",
-    pending: true,
-    accepted: false,
-    receiver_id: Startup.all.sample.user.id,
-    sender_id: investor_vilma
-  )
-end
-
-10.times do
+3.times do
   connection = Connection.create!(
-    message: "I'm great hottie",
+    message: "Hello let's connect",
     pending: false,
     accepted: true,
-    receiver_id: Startup.all.sample.user.id,
-    sender_id: investor_vilma
+    receiver_id: investor_vilma,
+    sender_id: Startup.all.sample.user.id
   )
-  date = Faker::Date.forward(days: 35)
+  date = Faker::Date.forward(days: 10)
   time = rand(8...16)
   min = [30, 45, 60].sample
   starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
@@ -142,6 +290,11 @@ end
     meeting_accepted: true
   )
 end
+
+
+#----------------------------------------------------------------------------------
+
+# DONT COMMENT THIS IN ANYMORE
 # j = 1
 # 5.times do
 #   user = User.create!(

@@ -6,9 +6,9 @@ require "cgi"
 
 class CrunchbaseApi
 
-  def self.organization_summary(search)
+  def self.organization_summary(search, number)
     user_key = "38db4d15fdad030d92cdd22e20b64a56"
-    limit = 5
+    limit = number
     industry = CGI.escape(search)
     url = "https://api.crunchbase.com/api/v4/autocompletes?query=#{industry}&collection_ids=categories&limit=#{limit}&user_key=#{user_key}"
     response = HTTParty.get(url,
@@ -17,6 +17,8 @@ class CrunchbaseApi
               })
   end
 end
+
+
 
 # airbnb uuid: bcb617c3-9e43-d5b0-1d14-82b795f2642f
 

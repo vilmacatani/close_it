@@ -10,7 +10,7 @@
       <% counter = 0 %>
       <% @my_connection_requests_received.each do |request| %>
         <% counter += 1 %>
-
+        <%# <% raise %> 
         <% if request.pending == true %>
         <div class="forms-container">
           <img class="requester-img" src="https://source.unsplash.com/random/400x400/?industrye&<%= rand(1...100) %>">
@@ -40,7 +40,7 @@
             <%= render 'meetings/popup', counter: counter, request: request %>
             <%# Bootstrap %>
             <%# Check if there is a meeting already set%>
-            <% meetings = Meeting.where(connection_id: request) %>
+            <% meetings = @meetings.where(connection_id: request) %>
             <% connection_meetings = meetings.where(meeting_pending: false) %>
             <%= render 'show_meetings', connection_meetings: connection_meetings, request: request, counter: counter %>
           <%# elsif request.pending == false && request.accepted == false %>
@@ -81,7 +81,7 @@
                 </div>
               </div>
               <%= render 'meetings/popup', counter: counter, request: request %>
-              <% meetings = Meeting.where(connection_id: request) %>
+              <% meetings = @meetings.where(connection_id: request) %>
               <% connection_meetings = meetings.where(meeting_pending: false) %>
               <%= render 'show_meetings', connection_meetings: connection_meetings, request: request, counter:counter %>
             <% elsif request.pending == false && request.accepted == false %>

@@ -13,7 +13,7 @@ class MeetingsController < ApplicationController
     @meeting.end_time = params[:meeting][:start_time].to_datetime + params[:meeting][:duration].to_i.minutes
 
     if @meeting.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path, notice: "Meeting created."
     else
       render :new, status: :unprocessable_entity
     end
