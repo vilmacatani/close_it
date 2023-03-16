@@ -9,7 +9,7 @@ class ConnectionsController < ApplicationController
     @connection.accepted = false
 
     if @connection.save
-      redirect_to startup_path(@startup)
+      redirect_to startup_path(@startup), notice: "Connection made!"
     else
       redirect_to root_path, status: :unprocessable_entity
     end

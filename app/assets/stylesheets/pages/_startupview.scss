@@ -25,6 +25,7 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 2px;
+  gap: 3em;
   margin-top: 1.5em;
 }
 
@@ -85,7 +86,7 @@ span#raising_per{
   // position: absolute;
   width: 652px;
   height: 290px;
-  margin-top: 15px;
+  margin-top: -14px;
   border: 1px solid $blue;
   h3{
     font-size: 12px;
@@ -327,4 +328,36 @@ span#raising_per{
   align-content: center;
   top: 3px;
   left: 4px;
+}
+
+.home-line-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.7em;
+  border-bottom-color: white;
+  border-bottom-style: dashed;
+  padding-bottom: 5px;
+  border-top-color: white;
+  border-top-style: dashed;
+  padding-top: 5px;
+  width: 300px;
+
+  a{
+    margin-left: 10px;
+    font-family: $headers-font;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+
+.links-plus-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.all-startup-link {
+  margin-right: 5%;
 }

@@ -1,6 +1,13 @@
 <%= render "shared/navbar" %>
 
+ <div class="startup-link">
+      <h2 class="startup-line-link">
+      <i class="fa-sharp fa-solid fa-arrow-left"></i>
+      <%= link_to "STARTUP", :back, class: "white-link"%>
+  </div>
+
 <div class="members-cointainer row members-gap">
+
   <div class="col-6" data-controller="team-show">
     <% @members.each do |member| %>
       <div class= "description-team-members d-none info-card-<%= member.id %>"%>

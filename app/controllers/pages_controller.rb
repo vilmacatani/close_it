@@ -27,15 +27,16 @@ class PagesController < ApplicationController
 
   def dashboard
 
+    @my_connection_requests_sent = Connection.where(sender_id: current_user)
+    @my_connection_requests_received = Connection.where(receiver_id: current_user)
     connections_sent = Connection.where(sender_id: current_user)
     connections_received = Connection.where(receiver_id: current_user)
     sent_connection_ids = connections_sent.pluck(:id)
     received_connection_ids = connections_received.pluck(:id)
-    connection_ids = sent_connection_ids << received_connection_ids
-    my_meetings = Meeting.where(connection_id: connection_ids)
-
-    @my_connection_requests_sent = Connection.where(sender_id: current_user)
-    @my_connection_requests_received = Connection.where(receiver_id: current_user)
+    received_connection_ids.each do |connection|
+      sent_connection_ids << connection
+    end
+    my_meetings = Meeting.where(connection_id: sent_connection_ids)
 
     start_date = params.fetch(:start_date, Date.today).to_date
     @meetings = my_meetings.where(start_time: start_date.beginning_of_month.beginning_of_week..start_date.end_of_month.end_of_week)
