@@ -1,4 +1,6 @@
 <%= render "shared/navbar" %>
+<%# <div></div>
+ <%= link_to root_path, class: "navbar-brand" do %>
 
  <div class="startup-link">
       <h2 class="startup-line-link">
@@ -32,9 +34,6 @@
                 <div class="name-boxed">
                   <h3 class= "member-name"><%=member.first_name%> <%=member.last_name%></h3>
               </div>
-              <%# <div class="class-boxed">
-                <p class= "startup-class"><%=@startup.funding %></p>
-              <%# </div> %>
             </figure>
           </div>
         <% end %>

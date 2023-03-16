@@ -4,6 +4,12 @@
 
 import { application } from "./application"
 
+import AnimationLogoutController from "./animation_logout_controller"
+application.register("animation-logout", AnimationLogoutController)
+
+import AnimationsController from "./animations_controller"
+application.register("animations", AnimationsController)
+
 import CardsShowController from "./cards_show_controller"
 application.register("cards-show", CardsShowController)
 
