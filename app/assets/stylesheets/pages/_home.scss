@@ -281,6 +281,8 @@ select#investor_funding_type{
   width: 100%;
   object-fit: cover;
   position: relative;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .gallery__item {

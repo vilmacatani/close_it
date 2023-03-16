@@ -13,5 +13,8 @@ application.register("filter-list", FilterListController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import TeamShowController from "./team_show_controller"
+application.register("team-show", TeamShowController)
+
 import UpdatePendingRequestsController from "./update_pending_requests_controller"
 application.register("update-pending-requests", UpdatePendingRequestsController)
