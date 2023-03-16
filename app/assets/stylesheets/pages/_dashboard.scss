@@ -166,3 +166,31 @@ button.btn {
   color: $blue;
   transition: ease 3ms;
 }
+
+input#meeting_title.form-control.string.optional {
+  border: 1px solid lightgray;
+}
+
+select#meeting_duration.form-select.select.optional {
+  border-radius: 0 ;
+}
+
+input#meeting_start_time.form-select.mx-1.datetime.optional {
+  border-radius: 0;
+}
+
+div.modal-body h1{
+ color:$blue;
+}
+
+label.form-label.string.optional {
+  color: $blue;
+}
+
+label.form-label.select.optional {
+  color: $blue;
+}
+
+label.form-label.datetime.optional {
+  color: $blue;
+}
