@@ -7,6 +7,6 @@ export default class extends Controller {
 
     setTimeout(() => {
     this.animationTarget.classList.add("d-none")
-    }, 5000);
+    }, 4180);
   }
 }
