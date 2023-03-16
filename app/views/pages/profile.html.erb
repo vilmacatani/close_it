@@ -19,10 +19,10 @@
     </div>
   </div>
   <div class="signup-container">
-    <div class="user-as-text">
-      <p id="user-text">EDIT YOUR INFO AS A</p>
-    </div>
     <div class="home-signup-page">
+      <div class="user-as-text">
+        <p id="user-text">EDIT YOUR INFO AS A</p>
+      </div>
       <%= simple_form_for @user, method: :patch, url: update_profile_path(@user) do |f| %>
         <%= f.error_notification %>
         <p class="user-edit-title">USER</p>
