@@ -23,6 +23,8 @@ Rails.application.routes.draw do
   post 'investors', to: "investors#create"
   # get 'start_up/:id', to: "startups#start_up"
   post 'startups', to: "connections#create"
+  get 'startups/form', to: "startups#form", as: :new_startup_registration
+
   resources :startups do
     resources :connections, only: %i[new create]
   end
