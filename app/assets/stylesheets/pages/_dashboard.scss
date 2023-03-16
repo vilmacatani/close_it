@@ -6,15 +6,192 @@
   align-items: flex-start;
   margin-bottom: 1em;
   gap: 4em;
-  margin: 4em;
+  margin-top: 4em;
+  margin-right: 4em;
+  margin-left: 4em;
+  margin-bottom: 0;
 }
 
-.requests {
+.requests-left {
   width: 60%;
-  border-style: 1px solid white;
+  border: 2px solid white;
   padding: 2em;
-  max-height: 50em;
-  overflow: scroll;
+  height: 40em;
+  background-color: #17185E;
+  color: white;
+  margin-bottom: 4em;
+}
+
+.requests-right {
+  width: 60%;
+  border: 2px solid #17185E;
+  padding: 2em;
+  height: 40em;
   background-color: white;
   color: #17185E;
+  margin-bottom: 4em;
+}
+
+input.btn {
+  border-radius: 0;
+}
+
+div.btn {
+  border-radius: 0;
+}
+
+button.btn {
+  border-radius: 0;
+}
+
+#requests-left-title {
+  border-bottom: 1px solid white;
+  padding-bottom: 15px;
+}
+
+#requests-right-title {
+  border-bottom: 1px solid $blue;
+  padding-bottom: 15px;
+}
+
+.requests-content-container {
+  max-height: 32em;
+  padding-top: 10px;
+  overflow: scroll;
+}
+
+.requester-img {
+  object-fit: cover;
+  height: 110px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+  width: 110px;
+  background-position: center;
+  border-radius: 50% !important;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #292ba2;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.forms-container2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 20px;
+  padding-top: 15px;
+}
+
+.requester-info {
+  padding-left: 1em;
+}
+
+.requester-status {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+.btn.btn-primary.meeting-set {
+  background-color: white;
+  color: $blue;
+  font-family: $headers-font;
+}
+
+.btn.btn-primary.meeting-set:hover {
+  border: 1px solid white;
+  background-color: $blue;
+  color: white;
+  transition: ease 3ms;
+}
+
+.btn.btn-outline-success.accepted {
+  color:#7affc1;
+  border: 1px solid #7affc1;
+  font-family: $headers-font;
+}
+
+.btn.btn-outline-success.accepted:hover {
+  color:#7affc1;
+  border: 1px solid #7affc1;
+  background-color: $blue;
+  font-family: $headers-font;
+  cursor:not-allowed;
+}
+
+.btn.btn-outline-warning.pending {
+  cursor: wait;
+  color: #cd9b03;
+  border: 1px solid #cd9b03;
+  font-family: $headers-font;
+  background-color: white;
+}
+
+.btn.btn-outline-warning.pending:hover{
+  cursor: wait;
+  font-family: $headers-font;
+  background-color: white;
+  color: #cd9b03;
+  border: 1px solid #cd9b03;
+}
+
+.btn.btn-outline-success.accepted-right {
+  color:#0a9d4c;
+  border: 1px solid #0a9d4c;
+  font-family: $headers-font;
+}
+
+.btn.btn-outline-success.accepted-right:hover {
+  color:#0a9d4c;
+  border: 1px solid #0a9d4c;
+  background-color: white;
+  font-family: $headers-font;
+  cursor:not-allowed;
+}
+
+.btn.btn-primary.metting-right{
+  background-color: $blue;
+  color: $white;
+  font-family: $headers-font;
+}
+
+.btn.btn-primary.metting-right:hover {
+  border: 1px solid $blue;
+  background-color: white;
+  color: $blue;
+  transition: ease 3ms;
+}
+
+input#meeting_title.form-control.string.optional {
+  border: 1px solid lightgray;
+}
+
+select#meeting_duration.form-select.select.optional {
+  border-radius: 0 ;
+}
+
+input#meeting_start_time.form-select.mx-1.datetime.optional {
+  border-radius: 0;
+}
+
+div.modal-body h1{
+ color:$blue;
+}
+
+.mb-3.string.optional.meeting_title{
+  color: $blue;
+}
+
+
+label.form-label.select.optional {
+  color: $blue;
+}
+
+label.form-label.datetime.optional {
+  color: $blue;
 }

@@ -70,14 +70,13 @@
   }
 }
 
-
-p#raising_per{
+span#raising_per{
   font-size: 12px;
-  text-align: center;
   color:#7e7e7e !important;
   font-family: $body-font;
-  top: 641px;
-  left: 671px;
+  position: absolute;
+  bottom: 4%;
+  left: 44%;
 }
 
 .card-startup-descripion{
@@ -131,14 +130,17 @@ p#raising_per{
   }
 }
 
-.countdown-box{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.countdown-border {
   box-sizing: border-box;
   width: 290px;
   height: 106px;
   border: 1px solid $blue;
+}
+
+.countdown-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
   p{
     font-size: 12px;
@@ -188,6 +190,7 @@ p#raising_per{
 
 
 .raising-funding-box{
+  position: relative;
   box-sizing: border-box;
   width: 337px;
   height: 106px;
@@ -309,12 +312,12 @@ p#raising_per{
 }
 
 #myProgress {
+  position: absolute;
   width: 73%;
   height: 50px;
-  position: relative;
   background-color: #fff;
-  left: 38px;
-  top: 25px;
+  left: 11%;
+  top: 27%;
 }
 
 #myBar {

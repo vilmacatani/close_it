@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .all-container{
-  margin: 0em 7em 2em
+  margin: 0em 7em 0em
 }
 .blue-back {
   background-color: #17185E !important ;
@@ -46,9 +46,11 @@
   p#joining-text  {
     color: #17185E !important;
     position: absolute;
-    left: 23.9em;
+    left: 0;
     font-size: 2.5em;
-    top: 4.3em;
+    top: -8%;
+    height: 10%;
+    width: 100%;
   }
 
   .home-description {
@@ -164,7 +166,7 @@ letter-spacing: 2px;
 
 .startup-search-bar {
   position: absolute;
-  left: 58em;
+  left: 60.5em;
 }
 
 input.search-bar {
@@ -175,7 +177,6 @@ input.search-bar {
 
 .list-itself {
   width: 33em;
-  margin-right: 124px;
   padding: 0;
   border-top: 1px solid white;
 }
@@ -279,6 +280,8 @@ select#investor_funding_type{
   width: 100%;
   object-fit: cover;
   position: relative;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 .gallery__item {
