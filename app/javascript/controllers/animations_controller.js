@@ -6,6 +6,6 @@ export default class extends Controller {
   connect() {
     setTimeout(() => {
     this.animationTarget.classList.add("d-none")
-    }, 4000);
+    }, 4060);
   }
 }

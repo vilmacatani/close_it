@@ -266,7 +266,7 @@ puts "Create more connections"
 #   )
 # end
 
-6.times do
+3.times do
   Connection.create!(
     message: "Hi let's connect!",
     pending: true,
@@ -276,31 +276,31 @@ puts "Create more connections"
   )
 end
 
-3.times do
-  connection = Connection.create!(
-    message: "Hello let's connect",
-    pending: false,
-    accepted: true,
-    receiver_id: investor_vilma,
-    sender_id: Startup.all.sample.user.id
-  )
-  date = Faker::Date.forward(days: 10)
-  time = rand(8...16)
-  min = [30, 45, 60].sample
-  starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
-  ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
-  company = User.where(id: connection.receiver_id)
+# 3.times do
+#   connection = Connection.create!(
+#     message: "Hello let's connect",
+#     pending: false,
+#     accepted: true,
+#     receiver_id: investor_vilma,
+#     sender_id: Startup.all.sample.user.id
+#   )
+#   date = Faker::Date.forward(days: 10)
+#   time = rand(8...16)
+#   min = [30, 45, 60].sample
+#   starting_time = DateTime.new(date.year, date.month, date.day, time, 0, 0)
+#   ending_time = DateTime.new(date.year, date.month, date.day, time, 0, 0) + min.minute
+#   company = User.where(id: connection.receiver_id)
 
-  Meeting.create!(
-    connection_id: connection.id,
-    start_time: starting_time,
-    end_time: ending_time,
-    duration: min,
-    title: "Intro with #{company.first.company_name}",
-    meeting_pending: false,
-    meeting_accepted: true
-  )
-end
+#   Meeting.create!(
+#     connection_id: connection.id,
+#     start_time: starting_time,
+#     end_time: ending_time,
+#     duration: min,
+#     title: "Intro with #{company.first.company_name}",
+#     meeting_pending: false,
+#     meeting_accepted: true
+#   )
+# end
 
 
 #----------------------------------------------------------------------------------

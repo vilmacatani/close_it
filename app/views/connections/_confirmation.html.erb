@@ -1,7 +1,6 @@
 <% if request.pending == false && request.accepted == true %>
-    <p>Company name: <%= User.where(id:request.sender_id).select(:company_name).first.company_name %></p>
-    <div class="btn btn-outline-success">Accepted!</div>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<%=counter%>">
+    <div class="btn btn-outline-success accepted">Accepted!</div>
+    <button type="button" class="btn btn-primary meeting-set" data-toggle="modal" data-target="#exampleModal<%=counter%>">
         Set up a meeting
     </button>
     <%= render 'meetings/popup', counter: counter, request: request %>
