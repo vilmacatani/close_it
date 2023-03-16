@@ -9,7 +9,7 @@ class ConnectionsController < ApplicationController
     @connection.accepted = false
 
     if @connection.save
-      redirect_to startup_path(@startup)
+      redirect_to startup_path(@startup), notice: "Connection made!"
     else
       redirect_to root_path, status: :unprocessable_entity
     end
@@ -18,10 +18,11 @@ class ConnectionsController < ApplicationController
   def update
     @connection = Connection.find(params[:id])
     @connection.update(pending_params)
+    @counter = params[:counter]
 
     respond_to do |format|
       format.html { redirect_to dashboard_path }
-      format.text { render partial: "connections/confirmation", locals: { request: @connection }, formats: [:html] }
+      format.text { render partial: "connections/confirmation", locals: { request: @connection, counter: @counter }, formats: [:html] }
     end
   end
 
@@ -36,6 +37,6 @@ class ConnectionsController < ApplicationController
   end
 
   def pending_params
-    params.require(:connection).permit(:pending, :accepted)
+    params.require(:connection).permit(:pending, :accepted, :counter)
   end
 end

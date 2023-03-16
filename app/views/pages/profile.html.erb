@@ -1,9 +1,9 @@
 <div class= "home-container">
   <div class="signup-container">
-    <div class="investor-as-text">
-      <p id="investor-text">EDIT YOUR INFO AS A</p>
-    </div>
     <div class="investor-edit-page">
+      <div class="investor-as-text">
+        <p id="investor-text">EDIT YOUR INFO AS A</p>
+      </div>
       <%= simple_form_for @investor do |f| %>
         <p class="investor-title">INVESTOR</p>
         <%= f.collection_select :investor_type, Investor::INVESTORS, :to_s, :titleize, { include_blank: 'Select investor type' } %>
@@ -19,10 +19,10 @@
     </div>
   </div>
   <div class="signup-container">
-    <div class="user-as-text">
-      <p id="user-text">EDIT YOUR INFO AS A</p>
-    </div>
     <div class="home-signup-page">
+      <div class="user-as-text">
+        <p id="user-text">EDIT YOUR INFO AS A</p>
+      </div>
       <%= simple_form_for @user, method: :patch, url: update_profile_path(@user) do |f| %>
         <%= f.error_notification %>
         <p class="user-edit-title">USER</p>
@@ -89,4 +89,15 @@
 
     <%# </div>  %>
   </div>
+</div>
+<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path)|| current_page?(user_session_path) %>
+<div class="footer grey-back d-none <%= 'blue-back' if blue_pages %>">
+<div class="footer-links">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
 </div>

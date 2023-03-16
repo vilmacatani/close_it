@@ -1,0 +1,63 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon grey-back">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img src="/assets/CLOSE-IT WHITE-effe47c314f6869886fb696cdca998e66703898871234bcc6f82d66fb0168762.svg">
+</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/users/sign_in">
+              <i class="fa-solid fa-arrow-right text-white"></i>
+</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class= "home-container" >
+<div class="start-arrow">
+
+</div>
+  <div class="home-description">
+    <p>We are a team of motivated professionals working tirelessly to increase startup funding by connecting investors.</p>
+  </div>
+  <div class="signup-container">
+    <div class="joining-as-text">
+      <p id="joining-text">JOINING US</p>
+      <div class="startup-links">
+    
+
+     </div>
+    <div class="investor-signup-page ">
+     <%= simple_form_for(@startup, method: :post, url: new_startup_registration_path) do |f| %>
+        <p class="investor-title">STARTUP</p>
+
+        <div class="form-inputs">
+         <%= f.input :industry %>
+          <%= f.input :headcount %>
+          <%= f.input :turnover %>
+          <%= f.input :funding_amount %>
+          <%= f.input :funding_round_end_date %>
+          <%= f.input :team %>
+        </div>
+
+          <div class="form-actions">
+            <%= f.button :button, "Next", class: "signup-button" do %>
+              <i class="fa-solid fa-arrow-right text-white"></i>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

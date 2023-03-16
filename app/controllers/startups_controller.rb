@@ -5,9 +5,18 @@ class StartupsController < ApplicationController
     @connection = Connection.new
   end
 
+  def index
+    @startups = @Startup.all
+  end
+
   def team
     @start_up = Startup.find(params[:id])
     @members = @start_up.members
+  end
+
+  def form
+    @startup = Startup.new
+    
   end
 
   def new
@@ -40,6 +49,7 @@ class StartupsController < ApplicationController
 
   def starts_up_params
     params.require(:start_up).permit(:content)
+
   end
 
 end

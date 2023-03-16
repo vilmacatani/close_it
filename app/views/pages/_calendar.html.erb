@@ -1,7 +1,10 @@
 <div class="simple-calendar">
   <%= month_calendar(events: @meetings) do |date, meetings| %>
-    <div class="date"><%= date.strftime("%d").to_i %></div>
-
+    <% if date.today? %>
+      <div id="today"><%= date.strftime("%d").to_i %></div>
+    <% else %>
+      <div class="other-days"><%= date.strftime("%d").to_i %></div>
+    <% end %>
     <div class="date-info">
       <% meetings.each do |meeting| %>
         <% if meeting.title.length > 25 %>

@@ -1,17 +1,42 @@
+// .calendar-container {
+
+// }
+
 .simple-calendar {
   table {
     -webkit-border-horizontal-spacing: 0px;
     -webkit-border-vertical-spacing: 0px;
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid rgb(221, 221, 221);
+    background-color: white;
+    border: 1px solid #dddddd;
     border-collapse: collapse;
     box-sizing: border-box;
-    width: 100%;
+    width: 88%;
+    margin-left: 4em;
+
+
+  }
+
+  .table{
+    --bs-table-color: var(--bs-body-color);
+    --bs-table-bg: transparent;
+    --bs-table-border-color: var(--bs-border-color);
+    --bs-table-accent-bg: transparent;
+    --bs-table-striped-color: #062d54;
+    --bs-table-striped-bg: rgb(10 20 131 / 9%);
+    --bs-table-active-color: #0a0c57;
+    --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+    --bs-table-hover-color: var(--bs-body-color);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    margin-bottom: 1rem;
+    color: #083461;
+    vertical-align: top;
+    border-color: #e4e4e4 !important;
   }
 
   tr {
     border-collapse: collapse;
     max-height: 50px;
+
   }
 
   th {
@@ -23,6 +48,7 @@
     border-top: 0px none rgb(51, 51, 51);
     box-sizing: border-box;
     text-align: left;
+
   }
 
   td {
@@ -45,22 +71,33 @@
     border-left-width: 1px;
     font-size: 12px;
 
+    .date {
+      font-size: 16px;
+      color: $blue;
+    }
 
-    // .date-info {
-    //   border-radius: 30px;
-    //   width: 80%;
-    //   font-size: 10px;
-    //   border-color: black;
-    //   border-style: solid;
-    //   border-width: 1px;
-    // }
+    #today {
+      color: $white;
+      background: $blue;
+    }
+
   }
 
+  // .date-info {
 
-  .date {
-    font-size: 16px;
+  //   font-size: 10px;
+  //   border-style: solid;
+  //   border-width: 1px;
+  //   color: $white;
+  // }
+  .current-month {
+    background: $light-gray;
   }
 
+  // .date {
+  //   font-size: 16px;
+  //   color: $blue;
+  // }
 
   .day {
     height: 80px;
@@ -75,21 +112,25 @@
   .wday-6 {}
 
   .today {
-    background: rgb(207, 143, 143);
+    background: $blue;
   }
 
   .past {}
   .future {}
 
-  .start-date {}
+  // .start-date .td .date {
+
+  //   color:white;
+
+  // }
 
   .prev-month {
-    background: #5b5757;
+    background: $darker-grey;
   }
   .next-month {
-    background: #5b5757;
+    background: $darker-grey;
   }
-  .current-month {}
+
 
   .has-events {}
 }

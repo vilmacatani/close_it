@@ -5,50 +5,52 @@
   </div>
 
   <% if current_user.user_type == "investor" %>
-
-      <div class= "description-startup-boxes">
-        <div class="row">
-            <div class="industry-boxed">
-              <p><%= @startup.industry %></p>
+      <div class= "links-plus-description">
+        <div class= "description-startup-boxes">
+          <div class="row">
+              <div class="industry-boxed">
+                <p><%= @startup.industry %></p>
+              </div>
+          </div>
+            <div class="funding-boxed">
+              <div class="column">
+                  <p><%= @startup.funding %></p>
+              </div>
             </div>
         </div>
-
-          <div class="funding-boxed">
-            <div class="column">
-                <p><%= @startup.funding %></p>
-            </div>
-          </div>
+        <div class="all-startup-link">
+            <h2 class="home-line-link">
+            <i class="fa-sharp fa-solid fa-arrow-left"></i>
+            <%= link_to "ALL STARTUPS", root_path, class: "white-link"%>
+        </div>
       </div>
-
-      <div class="all-startup-link">
-             <h2 class="home-line-link">
-             <i class="fa-sharp fa-solid fa-arrow-left"></i>
-              <%= link_to "ALL STARTUPS", root_path, class: "white-link"%>
-          </div>
-
       <div class="startup-info-container">
             <div class="row">
               <div class= "card-startup-descripion" >
                   <h2><%= @startup.user.company_name[0..30]%></h2>
                   <p> <%= @startup.bio %></p>
-                  <h3>About <%= @startup.user.company_name[0..30]%> </h3>
+                  <%# <h3>About <%= @startup.user.company_name[0..30]%> </h3>
               </div>
 
-             <div class= "countdown-box" >
-                  <table id= "countdown" >
-                    <tr id="countdown-timer">
-                      <td><span id= "days">x</span></td>
-                      <td><span id= "hours">x</span></td>
-                      <td><span id= "minutes">x</span></td>
-                      <td><span id= "seconds">x</span></td>
-                    </tr>
-                    <tr id="countdown-labels">
-                      <td><span>Days</span></td>
-                      <td><span>Hours</span></td>
-                      <td><span>Minutes</span></td>
-                      <td><span>Seconds</span></td>
-                    </tr>
-                  </table>
+
+             <div class= "countdown-border" >
+                  Headcount
+                  <div class="countdown-box">
+                    <table id= "countdown" >
+                      <tr id="countdown-timer">
+                        <td><span id= "days">x</span></td>
+                        <td><span id= "hours">x</span></td>
+                        <td><span id= "minutes">x</span></td>
+                        <td><span id= "seconds">x</span></td>
+                      </tr>
+                      <tr id="countdown-labels">
+                        <td><span>Days</span></td>
+                        <td><span>Hours</span></td>
+                        <td><span>Minutes</span></td>
+                        <td><span>Seconds</span></td>
+                      </tr>
+                    </table>
+                  </div>
 
                <script>
                   const raisingDeadline = new Date('jan 01, 2024 00:00:00');
@@ -87,23 +89,21 @@
                     secondsEl.textContent = secondsToDisplay;
                   }
                 </script>
-                  <p>Headcount</p>
+
               </div>
 
-              <% percent = (@startup.funding_amount / @startup.raised_amount)*100 %>
+              <% percent = (@startup.raised_amount/@startup.funding_amount)*100 %>
+
               <div class= "raising-funding-box" >
-               <div class="row gap-4">
-                 <div class="col-12" id="myProgress">
-                    <div id="myBar" style="width: <%= percent %>%;"></div>
+                  Raising status
+
+                <div class="col-12 progress-bar" id="myProgress">
+                  <div id="myBar" style="width: <%= percent %>%;"></div>
                 </div>
-                <div class="col-12 text-center">
-                 <p id=raising_per> <%= percent %> %</p>
-                </div>
+
+                <span id=raising_per><%= percent.floor %> %</span>
+
               </div>
-                <p>Raising status</p>
-            </div>
-
-
             </div>
 
           <div class="container-dx">
@@ -125,7 +125,7 @@
             <div class="team-link">
              <h2 class="team-line-link">
              <i class="fa-sharp fa-solid fa-arrow-right"></i>
-              <%= link_to "TEAM", startup_team_path(@startup), class: "white-link"%>
+             <%= link_to "TEAM", startup_team_path(@startup), class: "white-link"%>
             </div>
           </div>
       </div>
@@ -205,4 +205,16 @@
       </div>
    </div>
 <% end %>
+</div>
+
+<% blue_pages = current_page?(root_path) || current_page?(new_user_session_path)|| current_page?(user_session_path) %>
+<div class="footer grey-back d-none <%= 'blue-back' if blue_pages %>">
+<div class="footer-links">
+  <a href="#"><i class="fab fa-github"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-facebook"></i></a>
+  <a href="#"><i class="fab fa-twitter"></i></a>
+  <a href="#"><i class="fab fa-linkedin"></i></a>
+</div>
+<div class="footer-copyright">
 </div>

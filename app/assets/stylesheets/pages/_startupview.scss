@@ -25,13 +25,14 @@
   flex-direction: row;
   align-items: flex-start;
   padding: 2px;
+  gap: 3em;
   margin-top: 1.5em;
 }
 
 
 .industry-boxed{
-  background-color: $blue !important;
-  width: 136px;
+  background-color: #17185E !important;
+  width: 100%;
   height: 43px;
   opacity: 90%;
   padding: 10px;
@@ -51,12 +52,12 @@
 }
 
 .funding-boxed{
-  background-color: $blue !important;
+  background-color: #17185E !important;
   opacity: 90%;
   padding: 10px;
   bottom: 20px;
   margin-bottom: 0;
-  margin-left: 20px;
+  margin-left: 4%;
   height: 43px;
 
   p{
@@ -70,14 +71,13 @@
   }
 }
 
-
-p#raising_per{
+span#raising_per{
   font-size: 12px;
-  text-align: center;
   color:#7e7e7e !important;
   font-family: $body-font;
-  top: 641px;
-  left: 671px;
+  position: absolute;
+  bottom: 4%;
+  left: 44%;
 }
 
 .card-startup-descripion{
@@ -86,14 +86,14 @@ p#raising_per{
   // position: absolute;
   width: 652px;
   height: 290px;
-  margin-top: 15px;
+  margin-top: -14px;
   border: 1px solid $blue;
   h3{
     font-size: 12px;
-    color: $blue;
-    font-family: $body-font;
+    color: #17185E;
+    font-family: "Montserrat", sans-serif;
     margin-top: 5px;
-    bottom: 257px;
+    bottom: 30.5em;
     left: 204px;
     position: absolute;
     text-transform: uppercase;
@@ -103,8 +103,7 @@ p#raising_per{
     position: absolute;
     padding-left: 0.5em;
     padding-top: 0.5em;
-
-    font-family: 'Haas Grot Disp';
+    font-family: $headers-font;
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
@@ -132,21 +131,24 @@ p#raising_per{
   }
 }
 
-.countdown-box{
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+.countdown-border {
   box-sizing: border-box;
   width: 290px;
   height: 106px;
   border: 1px solid $blue;
+}
+
+.countdown-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 
   p{
     font-size: 12px;
     color: $blue;
     font-family: $body-font;
     margin-top: 5px;
-    bottom: 111px;
+    bottom: 19.4em;
     left: 204px;
     position: absolute;
     text-transform: uppercase;
@@ -154,7 +156,7 @@ p#raising_per{
 }
 
 #countdown-timer{
-  font-family: 'Haas Grot Disp';
+  font-family: $headers-font;
   font-style: normal;
   //font-weight: 500;
   font-size: 25px;
@@ -189,6 +191,7 @@ p#raising_per{
 
 
 .raising-funding-box{
+  position: relative;
   box-sizing: border-box;
   width: 337px;
   height: 106px;
@@ -199,7 +202,7 @@ p#raising_per{
     color: $blue;
     font-family: $body-font;
     margin-top: 5px;
-    bottom: 111px;
+    bottom: 19.3em;
     left: 520px;
     position: absolute;
     text-transform: uppercase;
@@ -221,14 +224,14 @@ p#raising_per{
  display: flex;
  flex-direction: column;
  margin-left: 215px;
- margin-top: 1.1em;
+ margin-top: 0.7em;
 }
 
 .team-line-link{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 1.7em;
+    margin-top: 1.2em;
     border-bottom-color: white;
     border-bottom-style: dashed;
     padding-bottom: 5px;
@@ -285,10 +288,8 @@ p#raising_per{
 
 .send-a-message{
 
- // box-sizing: border-box;
-  width: 315px;
-  height: 170px;
-  //border: 1px solid  #125E2D;
+  width: 355px;
+  height: 194px;
   margin-top: 27px;
   background-color: #ffffff;
 
@@ -313,7 +314,7 @@ p#raising_per{
     letter-spacing: 0.7px;
     //width: 310px;
     position: relative;
-    margin-left: 36px;
+    margin-left: 59px;
     bottom: 18px;
   }
 
@@ -334,12 +335,12 @@ p#raising_per{
 }
 
 #myProgress {
+  position: absolute;
   width: 73%;
   height: 50px;
-  position: relative;
   background-color: #fff;
-  left: 38px;
-  top: 25px;
+  left: 11%;
+  top: 27%;
 }
 
 #myBar {
@@ -349,4 +350,36 @@ p#raising_per{
   align-content: center;
   top: 3px;
   left: 4px;
+}
+
+.home-line-link{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1.7em;
+  border-bottom-color: white;
+  border-bottom-style: dashed;
+  padding-bottom: 5px;
+  border-top-color: white;
+  border-top-style: dashed;
+  padding-top: 5px;
+  width: 300px;
+
+  a{
+    margin-left: 10px;
+    font-family: $headers-font;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+
+.links-plus-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.all-startup-link {
+  margin-right: 5%;
 }

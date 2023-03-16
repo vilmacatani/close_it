@@ -64,7 +64,7 @@ legend ~ div.form-check:first-of-type {
   width: 31em;
   height: 30em;
   position: absolute;
-  right: 64em;
+  right: 58em;
   top: 13em;
   padding: 2em;
 }
@@ -146,6 +146,7 @@ p.investor-title {
   overflow-y: scroll;
 }
 
+
 .form-check-input[type="checkbox"] {
   border-radius: 0;
 }
@@ -153,26 +154,33 @@ p.investor-title {
 p#joining-text  {
   color: #17185E !important;
   position: absolute;
-  left: 23.9em;
-  top: 4.3em;
-  font-size: 2em;
+  left: 0;
+  font-size: 2.5em;
+  top: -8%;
+  height: 10%;
+  width: 100%;
 }
 
 p#investor-text  {
   color: #17185E !important;
-  position: absolute;
-  left: 29.9em;
-  top: 5.65em;
-  font-size: 2em;
+    position: absolute;
+    left: 0;
+    font-size: 2.5em;
+    top: -7.5%;
+    height: 10%;
+    width: 100%;
+    font-family: $headers-font;
 }
 
 p#user-text  {
   color: #17185E !important;
-  position: absolute;
-  left: 5.9em;
-  top: 5.5em;
-  font-size: 2em;
-  font-family: "Grotesk medium";
+    position: absolute;
+    left: 0;
+    font-size: 2.5em;
+    top: -8.5%;
+    height: 10%;
+    width: 100%;
+    font-family: $headers-font;
 }
 
 p.user-edit-title {
@@ -193,14 +201,14 @@ input.create-button{
   background-color: white;
 }
 
-i.fa-solid.fa-arrow-right {
-  //background-color: white;
+i.fa-solid.fa-arrow-right.signup {
+  background-color: white;
   color: #17185E;
   font-size: 1.3em;
-  //position: absolute;
+  position: absolute;
   padding: 7px;
   bottom: -0.5em;
-  left: 12em;
+  left: 20em;
 }
 
 i.fa-solid.fa-check {

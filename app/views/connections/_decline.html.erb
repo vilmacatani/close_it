@@ -4,5 +4,6 @@
   update_pending_requests_target: "form", action: "submit->update-pending-requests#answer"}}) do |f| %>
   <%= f.input :pending, :as => :hidden, :input_html => { :value => false } %>
   <%= f.input :accepted, :as => :hidden, :input_html => { :value => false } %>
+  <%= hidden_field_tag 'counter', counter  %>
   <%= f.button :submit, "Decline", class: "btn btn-danger"%>
 <% end %>

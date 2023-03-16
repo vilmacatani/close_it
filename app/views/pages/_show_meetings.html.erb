@@ -2,13 +2,11 @@
     <% accepted_meetings = connection_meetings.where(meeting_accepted: true) %>
     <% declined_meetings = connection_meetings.where(meeting_accepted: false) %>
     <% accepted_meetings.each do |accepted| %>
-      <div>You have set the following meetings<%= accepted.title %></div>
-      <div class="btn btn-outline-primary"><%= link_to "You already have on meeting, set up another one<3", new_connection_meeting_path(request.id) %></div>
+
     <% end %>
     <% declined_meetings.each do |declined| %>
-      <div>You have still pending meetings</div>
-      <div class="btn btn-outline-primary"><%= link_to "Set up a meeting another meeting<3", new_connection_meeting_path(request.id) %></div>
+
     <% end %>
   <% else %>
-    <div class="btn btn-outline-primary"><%= link_to "Set up a meeting <3", new_connection_meeting_path(request.id) %></div>
+
 <% end %>

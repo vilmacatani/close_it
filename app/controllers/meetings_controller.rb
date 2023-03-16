@@ -1,8 +1,6 @@
 class MeetingsController < ApplicationController
-  before_action :set_connection, only: %i[new create]
-  def new
-    @meeting = Meeting.new
-  end
+  before_action :set_connection, only: %i[create]
+
 
   def create
     @meeting = Meeting.new(meeting_params)
@@ -15,7 +13,7 @@ class MeetingsController < ApplicationController
     @meeting.end_time = params[:meeting][:start_time].to_datetime + params[:meeting][:duration].to_i.minutes
 
     if @meeting.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path, notice: "Meeting created."
     else
       render :new, status: :unprocessable_entity
     end

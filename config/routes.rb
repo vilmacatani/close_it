@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # get 'meetings/create'
   # get 'connections/create'
   # get 'startups/index'
-  get 'startup', to: "startups#show"
   # get 'startups/new'
   # get 'startups/create'
   # get 'investors/new'
@@ -22,9 +21,11 @@ Rails.application.routes.draw do
 
   get 'investors/new', to: "investors#new"
   post 'investors', to: "investors#create"
-  get 'start_up/:id', to: "startups#start_up"
+  # get 'start_up/:id', to: "startups#start_up"
   post 'startups', to: "connections#create"
-  resources :startups, only: :show do
+  get 'startups/form', to: "startups#form", as: :new_startup_registration
+
+  resources :startups do
     resources :connections, only: %i[new create]
   end
 
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
   resources :investors, only: %i[edit show update]
 
   get 'startups/:id/team', to: "startups#team", as: :startup_team
-  resources :startups
+  # resources :startups
 
   # get '/investors/new', to: "investors#new"
   # post 'investors', to: "investors#create"
