@@ -34,15 +34,12 @@
   </div>
   <div class="signup-container">
     <div class="joining-as-text">
-      <p id="joining-text">JOINING AS</p>
+      <p id="joining-text">JOINING US</p>
       <div class="startup-links">
-        <h3 ><i id="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "COMPANY",  new_user_registration_path  %></h3>
-        <h3 ><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "FUNDING",  new_user_registration_path  %></h3>
-        <h3 ><i class="fa-sharp fa-solid fa-arrow-right"></i> <%= link_to "TEAM",  new_user_registration_path  %></h3>
-      </div>
+    
 
      </div>
-    <div class="investor-signup-page">
+    <div class="investor-signup-page ">
      <%= simple_form_for(@startup, method: :post, url: new_startup_registration_path) do |f| %>
         <p class="investor-title">STARTUP</p>
 
