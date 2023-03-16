@@ -10,9 +10,6 @@ application.register("cards-show", CardsShowController)
 import FilterListController from "./filter_list_controller"
 application.register("filter-list", FilterListController)
 
-import FilterMemberController from "./filter_member_controller"
-application.register("filter-member", FilterMemberController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
