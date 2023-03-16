@@ -3,7 +3,7 @@
     <div class="col-8 static">
       <% startups.each do |startup| %>
         <%# add d-none to card-left-details !!!!!  %>
-        <div class="card-left-details d-none" style="background-image: linear-gradient(black, black), url('https://source.unsplash.com/random/?industrial&<%= rand(1...100) %>'); background-blend-mode: saturation" data-startup="<%= startup.id %>">
+        <div class="card-left-details d-none" style="background-image: linear-gradient(black, black), url(<%= startup.img %>); background-blend-mode: saturation" data-startup="<%= startup.id %>">
           <div class="card-left-info">
             <h2 id="card-left-title"><%= startup.user.company_name %></h2>
             <p id="card-left-desc"><%= startup.bio %></p>
@@ -12,7 +12,7 @@
                 <p>INDUSTRY</p><p><%= startup.industry %></p>
               </div></li>
               <li><div id="card-left-class">
-                <p>CLASS</p><p><%= startup.funding.last.capitalize %></p>
+                <p>CLASS</p><p><%= startup.funding.capitalize %></p>
               </div></li>
               <li><div id="card-left-funding">
                 <p>RAISING</p><p><%= startup.funding_amount %></p>
@@ -28,7 +28,7 @@
           <div class="card-height" data-startup="<%= startup.id %>">
             <figure class="gallery__item gallery__item--1">
               <%= link_to startup_path(startup.id) do %>
-                <img src="https://source.unsplash.com/random/400x400/?industrial&<%= rand(1...100) %>" class="gallery__img" alt="Image 1">
+                <img src= "<%= startup.img %>" class="gallery__img" alt="Image 1">
                 <div class="card-short-descr">
                   <div class="title-boxed">
                     <h2><%= startup.user.company_name[0..30]%></h2>

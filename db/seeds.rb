@@ -7,6 +7,11 @@ Startup.destroy_all
 Investor.destroy_all
 User.destroy_all
 
+images = [Image::DELIVERY, Image::HEALTHTECH, Image::AI, Image::EDTECH, Image::FINTECH, Image::MOBILITY,
+  Image::SUPPLYCHAIN, Image::REALESTATE, Image::ECOMMERCE, Image::BIGDATA, Image::BLOCKCHAIN, Image::B2B, Image::RETAIL]
+
+vilmasimg = [Image::EDTECH, Image::HEALTHTECH]
+puts vilmasimg.class
 vilma = User.create!(
   email: "vilmacatani@gmail.com",
   password: "111111",
@@ -31,13 +36,16 @@ pending = [true, false]
 accepted = [true, false]
 technologies = ["Education Technology", "Healthcare Technology"]
 # Demo data
-h = 1
+
+h = 0
+m = 0
 technologies.each do |tech|
+  puts h
   limit = 5
   data = CrunchbaseApi.organization_summary(tech, limit)
   data["entities"].each do |company|
     user = User.create!(
-      email: "maria.massano#{h}@gmail.com",
+      email: "maria.massano#{m}@gmail.com",
       password: "111111",
       first_name: Faker::Name.first_name,
       last_name: Faker::Name.last_name,
@@ -45,11 +53,10 @@ technologies.each do |tech|
       country: "Portugal",
       company_name: company["identifier"]["value"]
     )
-    t = tech
     puts "Users created"
     Startup.create!(
       user_id: user.id,
-
+      industry: tech,
       funding_amount: Faker::Number.between(from: 60, to: 100),
       funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
       funding: "Seed",
@@ -61,10 +68,11 @@ technologies.each do |tech|
       and we invite you to join us as we build a better #{tech.downcase} for all.",
       headcount: Faker::Number.between(from: 1, to: 15),
       turnover: Faker::Number.between(from: 1, to: 10),
-      industry: t,
-      raised_amount: Faker::Number.between(from: 1, to: 75)
+      raised_amount: Faker::Number.between(from: 1, to: 75),
+      img: vilmasimg[h].sample
     )
-    h += 1
+    m+=1
+    puts 'end'
   end
   puts "Startups created"
   Startup.all.each do |sup|
@@ -79,6 +87,7 @@ technologies.each do |tech|
     end
   end
   puts "members created"
+  h += 1
 end
 
 startups = Startup.all
@@ -161,13 +170,15 @@ end
 #-------------------------------------------------------------------------------------------------------------------------
 
 # Create Startups
-j = 1
+j = 0
+n = 0
 Startup::INDUSTRIES.each do |s|
   limit = 4
   data = CrunchbaseApi.organization_summary(s, limit)
+
   data["entities"].each do |company|
     user = User.create!(
-      email: "marta#{j}@gmail.com",
+      email: "marta#{n}@gmail.com",
       password: "111111",
       first_name: "Marta",
       last_name: "Maria",
@@ -177,10 +188,10 @@ Startup::INDUSTRIES.each do |s|
       country: "UK",
       company_name: company["identifier"]["value"]
     )
-    indu = s
+
     Startup.create!(
       user_id: user.id,
-
+      industry: s,
       funding_amount: Faker::Number.between(from: 60, to: 100),
       funding_round_end_date: Faker::Date.between(from: '2023-01-01', to: '2024-12-31'),
       funding: Investor::FUNDINGS.sample,
@@ -188,12 +199,12 @@ Startup::INDUSTRIES.each do |s|
       bio: company["short_description"],
       headcount: Faker::Number.between(from: 1, to: 500),
       turnover: Faker::Number.between(from: 1, to: 200),
-      industry: indu,
-      raised_amount: Faker::Number.between(from: 1, to: 55)
+      raised_amount: Faker::Number.between(from: 1, to: 55),
+      img: images[j].sample
     )
-
-    j += 1
+    n+=1
   end
+  j += 1
 end
 
 k = 1

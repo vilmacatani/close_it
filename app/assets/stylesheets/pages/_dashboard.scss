@@ -61,6 +61,7 @@ button.btn {
 }
 
 .requester-img {
+  filter: grayscale(100%);
   object-fit: cover;
   height: 110px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
