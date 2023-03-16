@@ -14,6 +14,11 @@ class StartupsController < ApplicationController
     @members = @start_up.members
   end
 
+  def form
+    @startup = Startup.new
+    
+  end
+
   def new
     @user = User.find(params[:user_id])
     @start_ups = Startup.new
@@ -44,6 +49,7 @@ class StartupsController < ApplicationController
 
   def starts_up_params
     params.require(:start_up).permit(:content)
+
   end
 
 end
